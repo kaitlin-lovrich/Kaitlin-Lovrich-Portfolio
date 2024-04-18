@@ -1,0 +1,54 @@
+import { Link, Outlet } from "react-router-dom";
+import "../index.css";
+
+export default function Header() {
+    return (
+        <>
+            <nav className="fixed top-0 w-full z-2 py-2 px-6 bg-custom-gradient-2 text-white">
+                <ul className="flex justify-between w-full">
+                    <li className="self-center">
+                        <Link to="/" className="text-blue-purple-gradient">
+                            <img
+                                src="./kl-logo.png"
+                                alt="k l logo"
+                                width={70}
+                            />
+                        </Link>
+                    </li>
+                    <li className="self-center">
+                        <ul className="flex">
+                            <li className="mx-4 self-center">
+                                <Link
+                                    to="https://www.linkedin.com/in/kaitlin-lovrich/"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
+                                    <img
+                                        src="./linkedin-icon.png"
+                                        alt="linked-icon"
+                                        width={40}
+                                    />
+                                </Link>
+                            </li>
+                            <li className="">
+                                <Link
+                                    to="https://github.com/kaitlin-lovrich"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="text-blue-purple-gradient"
+                                >
+                                    <img
+                                        src="./github-icon.png"
+                                        alt="github-icon"
+                                        width={45}
+                                    />
+                                </Link>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+            <Outlet />
+        </>
+    );
+}
