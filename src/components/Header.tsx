@@ -11,7 +11,7 @@ export default function Header() {
                             <img
                                 src="./kl-logo.png"
                                 alt="k l logo"
-                                width={70}
+                                width={60}
                             />
                         </Link>
                     </li>
@@ -48,6 +48,27 @@ export default function Header() {
                     </li>
                 </ul>
             </nav>
+            <aside>
+                <nav className="flex justify-center md:justify-end px-3 sm:px-10">
+                    <ul className="flex gap-1 sm:gap-3 pt-24 font-heading text-white text-lg sm:text-2xl">
+                        <li className=" text-white">
+                            <Link to="/">About</Link>
+                        </li>
+                        <span className=" text-coral">|</span>
+                        <li className="">
+                            <Link to="/">Projects</Link>
+                        </li>
+                        <span className=" text-coral">|</span>
+                        <li className="">
+                            <Link to="/">Experience</Link>
+                        </li>
+                        <span className=" text-coral">|</span>
+                        <li className=" gradient-text">
+                            <Link to="/">Contact</Link>
+                        </li>
+                    </ul>
+                </nav>
+            </aside>
             <Outlet />
         </>
     );
