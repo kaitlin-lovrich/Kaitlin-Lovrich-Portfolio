@@ -4,7 +4,7 @@ import "../index.css";
 export default function Header() {
     return (
         <>
-            <nav className="fixed top-0 w-full z-20 py-2 px-6 bg-custom-gradient-2 text-white">
+            <nav className="fixed top-0 w-full z-50 py-2 px-6 bg-custom-gradient-2 text-white">
                 <ul className="flex justify-between w-full">
                     <li className="self-center">
                         <Link to="/" className="text-blue-purple-gradient">
@@ -48,10 +48,10 @@ export default function Header() {
                     </li>
                 </ul>
             </nav>
-            <aside className="relative z-10">
+            <aside className="relative z-40">
                 <nav className="flex justify-center md:justify-end px-3 sm:px-10">
                     <ul className="flex gap-1 sm:gap-3 pt-24 font-heading text-white text-lg sm:text-2xl">
-                        <li className=" text-white">
+                        <li className=" text-white sm:text-red-200 md:text-green-200 lg:text-red-800 xl:text-yellow-600">
                             <Link to="/">About</Link>
                         </li>
                         <span className=" text-coral">|</span>
@@ -63,7 +63,7 @@ export default function Header() {
                             <Link to="/">Experience</Link>
                         </li>
                         <span className=" text-coral">|</span>
-                        <li className=" gradient-text">
+                        <li className="gradient-text">
                             <Link to="/">Contact</Link>
                         </li>
                     </ul>

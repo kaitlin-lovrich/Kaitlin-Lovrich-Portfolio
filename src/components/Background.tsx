@@ -37,5 +37,3 @@ export default function Background() {
         </div>
     );
 }
-// coral top-[390px] sm:top-[648px]
-// blue top-[442px] sm:top-[698px]
