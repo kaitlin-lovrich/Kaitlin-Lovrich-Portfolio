@@ -14,7 +14,7 @@ export default function About() {
                         Kaitlin Lovrich
                     </p>
                     <h1 className="text-2xl sm:text-3xl md:text-4xl">
-                        Software Developer
+                        Full Stack Developer
                     </h1>
                 </div>
 
