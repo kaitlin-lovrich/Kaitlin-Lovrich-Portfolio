@@ -11,6 +11,8 @@ export default {
             "custom-gradient-1": "linear-gradient(#292929 0%, #1D2449 100%)",
             "custom-gradient-2":
                 "linear-gradient(to right, rgb(72,101,253), rgb(43,60,150))",
+            "custom-gradient-3":
+                "linear-gradient(#69F1C0 0%, #65E6BE 26%, #2B3C97 100%)",
         },
 
         extend: {

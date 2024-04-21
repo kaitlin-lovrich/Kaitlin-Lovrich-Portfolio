@@ -1,9 +1,11 @@
+import About from "../components/About";
 import Background from "../components/Background";
 
 export default function HomePage() {
     return (
-        <div className="">
+        <div className="relative">
             <Background />
+            <About />
         </div>
     );
 }
