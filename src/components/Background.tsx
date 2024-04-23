@@ -49,13 +49,13 @@ function Bubbles() {
     return (
         <div className="absolute inset-0">
             <div className="relative w-full z-10 h-lvh">
-                <div className="absolute top-[-199px] sm:top-[-223px] md:top-[-210px] left-[229px] sm:left-[433px] md:left-[484px] lg:left-[530px]">
+                {/* <div className="absolute top-[-199px] sm:top-[-223px] md:top-[-210px] left-[229px] sm:left-[433px] md:left-[484px] lg:left-[530px]">
                     <LargeBubble />
                 </div>
                 <div className="absolute top-[-261px] sm:top-[-230px] right-[6px] sm:right-[25px] lg:right-[100px]">
                     <LargeBubble />
-                </div>
-                <div className="absolute top-[-190px] lg:top-[-180px] left-[170px] sm:left-[220px] lg:left-[240px]">
+                </div> */}
+                {/* <div className="absolute top-[-190px] lg:top-[-180px] left-[170px] sm:left-[220px] lg:left-[240px]">
                     <MediumBubble />
                 </div>
                 <div className="absolute top-[-98px] sm:top-[-80px] lg:top-[-65px] left-[-29px] sm:left-[15px] lg:left-[30px]">
@@ -72,8 +72,14 @@ function Bubbles() {
                 </div>
                 <div className="absolute hidden sm:block sm:top-[565px] sm:right-[18px] lg:right-[30px]">
                     <MediumBubble />
+                </div> */}
+                <div className="absolute top-[372px] sm:top-[523px] lg:top-[550px] left-[-14px] sm:left-[4px] md:left-[33px] lg:left-[50px]">
+                    <MediumBubble />
                 </div>
-                <div className="absolute top-[70px] sm:top-[80px] lg:top-[188px] left-[-5px] sm:left-[43px] lg:left-[90px]">
+                <div className="absolute top-[611px] sm:top-[783px] md:top-[852px] left-[-17px] md:left-[5px] lg:left-[10px]">
+                    <MediumBubble />
+                </div>
+                {/* <div className="absolute top-[70px] sm:top-[80px] lg:top-[188px] left-[-5px] sm:left-[43px] lg:left-[90px]">
                     <SmallBubble />
                 </div>
                 <div className="absolute top-[-10px] sm:top-[197px] lg:top-[212px] left-[172px] sm:left-[4px] lg:left-[5px]">
@@ -102,8 +108,26 @@ function Bubbles() {
                 </div>
                 <div className="absolute hidden sm:block sm:top-[722px] sm:right-[35px] lg:right-[45px]">
                     <SmallBubble />
+                </div> */}
+                <div className="absolute top-[324px] sm:top-[466px] lg:top-[493px] left-[-8px] sm:left-[9px] md:left-[40px] lg:left-[61px]">
+                    <SmallBubble />
                 </div>
-                <div className="absolute top-[-45px] sm:top-[-42px] left-[170px] sm:left-[473px] md:left-[524px] lg:left-[570px]">
+                <div className="absolute top-[407px] sm:top-[558px] lg:top-[582px] left-[4px] sm:left-[33px] md:left-[61px] lg:left-[79px]">
+                    <SmallBubble />
+                </div>
+                <div className="absolute top-[575px] sm:top-[716px] md:top-[793px] left-[-6px] sm:left-[-6px] md:left-[14px] lg:left-[20px]">
+                    <SmallBubble />
+                </div>
+                <div className="absolute top-[640px] sm:top-[828px] md:top-[899px] left-[12px] sm:left-[12px] md:left-[34px] lg:left-[39px]">
+                    <SmallBubble />
+                </div>
+                <div className="absolute top-[594px] sm:top-[759px] md:top-[820px] left-[95px] sm:left-[149px] md:left-[155px] lg:left-[211px]">
+                    <SmallBubble />
+                </div>
+                <div className="absolute top-[633px] sm:top-[819px] md:top-[880px] left-[85px] sm:left-[139px] md:left-[145px] lg:left-[201px]">
+                    <SmallBubble />
+                </div>
+                {/* <div className="absolute top-[-45px] sm:top-[-42px] left-[170px] sm:left-[473px] md:left-[524px] lg:left-[570px]">
                     <XSmallBubble />
                 </div>
 
@@ -123,6 +147,9 @@ function Bubbles() {
                     <XSmallBubble />
                 </div>
                 <div className="absolute top-[153px] right-[0px] sm:right-[7px]">
+                    <XSmallBubble /> 
+                </div>*/}
+                <div className="absolute top-[618px] sm:top-[790px] md:top-[851px] left-[110px] sm:left-[165px] md:left-[171px] lg:left-[228px]">
                     <XSmallBubble />
                 </div>
             </div>
