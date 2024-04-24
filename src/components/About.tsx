@@ -13,7 +13,7 @@ export default function About() {
                     <p className="text-xl sm:text-2xl md:text-3xl pb-1.5 sm:pb-4 ">
                         Kaitlin Lovrich
                     </p>
-                    <h1 className="text-2xl sm:text-3xl md:text-4xl">
+                    <h1 className="text-2xl sm:text-3xl md:text-4xl sm:text-red-200 md:text-green-200 lg:text-red-800 xl:text-yellow-600">
                         Full Stack Developer
                     </h1>
                 </div>
