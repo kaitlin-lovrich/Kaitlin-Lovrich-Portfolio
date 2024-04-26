@@ -24,13 +24,13 @@ body {
 
 .bubble {
     border-radius: 189px 189px 189px 189px / 150px 150px 150px 150px;
-    border-color: rgba(255, 255, 255, 1);
-    /* animation: float 10s infinite running linear; */
+    border-color: rgba(255, 255, 255, 0.87);
+    /* animation: float 20s infinite running linear; */
 }
 /* change bordercolor opacity back to 0.2 */
 .bubble p {
     color: rgba(255, 255, 255, 0.1);
-    /* animation: fade-color 10s 1ms infinite running linear; */
+    /* animation: fade-color 20s 1ms infinite running linear; */
 }
 
 @keyframes float {

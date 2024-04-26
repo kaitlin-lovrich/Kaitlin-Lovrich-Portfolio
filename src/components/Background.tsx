@@ -551,6 +551,35 @@ function Bubbles() {
                 <div className="absolute hidden md:block top-[140px] right-[757px]">
                     <XSmallBubble />
                 </div>
+
+                {/* Below are the newly added top bubbles */}
+
+                <div className="absolute hidden min-[2675px]:block top-[-22px] right-[1809px]">
+                    <LargeBubble />
+                </div>
+                <div className="absolute hidden min-[2370px]:block top-[46px] right-[1452px]">
+                    <LargeBubble />
+                </div>
+                <div className="absolute hidden min-[1670px]:block top-[-34px] right-[757px]">
+                    <LargeBubble />
+                </div>
+
+                <div className="absolute hidden min-[2040px]:block top-[0px] right-[1123px]">
+                    <MediumBubble />
+                </div>
+                <div className="absolute hidden min-[1260px]:block top-[-69px] right-[390px]">
+                    <MediumBubble />
+                </div>
+
+                <div className="absolute hidden min-[2370px]:block top-[88px] right-[1478px]">
+                    <SmallBubble />
+                </div>
+                <div className="absolute hidden min-[2040px]:block top-[36px] right-[1137px]">
+                    <SmallBubble />
+                </div>
+                <div className="absolute hidden min-[1670px]:block top-[21px] right-[773px]">
+                    <SmallBubble />
+                </div>
             </div>
         </div>
     );
