@@ -21,3 +21,144 @@ body {
         letter-spacing: 0.1rem;
     }
 }
+
+.bubble {
+    border-radius: 189px 189px 189px 189px / 150px 150px 150px 150px;
+    /* border-color: rgba(255, 255, 255, 0.2); */
+    /* animation: fade-bubble 15s infinite running linear; */
+}
+/* change bordercolor opacity back to 0.2 */
+.bubble p {
+    color: rgba(255, 255, 255, 0.2);
+    /* animation: fade-color 20s 1ms infinite running linear; */
+}
+
+.float-animate-1 {
+    border-color: rgba(255, 255, 255, 0.2);
+    animation: float 15s infinite running linear;
+}
+
+.float-animate-1 p {
+    color: rgba(255, 255, 255, 0.2);
+    animation: fade-color 15s 1ms infinite running linear;
+}
+
+.float-animate-2 {
+    border-color: rgba(255, 255, 255, 0);
+    animation: float 15s 2s infinite running linear;
+}
+
+.float-animate-2 p {
+    color: rgba(255, 255, 255, 0);
+    animation: fade-color 15s 2.1s infinite running linear;
+}
+
+.float-animate-3 {
+    border-color: rgba(255, 255, 255, 0);
+    animation: float 15s 4s infinite running linear;
+}
+
+.float-animate-3 p {
+    color: rgba(255, 255, 255, 0);
+    animation: fade-color 15s 4.1s infinite running linear;
+}
+
+@keyframes float {
+    0% {
+        border-color: rgba(255, 255, 255, 0.1);
+        transform: translateY(700%);
+    }
+    10% {
+        border-color: rgba(255, 255, 255, 0.5);
+    }
+    20% {
+        border-color: rgba(255, 255, 255, 1);
+    }
+    30% {
+        border-color: rgba(255, 255, 255, 1);
+    }
+    40% {
+        border-color: rgba(255, 255, 255, 1);
+    }
+    50% {
+        border-color: rgba(255, 255, 255, 1);
+    }
+    60% {
+        border-color: rgba(255, 255, 255, 1);
+    }
+    70% {
+        border-color: rgba(255, 255, 255, 0.98);
+    }
+    80% {
+        border-color: rgba(255, 255, 255, 0.96);
+    }
+    100% {
+        border-color: rgba(255, 255, 255, 0);
+    }
+}
+
+@keyframes fade-color {
+    0% {
+        color: rgba(255, 255, 255, 0.1);
+    }
+    10% {
+        color: rgba(255, 255, 255, 0.5);
+    }
+    20% {
+        color: rgba(255, 255, 255, 1);
+    }
+    30% {
+        color: rgba(255, 255, 255, 1);
+    }
+    40% {
+        color: rgba(255, 255, 255, 1);
+    }
+    50% {
+        color: rgba(255, 255, 255, 1);
+    }
+    60% {
+        color: rgba(255, 255, 255, 1);
+    }
+    70% {
+        color: rgba(255, 255, 255, 0.98);
+    }
+    80% {
+        color: rgba(255, 255, 255, 0.96);
+    }
+    100% {
+        color: rgba(255, 255, 255, 0);
+    }
+}
+
+/* @keyframes fade-bubble {
+    0% {
+        border-color: rgba(255, 255, 255, 0.1);
+    }
+    10% {
+        border-color: rgba(255, 255, 255, 0.5);
+    }
+    20% {
+        border-color: rgba(255, 255, 255, 1);
+    }
+    30% {
+        border-color: rgba(255, 255, 255, 1);
+    }
+    40% {
+        border-color: rgba(255, 255, 255, 1);
+    }
+    50% {
+        border-color: rgba(255, 255, 255, 1);
+    }
+    60% {
+        border-color: rgba(255, 255, 255, 1);
+    }
+    70% {
+        border-color: rgba(255, 255, 255, 0.98);
+    }
+    80% {
+        border-color: rgba(255, 255, 255, 0.96);
+    }
+    100% {
+        border-color: rgba(255, 255, 255, 0);
+    }
+} */

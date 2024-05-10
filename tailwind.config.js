@@ -5,7 +5,7 @@ export default {
         fontFamily: {
             heading: ['"Paytone One"', "sans-serif"],
             body: ['"Plus Jakarta Sans"', "sans-serif"],
-            // special: [],
+            special: ['"Yanone Kaffeesatz"', "sans-serif"],
         },
         backgroundImage: {
             "custom-gradient-1": "linear-gradient(#292929 0%, #1D2449 100%)",
