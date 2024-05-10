@@ -236,8 +236,8 @@ function Bubbles() {
                 <div className="absolute hidden sm:block sm:top-[879px] sm:left-[192px] md:left-[200px] lg:left-[262px]">
                     <SmallBubble animation={"float-animate-1"} />
                 </div>
-                <div className="absolute hidden min-[1000px]:block md:top-[984px] right-[6px] md:right-[360px] lg:right-[391px] xl:hidden">
-                    <SmallBubble />
+                <div className="absolute hidden min-[1000px]:block md:top-[891px] right-[6px] md:right-[360px] lg:right-[391px] xl:hidden">
+                    <SmallBubble animation={"float-animate-2"} />
                 </div>
                 <div className="absolute hidden xl:block top-[899px] right-[375px]">
                     <SmallBubble animation={"float-animate-2"} />
@@ -245,14 +245,14 @@ function Bubbles() {
                 <div className="absolute hidden min-[1000px]:block md:top-[705px] md:right-[391px] ">
                     <SmallBubble animation={"float-animate-1"} />
                 </div>
-                <div className="absolute hidden min-[1235px]:block top-[1006px] right-[564px] xl:hidden">
-                    <SmallBubble />
+                <div className="absolute hidden min-[1235px]:block top-[913px] right-[564px] xl:hidden">
+                    <SmallBubble animation={"float-animate-1"} />
                 </div>
                 <div className="absolute hidden xl:block top-[839px] right-[423px]">
                     <SmallBubble animation={"float-animate-2"} />
                 </div>
-                <div className="absolute hidden md:block md:top-[932px] md:right-[220px] lg:right-[248px] xl:hidden">
-                    <SmallBubble />
+                <div className="absolute hidden md:block md:top-[839px] md:right-[220px] lg:right-[248px] xl:hidden">
+                    <SmallBubble animation={"float-animate-1"} />
                 </div>
                 <div className="absolute hidden min-[1460px]:block top-[863px] xl:top-[823px] right-[800px] xl:right-[712px]">
                     <SmallBubble animation={"float-animate-1"} />
@@ -308,14 +308,11 @@ function Bubbles() {
                 <div className="absolute hidden md:block sm:top-[712px] sm:right-[224px]">
                     <SmallBubble animation={"float-animate-2"} />
                 </div>
-                <div className="absolute hidden md:block top-[150px] right-[100px] xl:hidden">
-                    <SmallBubble />
+                <div className="absolute hidden md:block top-[57px] right-[100px] xl:hidden">
+                    <SmallBubble animation={"float-animate-1"} />
                 </div>
                 <div className="absolute hidden min-[2105px]:block top-[904px] right-[1377px]">
                     <SmallBubble animation={"float-animate-1"} />
-                </div>
-                <div className="absolute hidden md:block top-[703px] right-[235px] xl:hidden">
-                    <SmallBubble />
                 </div>
                 <div className="absolute hidden min-[2445px]:block top-[818px] right-[1753px]">
                     <SmallBubble animation={"float-animate-2"} />
@@ -398,8 +395,8 @@ function Bubbles() {
                 <div className="absolute hidden sm:block sm:top-[803px] md:top-[372px] sm:left-[260px] lg:left-[348px]">
                     <XSmallBubble animation={"float-animate-2"} />
                 </div>
-                <div className="absolute hidden min-[905px]:block top-[640px] sm:top-[930px] right-[149px] sm:right-[247px] md:right-[306px] lg:right-[346px] xl:hidden">
-                    <XSmallBubble />
+                <div className="absolute hidden min-[905px]:block top-[603px] sm:top-[893px] right-[149px] sm:right-[247px] md:right-[306px] lg:right-[346px] xl:hidden">
+                    <XSmallBubble animation={"float-animate-1"} />
                 </div>
                 <div className="absolute top-[606px] sm:top-[982px] right-[52px] sm:right-[103px]">
                     <XSmallBubble animation={"float-animate-1"} />
@@ -476,14 +473,8 @@ function Bubbles() {
                 <div className="absolute hidden min-[2445px]:block top-[836px] right-[1738px]">
                     <XSmallBubble animation={"float-animate-2"} />
                 </div>
-                <div className="absolute hidden md:block top-[517px] right-[256px] xl:hidden">
-                    <XSmallBubble />
-                </div>
                 <div className="absolute hidden min-[2105px]:block top-[984px] right-[1357px]">
                     <XSmallBubble animation={"float-animate-1"} />
-                </div>
-                <div className="absolute hidden md:block top-[594px] right-[492px] xl:hidden">
-                    <XSmallBubble />
                 </div>
                 <div className="absolute hidden min-[2105px]:block top-[880px] right-[1393px] ">
                     <XSmallBubble animation={"float-animate-1"} />
@@ -554,7 +545,7 @@ function XSmallBubble({ animation }: XSmallBubbleProps) {
     );
 }
 
-// After animation subtract
+// After applying animation subtract
 // -250px from top for large bubbles
 // -195px from top for med bubbles
 // -93px from top for small bubbles
