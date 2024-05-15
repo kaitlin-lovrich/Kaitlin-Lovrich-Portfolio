@@ -7,10 +7,10 @@ import {
 
 export default function Background() {
     return (
-        <>
+        <div className="relative z-0">
             <Flowers />
             <Bubbles />
-        </>
+        </div>
     );
 }
 
