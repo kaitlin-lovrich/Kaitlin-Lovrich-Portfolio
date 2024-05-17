@@ -3,14 +3,14 @@ import {
     MediumBubbleProps,
     SmallBubbleProps,
     XSmallBubbleProps,
-} from "../lib/dataTypes";
+} from "../lib/types";
 
 export default function Background() {
     return (
-        <>
+        <div className="relative z-0">
             <Flowers />
             <Bubbles />
-        </>
+        </div>
     );
 }
 

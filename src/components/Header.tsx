@@ -56,7 +56,7 @@ export default function Header() {
                         </li>
                         <span className=" text-coral">|</span>
                         <li className="">
-                            <Link to="/">Projects</Link>
+                            <Link to="/projects">Projects</Link>
                         </li>
                         <span className=" text-coral">|</span>
                         <li className="">
