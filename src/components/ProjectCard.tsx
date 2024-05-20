@@ -59,7 +59,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
                         className={`self-center text-3xl sm:text-4xl duration-500 ease-in-out ${
                             hoverSourceCode
                                 ? "scale-110 drop-shadow-custom-blue"
-                                : ""
+                                : "custom-pulse"
                         }`}
                     >
                         <TbHeartCode />
