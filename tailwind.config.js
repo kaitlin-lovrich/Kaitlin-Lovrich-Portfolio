@@ -22,7 +22,7 @@ export default {
                 "coral": "#FF4D5A",
             },
             dropShadow: {
-                "heading": "3px 4px 1px rgba(255, 77, 90, .80)",
+                "heading": "2px 3.5px 1px rgba(255, 77, 90, .98)",
                 "custom-blue": "3px 4px 2px rgba(72, 101, 253, 1)",
             },
             boxShadow: {
