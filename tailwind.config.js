@@ -10,11 +10,13 @@ export default {
         backgroundImage: {
             "custom-gradient-1": "linear-gradient(#292929 0%, #1D2449 100%)",
             "custom-gradient-2":
-                "linear-gradient(to right, rgb(72,101,253), rgb(43,60,150))",
+                "linear-gradient(to right, rgb(72, 101, 253), rgb(43,60,150))",
             "custom-gradient-3":
-                "linear-gradient(#69F1C0 0%, #65E6BE 26%, #2B3C97 100%)",
+                "linear-gradient(rgb(105, 241, 192) 0%, rgb(101, 230, 190) 26%, rgb(43, 60, 151) 100%)",
             "custom-gradient-4":
                 "linear-gradient(rgba(72, 101, 253, .60) 0%, rgba(29, 36, 73, .90) 75%)",
+            "custom-gradient-5":
+                "linear-gradient(rgb(105, 241, 192) 0%, rgb(105, 241, 192) 3%, rgb(77, 160, 173) 33%, rgb(43, 60, 151) 100%)",
         },
 
         extend: {

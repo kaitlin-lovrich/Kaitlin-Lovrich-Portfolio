@@ -18,6 +18,10 @@ export interface ProjectCardProps {
     project: projectDataType;
 }
 
+export interface ExperienceCardProps {
+    experience: experienceDataType;
+}
+
 export type projectDataType = {
     imageSrc: string;
     altText: string;
@@ -27,4 +31,14 @@ export type projectDataType = {
     projectDescription: string;
     projectType: string;
     projectRole: string;
+};
+
+export type experienceDataType = {
+    imageSrc: string;
+    altText: string;
+    imageWidth: string;
+    experienceTitle: string;
+    experienceLocation: string;
+    experienceDate: string;
+    experienceBulletPoints: string[];
 };
