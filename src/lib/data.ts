@@ -55,7 +55,7 @@ export const experiencesData: experienceDataType[] = [
     {
         imageSrc: "./learningfuze-cohort-0823.jpg",
         altText: "learning fuze cohort 0823",
-        imageWidth: "w-[480px]",
+        imageWidth: "w-[286px] sm:w-[480px]",
         experienceTitle: "Web Development Student",
         experienceLocation: "LearningFuze - Irvine, CA",
         experienceDate: "August 2023 - December 2024",
@@ -69,7 +69,7 @@ export const experiencesData: experienceDataType[] = [
     {
         imageSrc: "./kaitlin-the-hairdresser.png",
         altText: "Kaitlin the hairdresser",
-        imageWidth: "w-[250px]",
+        imageWidth: "w-[230px] sm:w-[250px]",
         experienceTitle: "Hair Stylist",
         experienceLocation:
             "Halo For Men (Lady Janes's Haircuts for Men, Sport Clips) - Chicago, IL",
