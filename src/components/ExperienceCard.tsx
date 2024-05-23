@@ -12,7 +12,7 @@ export default function ProjectCard({ experience }: ExperienceCardProps) {
     } = experience;
     return (
         <div className="">
-            <div className="flex flex-col lg:flex-row justify-between items-center lg:items-start gap-4 lg:gap-8 bg-white/15 rounded-lg p-4 shadow-textBox w-full">
+            <div className="flex flex-col lg:flex-row justify-between items-center lg:items-start gap-2 md:gap-6 bg-white/15 rounded-lg p-4 shadow-textBox w-full">
                 <div className={imageWidth}>
                     <img
                         src={imageSrc}
