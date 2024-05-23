@@ -14,7 +14,7 @@ export default function About() {
                         />
                     </div>
 
-                    <div className="flex justify-center bg-white/20 rounded-lg p-2 shadow-textBox">
+                    <div className="flex justify-center bg-white/15 rounded-lg p-2 shadow-textBox">
                         <p className="text-base font-body sm:text-xl md:text-2xl ">
                             👋 Hello World! I'm Kaitlin Lovrich,
                         </p>

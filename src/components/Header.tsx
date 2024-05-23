@@ -51,7 +51,7 @@ export default function Header() {
             <aside className="relative z-40">
                 <nav className="flex justify-center md:justify-end px-3 sm:px-10">
                     <ul className="flex gap-1 sm:gap-3 pt-24 font-heading text-white text-lg sm:text-2xl">
-                        <li className=" text-white">
+                        <li className="">
                             <Link to="/">About</Link>
                         </li>
                         <span className=" text-coral">|</span>
@@ -60,7 +60,7 @@ export default function Header() {
                         </li>
                         <span className=" text-coral">|</span>
                         <li className="">
-                            <Link to="/">Experience</Link>
+                            <Link to="/experience">Experience</Link>
                         </li>
                         <span className=" text-coral">|</span>
                         <li className="gradient-text">

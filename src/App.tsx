@@ -1,5 +1,5 @@
 import { Routes, Route } from "react-router-dom";
-import { About, Projects } from "./pages/index";
+import { About, Projects, Experience } from "./pages/index";
 import Header from "./components/Header";
 
 export default function App() {
@@ -8,6 +8,7 @@ export default function App() {
             <Route path="/" element={<Header />}>
                 <Route index element={<About />} />
                 <Route path="/projects" element={<Projects />} />
+                <Route path="/experience" element={<Experience />} />
             </Route>
         </Routes>
     );
