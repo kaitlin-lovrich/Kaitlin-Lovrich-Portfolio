@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import Background from "../components/Background";
 
 export default function Contact() {
@@ -13,9 +14,12 @@ export default function Contact() {
                             className="w-full"
                         />
                     </div>
-                    <h1 className="text-2xl sm:text-3xl md:text-4xl  font-heading drop-shadow-heading">
-                        Let's Connect
-                    </h1>
+                    <Link to="/contact2" className="hover:cursor-default">
+                        <h1 className="text-2xl sm:text-3xl md:text-4xl  font-heading drop-shadow-heading">
+                            Contact
+                        </h1>
+                    </Link>
+
                     <div className="flex justify-center bg-white/15 rounded-lg p-2 shadow-textBox px-4">
                         <p className="text-base font-body sm:text-xl md:text-2xl">
                             Email: kaylovrich@gmail.com
