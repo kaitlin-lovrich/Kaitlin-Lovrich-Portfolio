@@ -16,7 +16,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
         projectRole,
     } = project;
     return (
-        <div className="flex flex-col items-center bg-white/15 rounded-lg p-2 mb-0 sm:mb-8 min-[1410px]:mb-0 shadow-textBox w-[300px] sm:w-[330px] lg:w-[330px] min-[1620px]:w-[350px] min-[1750px]:w-[30%] h-auto sm:h-[490px] min-[1620px]:h-[510px] min-[1750px]:h-[530px] snap-center">
+        <div className="flex flex-col items-center bg-white/15 rounded-lg p-2 mb-0 sm:mb-8 min-[1410px]:mb-0 shadow-textBox w-[300px] sm:w-[330px] lg:w-[330px] min-[1620px]:w-[350px] min-[1750px]:w-[30%] h-auto sm:h-[490px] min-[1620px]:h-[510px] min-[1750px]:h-[530px] snap-center first:scroll-mb-0 scroll-mb-16">
             <Link
                 to={projectURL}
                 target="_blank"

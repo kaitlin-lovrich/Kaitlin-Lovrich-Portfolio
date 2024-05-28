@@ -7,11 +7,11 @@ export default function Experience() {
         <div className="relative">
             <Background />
             <div className="absolute inset-0">
-                <div className="flex justify-evenly items-center flex-col relative z-30 mx-auto mt-9 sm:mt-12 md:mt-12 w-[90%] sm:w-[85%] md:w-[80%] xl:max-w-[1340px] h-auto sm:h-[820px] md:h-[800px] bg-custom-gradient-5 rounded-xl text-white py-4 sm:py-8 md:py-10 overflow-y-auto snap-y">
-                    <h1 className="text-3xl sm:text-4xl font-heading drop-shadow-heading py-2 sm:py-0">
+                <div className="flex justify-evenly items-center flex-col relative z-30 mx-auto mt-6 sm:mt-12 w-[90%] sm:w-[85%] md:w-[80%]  lg:w-[85%] xl:max-w-[1340px] h-[75%] sm:h-[815px] lg:h-[790px] bg-custom-gradient-5 rounded-xl text-white py-4 sm:py-6 xl:py-10 overflow-y-auto overscroll-y-contain">
+                    <h1 className="text-3xl sm:text-4xl font-heading drop-shadow-heading py-2 sm:py-4 md:py-8">
                         Tech Stack
                     </h1>
-                    <div className="flex flex-col gap-3 bg-white/15 rounded-lg p-4 my-7 mb-10 shadow-textBox w-[90%] sm:w-[85%]  text-lg">
+                    <div className="flex flex-col gap-3 bg-white/15 rounded-lg p-4 my-4 shadow-textBox w-[90%] sm:w-[85%]  text-lg">
                         <p>
                             <span className="font-bold">Strong:</span>{" "}
                             TypeScript, JavaScript (ES5/ES6), ReactJS, HTML5,
@@ -29,10 +29,10 @@ export default function Experience() {
                         </p>
                     </div>
 
-                    <h1 className="text-3xl sm:text-4xl font-heading drop-shadow-heading py-2 sm:py-0">
+                    <h1 className="text-3xl sm:text-4xl font-heading drop-shadow-heading py-2 sm:py-4 md:py-8">
                         Timeline
                     </h1>
-                    <div className="flex flex-col justify-center gap-5 my-7 w-[90%] sm:w-[95%] ">
+                    <div className="flex flex-col justify-center gap-5 py-4 w-[90%] sm:w-[95%] ">
                         {experiencesData.map((experience, index) => (
                             <ExperienceCard
                                 key={index}
