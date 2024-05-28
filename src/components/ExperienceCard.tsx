@@ -11,7 +11,7 @@ export default function ProjectCard({ experience }: ExperienceCardProps) {
         experienceBulletPoints,
     } = experience;
     return (
-        <div className="flex flex-col lg:flex-row justify-between items-center lg:items-start gap-2 md:gap-6 bg-white/15 rounded-lg p-4 shadow-textBox w-full snap-start first:scroll-mt-16 scroll-mt-6">
+        <div className="flex flex-col lg:flex-row justify-between items-center lg:items-start gap-2 md:gap-6 bg-white/15 rounded-lg p-4 shadow-textBox w-full snap-start first:scroll-mb-96 scroll-mt-6">
             <div className={imageWidth}>
                 <img
                     src={imageSrc}
