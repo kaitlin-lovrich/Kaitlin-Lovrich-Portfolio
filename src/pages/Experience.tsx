@@ -32,7 +32,7 @@ export default function Experience() {
                     <h1 className="text-3xl sm:text-4xl font-heading drop-shadow-heading py-2 sm:py-4 md:py-8">
                         Timeline
                     </h1>
-                    <div className="flex flex-col justify-center gap-5 py-4 w-[90%] sm:w-[95%] ">
+                    <div className="flex flex-col justify-center gap-5 py-4 w-[90%] sm:w-[95%]">
                         {experiencesData.map((experience, index) => (
                             <ExperienceCard
                                 key={index}
