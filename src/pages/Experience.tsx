@@ -1,19 +1,27 @@
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import Background from "../components/Background";
 import ExperienceCard from "../components/ExperienceCard";
 import { experiencesData } from "../lib/data";
 
 export default function Experience() {
+    // Create a ref for the content container
+    const contentContainerRef = useRef<HTMLDivElement>(null);
+
     useEffect(() => {
-        // Scroll to the top when the component mounts
-        window.scrollTo(0, 0);
+        // Scroll to the top of the content container when the component mounts
+        if (contentContainerRef.current) {
+            contentContainerRef.current.scrollTop = 0;
+        }
     }, []);
 
     return (
         <div className="relative">
             <Background />
             <div className="absolute inset-0">
-                <div className="flex justify-evenly items-center flex-col relative z-30 mx-auto mt-6 sm:mt-12 w-[90%] sm:w-[85%] md:w-[80%] lg:w-[85%] xl:max-w-[1340px] h-[70%] sm:h-[815px] lg:h-[790px] bg-custom-gradient-5 rounded-xl text-white py-4 sm:py-6 xl:py-10 overflow-y-auto">
+                <div
+                    ref={contentContainerRef}
+                    className="flex justify-evenly items-center flex-col relative z-30 mx-auto mt-6 sm:mt-12 w-[90%] sm:w-[85%] md:w-[80%] lg:w-[85%] xl:max-w-[1340px] h-[70%] sm:h-[815px] lg:h-[790px] bg-custom-gradient-5 rounded-xl text-white py-4 sm:py-6 xl:py-10 overflow-y-auto"
+                >
                     <h1 className="text-3xl sm:text-4xl font-heading drop-shadow-heading py-2 sm:py-4 md:py-8">
                         Tech Stack
                     </h1>
