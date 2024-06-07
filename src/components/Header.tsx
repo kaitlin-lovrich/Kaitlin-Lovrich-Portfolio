@@ -14,6 +14,7 @@ export default function Header() {
                                 src="./kl-logo.png"
                                 alt="k l logo"
                                 width={60}
+                                className=" hover:scale-110 active:scale-110 duration-300"
                             />
                         </Link>
                     </li>
@@ -29,6 +30,7 @@ export default function Header() {
                                         src="./linkedin-icon.png"
                                         alt="linked-icon"
                                         width={40}
+                                        className=" hover:scale-110 active:scale-110 duration-300"
                                     />
                                 </Link>
                             </li>
@@ -43,6 +45,7 @@ export default function Header() {
                                         src="./github-icon.png"
                                         alt="github-icon"
                                         width={45}
+                                        className=" hover:scale-110 active:scale-110 duration-300"
                                     />
                                 </Link>
                             </li>
@@ -52,12 +55,12 @@ export default function Header() {
             </nav>
             <aside className="relative z-40">
                 <nav className="flex justify-center md:justify-end px-3 sm:px-10">
-                    <ul className="flex gap-1 sm:gap-3 pt-24 font-heading text-white text-lg sm:text-2xl hover:*:font-bold">
+                    <ul className="flex gap-1 sm:gap-3 pt-24 font-heading text-lg sm:text-2xl hover:*:font-bold">
                         <li
                             className={
                                 pathname.includes("/about")
-                                    ? "underline decoration-sky-blue decoration-4 underline-offset-8"
-                                    : ""
+                                    ? "underline decoration-sky-blue decoration-4 underline-offset-8 white-text"
+                                    : "white-text"
                             }
                         >
                             <Link to="/about">About</Link>
@@ -66,8 +69,8 @@ export default function Header() {
                         <li
                             className={
                                 pathname.includes("/projects")
-                                    ? "underline decoration-sky-blue decoration-4 underline-offset-8"
-                                    : ""
+                                    ? "underline decoration-sky-blue decoration-4 underline-offset-8 white-text"
+                                    : "white-text"
                             }
                         >
                             <Link to="/projects">Projects</Link>
@@ -76,8 +79,8 @@ export default function Header() {
                         <li
                             className={
                                 pathname.includes("/experience")
-                                    ? "underline decoration-sky-blue decoration-4 underline-offset-8"
-                                    : ""
+                                    ? "underline decoration-sky-blue decoration-4 underline-offset-8 white-text"
+                                    : "white-text"
                             }
                         >
                             <Link to="/experience">Experience</Link>
