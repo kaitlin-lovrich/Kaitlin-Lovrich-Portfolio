@@ -10,7 +10,11 @@ export default function Experience() {
     useEffect(() => {
         // Scroll to the top of the content container when the component mounts
         if (contentContainerRef.current) {
-            contentContainerRef.current.scrollTop = 0;
+            setTimeout(() => {
+                if (contentContainerRef.current) {
+                    contentContainerRef.current.scrollTop = 0;
+                }
+            }, 100); // 100ms delay
         }
     }, []);
 
@@ -20,7 +24,7 @@ export default function Experience() {
             <div className="absolute inset-0">
                 <div
                     ref={contentContainerRef}
-                    className="flex justify-evenly items-center flex-col relative z-30 mx-auto mt-6 sm:mt-12 w-[90%] sm:w-[85%] md:w-[80%] lg:w-[85%] xl:max-w-[1340px] h-[70%] sm:h-[815px] lg:h-[790px] bg-custom-gradient-5 rounded-xl text-white py-4 sm:py-6 xl:py-10 overflow-y-auto"
+                    className="flex justify-evenly items-center flex-col relative z-30 mx-auto mt-6 sm:mt-12 w-[90%] sm:w-[85%] md:w-[80%] lg:w-[85%] xl:max-w-[1340px] h-[70%] sm:h-[815px] lg:h-[790px] bg-custom-gradient-5 rounded-xl text-white py-4 sm:py-6 xl:py-10 overflow-y-scroll"
                 >
                     <h1 className="text-3xl sm:text-4xl font-heading drop-shadow-heading py-2 sm:py-4 md:py-8">
                         Tech Stack
@@ -59,3 +63,9 @@ export default function Experience() {
         </div>
     );
 }
+
+// useEffect(() => {
+//     if (contentContainerRef.current) {
+//         contentContainerRef.current.scrollTop = 0;
+//     }
+// }, []);
