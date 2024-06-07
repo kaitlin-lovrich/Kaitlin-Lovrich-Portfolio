@@ -12,7 +12,9 @@ export default function Experience() {
         if (contentContainerRef.current) {
             setTimeout(() => {
                 if (contentContainerRef.current) {
+                    contentContainerRef.current.style.overflow = "hidden";
                     contentContainerRef.current.scrollTop = 0;
+                    contentContainerRef.current.style.overflow = "auto";
                 }
             }, 100); // 100ms delay
         }
@@ -24,7 +26,7 @@ export default function Experience() {
             <div className="absolute inset-0">
                 <div
                     ref={contentContainerRef}
-                    className="flex justify-evenly items-center flex-col relative z-30 mx-auto mt-6 sm:mt-12 w-[90%] sm:w-[85%] md:w-[80%] lg:w-[85%] xl:max-w-[1340px] h-[70%] sm:h-[815px] lg:h-[790px] bg-custom-gradient-5 rounded-xl text-white py-4 sm:py-6 xl:py-10 overflow-y-scroll"
+                    className="flex justify-evenly items-center flex-col relative z-30 mx-auto mt-6 sm:mt-12 w-[90%] sm:w-[85%] md:w-[80%] lg:w-[85%] xl:max-w-[1340px] h-[70%] sm:h-[815px] lg:h-[790px] bg-custom-gradient-5 rounded-xl text-white py-4 sm:py-6 xl:py-10 overflow-y-auto"
                 >
                     <h1 className="text-3xl sm:text-4xl font-heading drop-shadow-heading py-2 sm:py-4 md:py-8">
                         Tech Stack
