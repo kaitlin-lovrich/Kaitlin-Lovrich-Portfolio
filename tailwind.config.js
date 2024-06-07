@@ -22,6 +22,7 @@ export default {
         extend: {
             colors: {
                 "coral": "#FF4D5A",
+                "sky-blue": "rgb(72, 209, 253)",
             },
             dropShadow: {
                 "heading": "2px 3.5px 1px rgba(255, 77, 90, .98)",

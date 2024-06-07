@@ -1,7 +1,9 @@
-import { Link, Outlet } from "react-router-dom";
+import { Link, Outlet, useLocation } from "react-router-dom";
 import "../index.css";
 
 export default function Header() {
+    const location = useLocation();
+    const pathname = location.pathname;
     return (
         <>
             <nav className="fixed top-0 w-full z-50 py-2 px-6 bg-custom-gradient-2 text-white">
@@ -50,20 +52,44 @@ export default function Header() {
             </nav>
             <aside className="relative z-40">
                 <nav className="flex justify-center md:justify-end px-3 sm:px-10">
-                    <ul className="flex gap-1 sm:gap-3 pt-24 font-heading text-white text-lg sm:text-2xl">
-                        <li className=" text-white sm:text-red-200 md:text-green-200 lg:text-red-800 xl:text-white">
+                    <ul className="flex gap-1 sm:gap-3 pt-24 font-heading text-white text-lg sm:text-2xl hover:*:font-bold">
+                        <li
+                            className={
+                                pathname.includes("/about")
+                                    ? "underline decoration-sky-blue decoration-4 underline-offset-8"
+                                    : ""
+                            }
+                        >
                             <Link to="/about">About</Link>
                         </li>
                         <span className=" text-coral">|</span>
-                        <li className="">
+                        <li
+                            className={
+                                pathname.includes("/projects")
+                                    ? "underline decoration-sky-blue decoration-4 underline-offset-8"
+                                    : ""
+                            }
+                        >
                             <Link to="/projects">Projects</Link>
                         </li>
                         <span className=" text-coral">|</span>
-                        <li className="">
+                        <li
+                            className={
+                                pathname.includes("/experience")
+                                    ? "underline decoration-sky-blue decoration-4 underline-offset-8"
+                                    : ""
+                            }
+                        >
                             <Link to="/experience">Experience</Link>
                         </li>
                         <span className=" text-coral">|</span>
-                        <li className="gradient-text">
+                        <li
+                            className={
+                                pathname.includes("/contact")
+                                    ? "gradient-text underline decoration-sky-blue decoration-4 underline-offset-8"
+                                    : "gradient-text"
+                            }
+                        >
                             <Link to="/contact">Contact</Link>
                         </li>
                     </ul>
