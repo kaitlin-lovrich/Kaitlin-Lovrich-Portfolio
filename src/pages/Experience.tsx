@@ -1,8 +1,14 @@
+import { useEffect } from "react";
 import Background from "../components/Background";
 import ExperienceCard from "../components/ExperienceCard";
 import { experiencesData } from "../lib/data";
 
 export default function Experience() {
+    useEffect(() => {
+        // Scroll to the top when the component mounts
+        window.scrollTo(0, 0);
+    }, []);
+
     return (
         <div className="relative">
             <Background />
