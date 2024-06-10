@@ -19,7 +19,7 @@ export default function About() {
                             />
                         </div>
 
-                        <div className="flex flex-col w-full gap-3 text-justify bg-white/15 rounded-2xl p-4 xl:py-8 xl:px-6 shadow-textBox font-body text-base sm:text-lg xl:text-xl indent-8">
+                        <section className="flex flex-col w-full gap-3 text-justify bg-white/15 rounded-2xl p-4 xl:py-8 xl:px-6 shadow-textBox font-body text-base sm:text-lg xl:text-xl indent-8">
                             <p>
                                 Hello! I'm Kaitlin, a software engineer based in
                                 Orange County, California.
@@ -65,7 +65,7 @@ export default function About() {
                                 I'd love to connect and explore how we can
                                 collaborate to bring innovative ideas to life!
                             </p>
-                        </div>
+                        </section>
                     </div>
                 </div>
             </div>
