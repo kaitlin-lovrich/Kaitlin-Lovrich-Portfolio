@@ -1,4 +1,5 @@
 import Background from "../components/Background";
+import { Link } from "react-router-dom";
 
 export default function About() {
     return (
@@ -20,32 +21,49 @@ export default function About() {
 
                         <div className="flex flex-col w-full gap-3 text-justify bg-white/15 rounded-2xl p-4 xl:py-8 xl:px-6 shadow-textBox font-body text-base sm:text-lg xl:text-xl indent-8">
                             <p>
-                                👋 Hello World! My name is Kaitlin and I am a
-                                software engineer located in Orange County,
-                                California!
+                                Hello! I'm Kaitlin, a software engineer based in
+                                Orange County, California.
                             </p>
                             <p>
-                                Through hairdressing, I have spent 7+ years
-                                honing my interpersonal and business management
-                                skills. I started learning to code part-time
-                                after trying a python 2 course. As the course
-                                progressed and passion grew, the decision to
-                                fully commit myself to advancing my career in
-                                web development was easy. Finding the solution
-                                to complex problems for me is like solving a
-                                puzzle, it's challenging but immensely rewarding
-                                and this is what drives me.
+                                Before diving into the world of coding, I spent
+                                over seven years as a hairdresser, where I honed
+                                my interpersonal and business management skills.
+                                This experience sharpened my attention to detail
+                                and design—qualities that seamlessly
+                                transitioned into my coding career. Initially,
+                                coding was a side hobby, but as my passion grew,
+                                I knew I had to fully commit to web development.
+                                I find immense satisfaction in creating visually
+                                appealing and interactive websites, which is
+                                what fuels my drive every day.
                             </p>
                             <p>
-                                With my career pivot, I have had the opportunity
-                                to experience self-teaching and working with
-                                talented instructors/classmates at
-                                LearningFuze's fully immersed, agile work
-                                environment web development bootcamp. Through
-                                this program, I have engineered different apps
-                                and projects, continued practicing my problem
-                                solving skills, and gained practical working
-                                experience collaborating with developers.
+                                I had the incredible opportunity to enhance my
+                                skills at LearningFuze's immersive web
+                                development bootcamp. In this agile work
+                                environment, I collaborated with talented
+                                instructors and classmates to engineer various
+                                apps and projects. This hands-on experience not
+                                only refined my problem-solving abilities but
+                                also provided practical experience in
+                                collaborating effectively with other developers.
+                            </p>
+                            <p>
+                                I'm continually excited by the possibilities in
+                                web development and look forward to leveraging
+                                my unique blend of skills to create amazing user
+                                experiences. If you're interested in discussing
+                                potential projects or opportunities, please feel
+                                free to{" "}
+                                <Link
+                                    to="/contact"
+                                    className="font-heading underline underline-offset-4 decoration-4 decoration-coral"
+                                >
+                                    email me
+                                </Link>
+                                {"! "}
+                                I'd love to connect and explore how we can
+                                collaborate to bring innovative ideas to life!
                             </p>
                         </div>
                     </div>
