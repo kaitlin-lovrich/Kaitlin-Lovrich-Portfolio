@@ -55,7 +55,7 @@ export default function Header() {
             </nav>
             <aside className="relative z-40">
                 <nav className="flex justify-center md:justify-end px-3 sm:px-10">
-                    <ul className="flex gap-1 sm:gap-3 pt-24 font-heading text-lg sm:text-2xl hover:*:font-bold">
+                    <ul className="flex flex-wrap justify-end gap-1 sm:gap-3 pt-24 font-heading text-lg sm:text-2xl hover:*:font-bold">
                         <li
                             className={
                                 pathname.includes("/about")

@@ -26,7 +26,7 @@ function Flowers() {
             <img
                 src="./pink-spongebob-flower.png"
                 alt="pink spongebob flower"
-                className="absolute top-[-7px] sm:top-[0px] md:top-[25px] left-[205px] sm:left-[265px] lg:left-[290px] max-w-[175px] sm:max-w-[245px] lg:max-w-[275px]"
+                className="absolute top-[-7px] sm:top-[0px] md:top-[25px] left-[175px] sm:left-[265px] lg:left-[290px] max-w-[175px] sm:max-w-[245px] lg:max-w-[275px]"
             />
             <img
                 src="./white-spongebob-flower.png"

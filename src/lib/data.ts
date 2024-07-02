@@ -41,7 +41,7 @@ export const experiencesData: experienceDataType[] = [
     {
         imageSrc: "./coding-cat3.jpg",
         altText: "coding cat",
-        imageWidth: "w-[280px]",
+        imageWidth: "w-full sm:w-[280px]",
         experienceTitle: "Freelance Web Developer",
         experienceLocation: "Bullies BBQ - Irvine, CA",
         experienceDate: "February 2024 - March 2024",
@@ -55,7 +55,7 @@ export const experiencesData: experienceDataType[] = [
     {
         imageSrc: "./learningfuze-cohort-0823.jpg",
         altText: "learning fuze cohort 0823",
-        imageWidth: "w-[286px] sm:w-[480px]",
+        imageWidth: "w-full sm:w-[480px]",
         experienceTitle: "Web Development Student",
         experienceLocation: "LearningFuze - Irvine, CA",
         experienceDate: "August 2023 - December 2024",
@@ -67,7 +67,7 @@ export const experiencesData: experienceDataType[] = [
     {
         imageSrc: "./california-palm-trees.jpg",
         altText: "california palm trees",
-        imageWidth: "w-[300px]",
+        imageWidth: "w-full sm:w-[300px]",
         experienceTitle: "Career Transition",
         experienceLocation: "Career Break - Irvine, CA",
         experienceDate: "May 2022 - Aug 2023",
@@ -80,7 +80,7 @@ export const experiencesData: experienceDataType[] = [
     {
         imageSrc: "./kaitlin-the-hairdresser.png",
         altText: "Kaitlin the hairdresser",
-        imageWidth: "w-[230px] sm:w-[250px]",
+        imageWidth: "w-full max-w-[250px] sm:max-w-auto",
         experienceTitle: "Hair Stylist",
         experienceLocation:
             "Halo For Men (Lady Janes's Haircuts for Men, Sport Clips) - Chicago, IL",
