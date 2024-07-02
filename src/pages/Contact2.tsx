@@ -8,7 +8,7 @@ export default function Contact() {
         <div className="relative">
             <Background />
             <div className="absolute inset-0">
-                <div className="flex justify-center items-center text-center flex-col relative z-30 mx-auto mt-9 sm:mt-20 md:mt-24 w-[90%] sm:w-[85%] md:w-[80%] lg:w-[75%] xl:w-[75%] xl:max-w-[1145px] bg-custom-gradient-3 rounded-xl text-white py-8 sm:py-14 md:py-20 gap-5 sm:gap-8">
+                <div className="flex justify-center items-center text-center flex-col relative z-30 mx-auto mt-4 sm:mt-6 md:mt-12 w-[90%] sm:w-[85%] md:w-[80%] lg:w-[75%] xl:w-[75%] xl:max-w-[1145px] bg-custom-gradient-3 rounded-xl text-white py-8 sm:py-14 md:py-20 gap-5 sm:gap-8">
                     <h1 className="text-3xl sm:text-4xl font-heading drop-shadow-heading py-2 sm:py-0">
                         Under Construction
                     </h1>

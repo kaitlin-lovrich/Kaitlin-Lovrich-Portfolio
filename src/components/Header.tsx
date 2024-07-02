@@ -13,8 +13,7 @@ export default function Header() {
                             <img
                                 src="./kl-logo.png"
                                 alt="k l logo"
-                                width={60}
-                                className=" hover:scale-110 active:scale-110 duration-300"
+                                className="w-12 sm:w-16 hover:scale-110 active:scale-110 duration-300"
                             />
                         </Link>
                     </li>
@@ -29,8 +28,7 @@ export default function Header() {
                                     <img
                                         src="./linkedin-icon.png"
                                         alt="linked-icon"
-                                        width={40}
-                                        className=" hover:scale-110 active:scale-110 duration-300"
+                                        className="w-8 sm:w-10 hover:scale-110 active:scale-110 duration-300"
                                     />
                                 </Link>
                             </li>
@@ -44,8 +42,7 @@ export default function Header() {
                                     <img
                                         src="./github-icon.png"
                                         alt="github-icon"
-                                        width={45}
-                                        className=" hover:scale-110 active:scale-110 duration-300"
+                                        className="w-9 sm:w-11 hover:scale-110 active:scale-110 duration-300"
                                     />
                                 </Link>
                             </li>
@@ -55,7 +52,7 @@ export default function Header() {
             </nav>
             <aside className="relative z-40">
                 <nav className="flex justify-center md:justify-end px-3 sm:px-10">
-                    <ul className="flex flex-wrap justify-end gap-1 sm:gap-3 pt-24 font-heading text-lg sm:text-2xl hover:*:font-bold">
+                    <ul className="flex flex-wrap justify-end gap-1 sm:gap-3 pt-[4.5rem] sm:pt-24 font-heading text-base sm:text-2xl hover:*:font-bold">
                         <li
                             className={
                                 pathname.includes("/about")
