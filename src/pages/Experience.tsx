@@ -26,12 +26,12 @@ export default function Experience() {
             <div className="absolute inset-0">
                 <div
                     ref={contentContainerRef}
-                    className="flex justify-evenly items-center flex-col relative z-30 mx-auto mt-4 sm:mt-6 md:mt-12 w-[90%] sm:w-[85%] md:w-[80%] lg:w-[85%] xl:max-w-[1340px] h-[90%] sm:h-[815px] lg:h-[790px] bg-custom-gradient-5 rounded-xl text-white py-4 sm:py-6 xl:py-10"
+                    className="flex justify-evenly items-center flex-col relative z-30 mx-auto mt-4 sm:mt-6 md:mt-12 w-[90%] sm:w-[85%] md:w-[80%] lg:w-[85%] xl:max-w-[1340px] h-[90%] sm:h-[815px] lg:h-[790px] bg-custom-gradient-5 rounded-xl text-white pt-4 pb-16 sm:py-6 xl:py-10"
                 >
-                    <h1 className="text-3xl sm:text-4xl font-heading drop-shadow-heading py-2 sm:py-4 md:py-8">
+                    <h1 className="text-2xl sm:text-4xl font-heading drop-shadow-heading py-2 sm:py-4 md:py-8">
                         Tech Stack
                     </h1>
-                    <div className="flex flex-col gap-3 bg-white/15 rounded-lg p-4 my-4 shadow-textBox w-[90%] sm:w-[85%] text-lg">
+                    <div className="flex flex-col gap-3 bg-white/15 rounded-lg p-4 my-4 shadow-textBox w-[95%] sm:w-[85%] text-lg">
                         <p>
                             <span className="font-bold">Strong:</span>{" "}
                             TypeScript, JavaScript (ES5/ES6), ReactJS, HTML5,
@@ -49,10 +49,10 @@ export default function Experience() {
                         </p>
                     </div>
 
-                    <h1 className="text-3xl sm:text-4xl font-heading drop-shadow-heading py-2 sm:py-4 md:py-8">
+                    <h1 className="text-2xl sm:text-4xl font-heading drop-shadow-heading py-2 sm:py-4 md:py-8">
                         Timeline
                     </h1>
-                    <div className="flex flex-col justify-center gap-5 py-4 w-[90%] sm:w-[95%]">
+                    <div className="flex flex-col justify-center gap-5 py-4 w-[95%] sm:w-[95%]">
                         {experiencesData.map((experience, index) => (
                             <ExperienceCard
                                 key={index}
@@ -65,9 +65,3 @@ export default function Experience() {
         </div>
     );
 }
-
-// useEffect(() => {
-//     if (contentContainerRef.current) {
-//         contentContainerRef.current.scrollTop = 0;
-//     }
-// }, []);
