@@ -28,7 +28,7 @@ export default function Header() {
                                     <img
                                         src="./linkedin-icon.png"
                                         alt="linked-icon"
-                                        className="w-8 sm:w-10 hover:scale-110 active:scale-110 duration-300"
+                                        className="w-[38px] sm:w-[42px] hover:scale-110 active:scale-110 duration-300"
                                     />
                                 </Link>
                             </li>
@@ -42,7 +42,7 @@ export default function Header() {
                                     <img
                                         src="./github-icon.png"
                                         alt="github-icon"
-                                        className="w-9 sm:w-11 hover:scale-110 active:scale-110 duration-300"
+                                        className="w-10 sm:w-11 hover:scale-110 active:scale-110 duration-300"
                                     />
                                 </Link>
                             </li>
@@ -52,7 +52,7 @@ export default function Header() {
             </nav>
             <aside className="relative z-40">
                 <nav className="flex justify-center md:justify-end px-3 sm:px-10">
-                    <ul className="flex flex-wrap justify-end gap-1 sm:gap-3 pt-[4.5rem] sm:pt-24 font-heading text-base sm:text-2xl hover:*:font-bold">
+                    <ul className="flex flex-wrap justify-end gap-1 sm:gap-3 pt-[4.5rem] sm:pt-24 font-heading text-base min-[390px]:text-lg sm:text-2xl hover:*:font-bold">
                         <li
                             className={
                                 pathname.includes("/about")
