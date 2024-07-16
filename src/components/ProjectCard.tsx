@@ -16,7 +16,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
         projectRole,
     } = project;
     return (
-        <div className="flex flex-col items-center bg-white/15 rounded-lg p-2 mb-0 sm:mb-8 min-[1410px]:mb-0 shadow-textBox w-[300px] sm:w-[330px] lg:w-[330px] min-[1620px]:w-[350px] min-[1750px]:w-[30%] h-auto sm:h-[490px] min-[1620px]:h-[510px] min-[1750px]:h-[530px] snap-center first:scroll-mt-16 scroll-mb-16">
+        <div className="flex flex-col items-center bg-white/15 rounded-lg p-2 mb-0 sm:mb-8 min-[1410px]:mb-0 shadow-textBox w-[300px] sm:w-[310px]  xl:w-[350px] min-[1750px]:w-[30%] h-auto sm:h-[490px] min-[1620px]:h-[510px] min-[1750px]:h-[530px] snap-center first:scroll-mt-16 scroll-mb-16">
             <Link
                 to={projectURL}
                 target="_blank"
@@ -38,7 +38,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
                     onTouchEnd={() => setShowViewSourceCode(false)}
                     onClick={() => setShowViewSourceCode(true)}
                 >
-                    <div className="relative flex-auto font-heading text-xl sm:text-2xl">
+                    <div className="relative flex-auto font-heading text-xl xl:text-2xl">
                         <h2
                             className={`absolute transition transform ease-in-out duration-500 ${
                                 showViewSourceCode
@@ -59,7 +59,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
                         </h2>
                     </div>
                     <span
-                        className={`self-center text-3xl sm:text-4xl duration-500 ease-in-out ${
+                        className={`self-center text-3xl sm:text-4xl xl:text-5xl duration-500 ease-in-out ${
                             showViewSourceCode
                                 ? "scale-110 drop-shadow-custom-blue"
                                 : "custom-pulse"

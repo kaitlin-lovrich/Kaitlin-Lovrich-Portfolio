@@ -11,12 +11,13 @@ export default function Experience() {
         // Scroll to the top of the content container when the component mounts
         if (contentContainerRef.current) {
             setTimeout(() => {
-                if (contentContainerRef.current) {
-                    contentContainerRef.current.style.overflow = "hidden";
-                    contentContainerRef.current.scrollTop = 0;
-                    contentContainerRef.current.style.overflow = "auto";
+                const container = contentContainerRef.current;
+                if (container) {
+                    container.style.overflow = "hidden";
+                    container.scrollTop = 0;
+                    container.style.overflow = "auto";
                 }
-            }, 100); // 100ms delay
+            }, 300); // delay
         }
     }, []);
 
@@ -26,12 +27,12 @@ export default function Experience() {
             <div className="absolute inset-0">
                 <div
                     ref={contentContainerRef}
-                    className="flex justify-evenly items-center flex-col relative z-30 mx-auto mt-4 sm:mt-6 md:mt-12 w-[90%] sm:w-[85%] md:w-[80%] lg:w-[85%] xl:max-w-[1340px] h-[90%] sm:h-[815px] lg:h-[790px] bg-custom-gradient-5 rounded-xl text-white pt-4 pb-16 sm:py-6 xl:py-10"
+                    className="flex justify-evenly items-center flex-col relative z-30 mx-auto mt-4 sm:mt-6 xl:mt-12 w-[90%] sm:w-[85%] md:w-[80%] lg:w-[85%] xl:max-w-[1340px] bg-custom-gradient-5 rounded-xl text-white pt-4 pb-16 sm:py-3 xl:py-6"
                 >
-                    <h1 className="text-2xl sm:text-4xl font-heading drop-shadow-heading py-2 sm:py-4 md:py-8">
+                    <h1 className="text-2xl sm:text-3xl xl:text-4xl font-heading drop-shadow-heading py-2 sm:py-4 md:py-5">
                         Tech Stack
                     </h1>
-                    <div className="flex flex-col gap-3 bg-white/15 rounded-lg p-4 my-4 shadow-textBox w-[95%] sm:w-[85%] text-lg">
+                    <div className="flex flex-col gap-1.5 bg-white/15 rounded-lg p-4 mb-3 shadow-textBox w-[95%] xl:w-[85%] text-base xl:text-lg">
                         <p>
                             <span className="font-bold">Strong:</span>{" "}
                             TypeScript, JavaScript (ES5/ES6), ReactJS, HTML5,
@@ -49,10 +50,10 @@ export default function Experience() {
                         </p>
                     </div>
 
-                    <h1 className="text-2xl sm:text-4xl font-heading drop-shadow-heading py-2 sm:py-4 md:py-8">
+                    <h1 className="text-2xl sm:text-3xl xl:text-4xl font-heading drop-shadow-heading py-2 sm:py-4 md:py-5">
                         Timeline
                     </h1>
-                    <div className="flex flex-col justify-center gap-5 py-4 w-[95%] sm:w-[95%]">
+                    <div className="flex flex-col justify-center gap-5 pb-4 w-[95%] sm:w-[95%]">
                         {experiencesData.map((experience, index) => (
                             <ExperienceCard
                                 key={index}
