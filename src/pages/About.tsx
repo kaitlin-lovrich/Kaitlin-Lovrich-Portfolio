@@ -6,8 +6,8 @@ export default function About() {
         <div className="relative">
             <Background />
             <div className="absolute inset-0">
-                <div className="flex flex-col items-center relative z-30 mx-auto mt-4 sm:mt-6 md:mt-12 w-[90%] sm:w-[85%] md:w-[80%] lg:w-[85%] xl:max-w-[1340px] h-[90%] sm:h-[815px] lg:h-[790px] bg-custom-gradient-5 rounded-xl text-white pt-4 pb-16 sm:py-6 xl:py-10 overflow-y-auto">
-                    <h1 className="text-2xl sm:text-4xl font-heading drop-shadow-heading py-2 sm:py-4 md:py-8">
+                <div className="flex flex-col items-center relative z-30 mx-auto mt-4 sm:mt-6 xl:mt-12 w-[90%] sm:w-[85%] md:w-[80%] lg:w-[85%] xl:max-w-[1340px] h-[90%] sm:h-[815px] lg:h-[790px] bg-custom-gradient-5 rounded-xl text-white pt-4 pb-16 overflow-y-auto">
+                    <h1 className="text-2xl sm:text-3xl xl:text-4xl font-heading drop-shadow-heading py-2 sm:py-4  md:py-8">
                         About Me
                     </h1>
                     <div className="flex flex-col lg:flex-row justify-center items-center lg:items-start gap-6 w-[95%] h-fit">
