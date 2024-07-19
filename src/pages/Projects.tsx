@@ -12,7 +12,7 @@ export default function Projects() {
                         Projects
                     </h1>
 
-                    <div className="flex flex-wrap justify-center gap-9 sm:gap-5 lg:gap-7 min-[1750px]:gap-10 w-[95%] min-[1750px]:w-[90%] pt-4 sm:pt-0 pb-16 h-auto">
+                    <div className="flex flex-wrap justify-center gap-9 sm:gap-5 lg:gap-7 min-[1750px]:gap-10 w-[95%] min-[1750px]:w-[90%] pt-4 sm:pt-0  h-auto">
                         {projectsData.map((project, index) => (
                             <ProjectCard key={index} project={project} />
                         ))}
