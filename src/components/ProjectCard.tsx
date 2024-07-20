@@ -16,18 +16,18 @@ export default function ProjectCard({ project }: ProjectCardProps) {
         projectRole,
     } = project;
     return (
-        <div className="flex flex-col items-center bg-white/15 rounded-lg p-2 mb-0 sm:mb-8 min-[1410px]:mb-0 shadow-textBox w-[300px] sm:w-[310px]  xl:w-[350px] min-[1750px]:w-[30%] h-auto sm:h-[490px] min-[1620px]:h-[510px] min-[1750px]:h-[530px] snap-center first:scroll-mt-16 scroll-mb-16">
+        <div className="flex flex-col items-center bg-white/15 rounded-lg px-2 pt-2 shadow-textBox w-full max-w-[280px] sm:max-w-[290px] md:max-w-[310px] lg:max-w-[320px] min-[1415px]:max-w-[360px]">
             <Link
                 to={projectURL}
                 target="_blank"
-                className="relative group w-full h-[210px] sm:h-[240px] min-[1620px]:h-[260px] min-[1750px]:h-[280px]"
+                className="relative group w-full"
             >
                 <img src={imageSrc} alt={altText} className="w-full h-full" />
                 <div className="absolute inset-0 flex items-center justify-center bg-custom-gradient-4 opacity-0 transition-opacity group-hover:opacity-100 ease-in-out duration-500">
                     <span className="font-heading text-4xl">View Live</span>
                 </div>
             </Link>
-            <div className="flex flex-col gap-2 px-3 py-4">
+            <div className="flex flex-col gap-2 px-1.5 min-[1415px]:px-3 py-4">
                 <Link
                     to={projectSourceCode}
                     target="_blank"
@@ -59,7 +59,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
                         </h2>
                     </div>
                     <span
-                        className={`self-center text-3xl sm:text-4xl xl:text-5xl duration-500 ease-in-out ${
+                        className={`self-center text-3xl md:text-4xl xl:text-5xl duration-500 ease-in-out ${
                             showViewSourceCode
                                 ? "scale-110 drop-shadow-custom-blue"
                                 : "custom-pulse"
