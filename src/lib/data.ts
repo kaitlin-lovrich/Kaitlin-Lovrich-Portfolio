@@ -80,7 +80,7 @@ export const experiencesData: experienceDataType[] = [
     {
         imageSrc: "./kaitlin-the-hairdresser.png",
         altText: "Kaitlin the hairdresser",
-        imageWidth: "w-full max-w-[250px] sm:max-w-auto",
+        imageWidth: "w-full sm:w-[260px]",
         experienceTitle: "Hair Stylist",
         experienceLocation:
             "Halo For Men (Lady Janes's Haircuts for Men, Sport Clips) - Chicago, IL",
