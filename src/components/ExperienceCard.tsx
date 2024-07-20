@@ -11,12 +11,12 @@ export default function ExperienceCard({ experience }: ExperienceCardProps) {
         experienceBulletPoints,
     } = experience;
     return (
-        <div className="flex flex-col lg:flex-row justify-between items-center lg:items-start gap-2 md:gap-6 bg-white/15 rounded-lg p-4 shadow-textBox w-full">
-            <div className={imageWidth}>
+        <div className="flex flex-col lg:flex-row justify-between items-center lg:items-start gap-2 md:gap-6 bg-white/15 rounded-lg p-4 shadow-textBox w-full max-w-[480px] sm:max-w-full">
+            <div className={`${imageWidth} self-center`}>
                 <img
                     src={imageSrc}
                     alt={altText}
-                    className="bg-custom-gradient-4 opacity-100 w-full h-full rounded-lg"
+                    className="bg-custom-gradient-4 opacity-100 w-full max-w-[350px] sm:max-w-full h-full rounded-lg"
                 />
             </div>
             <div className="w-90% lg:w-3/4 sm:px-4">
