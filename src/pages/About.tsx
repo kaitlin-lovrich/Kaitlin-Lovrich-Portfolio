@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 
 export default function About() {
     const [isVisible, setIsVisible] = useState(false);
+    const [isImageLoaded, setIsImageLoaded] = useState(false);
 
     useEffect(() => {
         setIsVisible(true);
@@ -21,12 +22,19 @@ export default function About() {
                     <h1 className="text-2xl sm:text-3xl xl:text-4xl font-heading drop-shadow-heading py-4 md:py-5">
                         About Me
                     </h1>
-                    <div className="flex flex-col lg:flex-row justify-center items-center lg:items-start gap-6  h-fit">
-                        <div className="w-full max-w-[350px] sm:w-[65%] sm:max-w-[390px] lg:max-w-[430px] rounded">
+                    <div className="flex flex-col lg:flex-row justify-center items-center lg:items-start gap-6 h-fit">
+                        <div
+                            className={`w-full max-w-[350px] sm:w-[65%] sm:max-w-[390px] lg:max-w-[430px] rounded transition opacity transform duration-1000 ${
+                                isImageLoaded
+                                    ? "opacity-100 scale-100"
+                                    : "opacity-0 scale-95"
+                            }`}
+                        >
                             <img
                                 src="./rock-climbing-kait.jpg"
                                 alt="rock climbing Kait"
                                 className="w-full rounded-2xl shadow-textBox"
+                                onLoad={() => setIsImageLoaded(true)}
                             />
                         </div>
 
