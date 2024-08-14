@@ -7,7 +7,7 @@ body {
 }
 
 .background {
-    background-image: url("/spongebob-flowers-sm.png");
+    background-image: url("/spongebob-flowers-mobile.png");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -150,6 +150,12 @@ body {
     }
     100% {
         transform: scale(1);
+    }
+}
+
+@media (min-width: 640px) {
+    .background {
+        background-image: url("/spongebob-flowers-sm.png");
     }
 }
 
