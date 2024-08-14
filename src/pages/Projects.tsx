@@ -11,10 +11,10 @@ export default function Projects() {
     }, []);
 
     return (
-        <div className="relative">
+        <div className="min-h-screen pb-14 xl:pb-20">
             <Background />
             <div
-                className={`transition opacity transform duration-1000 absolute inset-0 ${
+                className={`transition opacity transform duration-1000  inset-0 ${
                     isVisible ? "opacity-100 scale-100" : "opacity-0 scale-95"
                 }`}
             >

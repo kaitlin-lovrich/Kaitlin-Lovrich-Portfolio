@@ -1,42 +1,24 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import Background from "../components/Background";
 import ExperienceCard from "../components/ExperienceCard";
 import { experiencesData } from "../lib/data";
 
 export default function Experience() {
     const [isVisible, setIsVisible] = useState(false);
-    const contentContainerRef = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
         setIsVisible(true);
     }, []);
 
-    useEffect(() => {
-        // Scroll to the top of the content container when the component mounts
-        if (contentContainerRef.current) {
-            setTimeout(() => {
-                const container = contentContainerRef.current;
-                if (container) {
-                    container.style.overflow = "hidden";
-                    container.scrollTop = 0;
-                    container.style.overflow = "auto";
-                }
-            }, 300); // delay
-        }
-    }, []);
-
     return (
-        <div className="relative">
+        <div className="min-h-screen pb-14 xl:pb-20">
             <Background />
             <div
-                className={`transition opacity transform duration-1000 absolute inset-0 ${
+                className={`transition opacity transform duration-1000  inset-0 ${
                     isVisible ? "opacity-100 scale-100" : "opacity-0 scale-95"
                 }`}
             >
-                <div
-                    ref={contentContainerRef}
-                    className="flex justify-evenly items-center flex-col relative z-30 mx-auto mt-4 sm:mt-6 xl:mt-12 w-[90%] sm:w-[85%] md:w-[80%] lg:w-[85%] xl:max-w-[1340px] bg-custom-gradient-5 rounded-xl text-white pt-4 pb-4 lg:pb-8 px-3"
-                >
+                <div className="flex justify-evenly items-center flex-col relative z-30 mx-auto mt-4 sm:mt-6 xl:mt-12 w-[90%] sm:w-[85%] md:w-[80%] lg:w-[85%] xl:max-w-[1340px] bg-custom-gradient-5 rounded-xl text-white pt-4 pb-4 lg:pb-8 px-3">
                     <h1 className="text-2xl sm:text-3xl xl:text-4xl font-heading drop-shadow-heading py-4 md:py-5">
                         Tech Stack
                     </h1>
