@@ -11,10 +11,10 @@ export default function About() {
     }, []);
 
     return (
-        <div className="relative h-full pb-24">
+        <div className="min-h-screen pb-14 xl:pb-20">
             <Background />
             <div
-                className={`transition opacity transform duration-1000 absolute inset-0 h-full mb-24 ${
+                className={`transition opacity transform duration-1000 inset-0 h-full ${
                     isVisible ? "opacity-100 scale-100" : "opacity-0 scale-95"
                 }`}
             >
