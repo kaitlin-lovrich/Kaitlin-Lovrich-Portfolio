@@ -1,12 +1,23 @@
+import { useEffect, useState } from "react";
 import Background from "../components/Background";
 
 export default function HomePage() {
+    const [isVisible, setIsVisible] = useState(false);
+
+    useEffect(() => {
+        setIsVisible(true);
+    }, []);
+
     return (
         <div className="relative">
             <Background />
-            <div className="absolute inset-0">
+            <div
+                className={`transition opacity transform duration-1000 absolute inset-0 ${
+                    isVisible ? "opacity-100 scale-100" : "opacity-0 scale-95"
+                }`}
+            >
                 <div className="flex justify-center items-center text-center flex-col relative z-30 mx-auto mt-4 sm:mt-6 xl:mt-12 w-[80%] min-w-[220px] sm:w-max bg-custom-gradient-3 rounded-xl text-white py-8 sm:py-10 xl:py-16 px-4 sm:px-7 md:px-10 gap-4 xl:gap-6">
-                    <div className="h-[200px] xl:h-[250px] w-[200px] xl:w-[250px] rounded-full border-4 border-[#4865FD] overflow-hidden">
+                    <div className="h-[200px] xl:h-[250px] w-[200px] xl:w-[250px] rounded-full  overflow-hidden">
                         <img
                             src="./kaitlin-lovrich-profile-picture.png"
                             alt="kaitlin lovrich profile picture"
