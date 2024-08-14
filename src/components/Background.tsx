@@ -7,10 +7,17 @@ import {
 
 export default function Background() {
     return (
-        <div className="relative z-0">
-            <div className="fixed inset-0 z-[-1]">
-                <Bubbles />
-            </div>
+        <div
+            className="fixed inset-0 z-[-1]"
+            style={{
+                backgroundImage: "url('/spongebob-flowers-mobile.png')",
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+                backgroundRepeat: "no-repeat",
+                backgroundAttachment: "fixed",
+            }}
+        >
+            <Bubbles />
         </div>
     );
 }
