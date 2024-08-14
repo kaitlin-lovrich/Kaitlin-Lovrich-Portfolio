@@ -1,6 +1,8 @@
+import { useState } from "react";
 import { ExperienceCardProps } from "../lib/types";
 
 export default function ExperienceCard({ experience }: ExperienceCardProps) {
+    const [isImageLoaded, setIsImageLoaded] = useState(false);
     const {
         imageSrc,
         altText,
@@ -10,13 +12,19 @@ export default function ExperienceCard({ experience }: ExperienceCardProps) {
         experienceDate,
         experienceBulletPoints,
     } = experience;
+
     return (
-        <div className="flex flex-col lg:flex-row justify-between items-center lg:items-start gap-2 md:gap-6 bg-white/15 rounded-lg p-4 shadow-textBox w-full max-w-[480px] sm:max-w-full">
+        <div
+            className={`flex flex-col lg:flex-row justify-between items-center lg:items-start gap-2 md:gap-6 bg-white/15 rounded-lg p-4 shadow-textBox w-full max-w-[480px] sm:max-w-full transition opacity transform duration-1000 ${
+                isImageLoaded ? "opacity-100 scale-100" : "opacity-0 scale-95"
+            }`}
+        >
             <div className={`${imageWidth} max-w-[290px] sm:max-w-full`}>
                 <img
                     src={imageSrc}
                     alt={altText}
                     className="bg-custom-gradient-4 opacity-100 w-full sm:max-w-full h-full rounded-lg"
+                    onLoad={() => setIsImageLoaded(true)}
                 />
             </div>
             <div className="w-90% lg:w-3/4 sm:px-4">

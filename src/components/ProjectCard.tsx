@@ -5,6 +5,8 @@ import { Link } from "react-router-dom";
 
 export default function ProjectCard({ project }: ProjectCardProps) {
     const [showViewSourceCode, setShowViewSourceCode] = useState(false);
+    const [isImageLoaded, setIsImageLoaded] = useState(false);
+
     const {
         imageSrc,
         altText,
@@ -16,13 +18,22 @@ export default function ProjectCard({ project }: ProjectCardProps) {
         projectRole,
     } = project;
     return (
-        <div className="flex flex-col items-center bg-white/15 rounded-lg px-2 pt-2 shadow-textBox w-full max-w-[280px] sm:max-w-[290px] md:max-w-[310px] lg:max-w-[320px] min-[1415px]:max-w-[360px]">
+        <div
+            className={`flex flex-col items-center bg-white/15 rounded-lg px-2 pt-2 shadow-textBox w-full max-w-[280px] sm:max-w-[290px] md:max-w-[310px] lg:max-w-[320px] min-[1415px]:max-w-[360px] transition opacity transform duration-1000 ${
+                isImageLoaded ? "opacity-100 scale-100" : "opacity-0 scale-95"
+            }`}
+        >
             <Link
                 to={projectURL}
                 target="_blank"
                 className="relative group w-full"
             >
-                <img src={imageSrc} alt={altText} className="w-full h-full" />
+                <img
+                    src={imageSrc}
+                    alt={altText}
+                    className="w-full h-full"
+                    onLoad={() => setIsImageLoaded(true)}
+                />
                 <div className="absolute inset-0 flex items-center justify-center bg-custom-gradient-4 opacity-0 transition-opacity group-hover:opacity-100 ease-in-out duration-500">
                     <span className="font-heading text-4xl">View Live</span>
                 </div>
