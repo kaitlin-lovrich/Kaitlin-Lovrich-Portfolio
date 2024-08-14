@@ -78,8 +78,8 @@ export const experiencesData: experienceDataType[] = [
         ],
     },
     {
-        imageSrc: "./kaitlin-the-hairdresser.png",
-        altText: "Kaitlin the hairdresser",
+        imageSrc: "./star-graphic-haircut.jpg",
+        altText: "Star graphic haircut",
         imageWidth: "w-full sm:w-[260px]",
         experienceTitle: "Hair Stylist",
         experienceLocation:
