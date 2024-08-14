@@ -1,11 +1,22 @@
+import { useEffect, useState } from "react";
 import Background from "../components/Background";
 import { Link } from "react-router-dom";
 
 export default function About() {
+    const [isVisible, setIsVisible] = useState(false);
+
+    useEffect(() => {
+        setIsVisible(true);
+    }, []);
+
     return (
-        <div className="relative">
+        <div className="relative h-full pb-24">
             <Background />
-            <div className="absolute inset-0">
+            <div
+                className={`transition opacity transform duration-1000 absolute inset-0 h-full mb-24 ${
+                    isVisible ? "opacity-100 scale-100" : "opacity-0 scale-95"
+                }`}
+            >
                 <div className="flex flex-col items-center relative z-30 mx-auto mt-4 sm:mt-6 xl:mt-12 w-[90%] sm:w-[85%] md:w-[80%] lg:w-[85%] xl:max-w-[1340px]  bg-custom-gradient-5 rounded-xl text-white pt-4 pb-10 lg:pb-14 px-4 sm:px-6 overflow-y-auto">
                     <h1 className="text-2xl sm:text-3xl xl:text-4xl font-heading drop-shadow-heading py-4 md:py-5">
                         About Me
