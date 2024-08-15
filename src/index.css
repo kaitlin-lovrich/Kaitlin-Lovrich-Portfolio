@@ -31,6 +31,7 @@ body {
     height: 100vh;
     width: 100%;
     z-index: -1;
+    background-color: linear-gradient(#292929, #1d2449);
 }
 
 .gradient-text {
