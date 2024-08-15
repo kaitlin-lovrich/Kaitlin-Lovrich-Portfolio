@@ -19,6 +19,16 @@ body {
     z-index: 1;
 }
 
+.preload {
+    position: absolute;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+    background-image: url("/spongebob-flowers-sm.png"),
+        url("/spongebob-flowers-md.png"), url("/spongebob-flowers-lg.png"),
+        url("/spongebob-flowers-xl.png"), url("/spongebob-flowers-xxl.png");
+}
+
 .background:before {
     content: "";
     background-image: url("/spongebob-flowers-mobile.png");
@@ -31,6 +41,7 @@ body {
     height: 100vh;
     width: 100%;
     z-index: -1;
+    background-color: #292929;
     background-color: linear-gradient(#292929, #1d2449);
 }
 
