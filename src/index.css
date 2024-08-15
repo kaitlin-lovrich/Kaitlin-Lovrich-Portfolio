@@ -23,12 +23,12 @@ body {
     width: 100%;
 } */
 
-.background {
+/* .background {
     position: relative;
-    z-index: 1; /* Ensures content is above the background image */
-}
+    z-index: 1;
+} */
 
-.background:before {
+/* .background:before {
     content: "";
     background-image: url("/spongebob-flowers-mobile.png");
     background-size: cover;
@@ -39,7 +39,22 @@ body {
     left: 0;
     height: 100%;
     width: 100%;
-    z-index: -1; /* Places the background image behind the content */
+    z-index: -1; 
+} */
+
+html,
+body {
+    height: 100vh; /* Ensures both html and body elements take up full height of the viewport */
+    margin: 0; /* Removes default margin that might cause issues */
+    padding: 0; /* Removes default padding */
+}
+
+body {
+    background-image: url("/spongebob-flowers-mobile.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed; /* Keeps the background image fixed while content scrolls */
 }
 
 .gradient-text {
@@ -181,31 +196,31 @@ body {
 }
 
 @media (min-width: 640px) {
-    .background {
+    body {
         background-image: url("/spongebob-flowers-sm.png");
     }
 }
 
 @media (min-width: 768px) {
-    .background {
+    body {
         background-image: url("/spongebob-flowers-md.png");
     }
 }
 
 @media (min-width: 1024px) {
-    .background {
+    body {
         background-image: url("/spongebob-flowers-lg.png");
     }
 }
 
 @media (min-width: 1280px) {
-    .background {
+    body {
         background-image: url("/spongebob-flowers-xl.png");
     }
 }
 
 @media (min-width: 1536px) {
-    .background {
+    body {
         background-image: url("/spongebob-flowers-xxl.png");
     }
 }
