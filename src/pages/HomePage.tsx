@@ -44,9 +44,13 @@ export default function HomePage() {
                     </h1>
 
                     <p className="font-body text-lg sm:text-xl xl:text-2xl w-full sm:w-[485px] md:w-[555px] lg:w-[675px] xl:w-[795px]">
-                        Over 7 years of professional interpersonal experience,
-                        delivering quality results to clients. Experienced in
-                        freelance work with frontend web development.
+                        With 2 years of experience creating dynamic,
+                        user-friendly web applications and over 11 years in
+                        client service, I'm passionate about crafting seamless
+                        digital experiences. Skilled in React, Node.js,
+                        PostgreSQL, TypeScript, and Express.js, I bring a strong
+                        work ethic and a commitment to delivering high-quality
+                        results using modern web development practices.
                     </p>
                 </div>
             </div>
