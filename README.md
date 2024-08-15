@@ -8,6 +8,6 @@ Showcases projects, professional experience timeline, design and animation skill
 
 <div align="center">
   <a href="https://kaitlin-lovrich-portfolio.vercel.app/">
-    <img src="https://github.com/user-attachments/assets/0ca2dcfa-e25a-469e-ae14-63ae1b9da8c9" alt="HomePage" width="500" />
+    <img src="https://github.com/user-attachments/assets/d960f22f-49a4-4694-9929-296e9cabb3c5" alt="HomePage" width="500" />
   </a>
 </div>
