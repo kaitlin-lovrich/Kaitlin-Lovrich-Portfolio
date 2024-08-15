@@ -172,31 +172,31 @@ body {
 }
 
 @media (min-width: 640px) {
-    .background {
+    .background:before {
         background-image: url("/spongebob-flowers-sm.png");
     }
 }
 
 @media (min-width: 768px) {
-    .background {
+    .background:before {
         background-image: url("/spongebob-flowers-md.png");
     }
 }
 
 @media (min-width: 1024px) {
-    .background {
+    .background:before {
         background-image: url("/spongebob-flowers-lg.png");
     }
 }
 
 @media (min-width: 1280px) {
-    .background {
+    .background:before {
         background-image: url("/spongebob-flowers-xl.png");
     }
 }
 
 @media (min-width: 1536px) {
-    .background {
+    .background:before {
         background-image: url("/spongebob-flowers-xxl.png");
     }
 }
