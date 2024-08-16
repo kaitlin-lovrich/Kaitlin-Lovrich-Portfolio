@@ -7,7 +7,6 @@ export default function About() {
     const [isImageLoaded, setIsImageLoaded] = useState(false);
 
     useEffect(() => {
-        window.scrollTo(0, 0);
         setIsVisible(true);
     }, []);
 
