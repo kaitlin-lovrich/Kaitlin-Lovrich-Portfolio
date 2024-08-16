@@ -12,6 +12,7 @@ export const projectsData: projectDataType[] = [
             "Website for a popular restaurant in Hilton Head, North Carolina.",
         projectType: "Team Project",
         projectRole: "Frontend",
+        projectTechStack: ["React", "TypeScript", "Next.js", "Tailwind CSS"],
     },
     {
         imageSrc: "./anime-almanac-website.png",
@@ -23,6 +24,7 @@ export const projectsData: projectDataType[] = [
             "Browse anime, view trailers, and save favorite titles to a personalized collection.",
         projectType: "Solo Project",
         projectRole: "Frontend",
+        projectTechStack: ["React", "TypeScript", "Tailwind CSS"],
     },
     {
         imageSrc: "./grocery-guru-website.png",
@@ -34,6 +36,14 @@ export const projectsData: projectDataType[] = [
             "Grocery list generator and meal planner catering to culinary enthusiasts.",
         projectType: "Solo Project",
         projectRole: "Full Stack",
+        projectTechStack: [
+            "React",
+            "TypeScript",
+            "Node.js",
+            "Express.js",
+            "PostgreSQL",
+            "CSS",
+        ],
     },
 ];
 
