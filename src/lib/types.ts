@@ -31,6 +31,7 @@ export type projectDataType = {
     projectDescription: string;
     projectType: string;
     projectRole: string;
+    projectTechStack: string[];
 };
 
 export type experienceDataType = {

@@ -16,6 +16,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
         projectDescription,
         projectType,
         projectRole,
+        projectTechStack,
     } = project;
     return (
         <div
@@ -84,6 +85,11 @@ export default function ProjectCard({ project }: ProjectCardProps) {
                     <p>{projectRole}</p>
                 </div>
                 <p>{projectDescription}</p>
+                <ul className="flex flex-wrap *:mr-4">
+                    {projectTechStack.map((technology, index) => (
+                        <li key={index}>#{technology}</li>
+                    ))}
+                </ul>
             </div>
         </div>
     );
