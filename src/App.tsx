@@ -9,48 +9,56 @@ export default function App() {
     const navigate = useNavigate();
     const [startX, setStartX] = useState(0);
     const [endX, setEndX] = useState(0);
+    const [startY, setStartY] = useState(0);
+    const [endY, setEndY] = useState(0);
 
     useEffect(() => {
         const handleTouchStart = (e: TouchEvent) => {
             setStartX(e.touches[0].clientX);
+            setStartY(e.touches[0].clientY);
         };
 
         const handleTouchMove = (e: TouchEvent) => {
             setEndX(e.touches[0].clientX);
+            setEndY(e.touches[0].clientY);
         };
 
         const handleTouchEnd = () => {
             const deltaX = startX - endX;
+            const deltaY = startY - endY;
 
-            if (deltaX > 50) {
-                // Swipe left (go to next route)
-                if (location.pathname === "/") {
-                    navigate("/about");
-                } else if (location.pathname.includes("/about")) {
-                    navigate("/projects");
-                } else if (location.pathname.includes("/projects")) {
-                    navigate("/experience");
-                } else if (location.pathname.includes("/experience")) {
-                    navigate("/contact");
+            // Only consider a swipe if it's mostly horizontal
+            if (Math.abs(deltaX) > Math.abs(deltaY) && Math.abs(deltaX) > 50) {
+                if (deltaX > 0) {
+                    // Swipe left (go to next route)
+                    if (location.pathname === "/") {
+                        navigate("/about");
+                    } else if (location.pathname.includes("/about")) {
+                        navigate("/projects");
+                    } else if (location.pathname.includes("/projects")) {
+                        navigate("/experience");
+                    } else if (location.pathname.includes("/experience")) {
+                        navigate("/contact");
+                    }
+                } else if (deltaX < 0) {
+                    // Swipe right (go to previous route)
+                    if (location.pathname.includes("/about")) {
+                        navigate("/");
+                    } else if (location.pathname.includes("/projects")) {
+                        navigate("/about");
+                    } else if (location.pathname.includes("/experience")) {
+                        navigate("/projects");
+                    } else if (location.pathname.includes("/contact")) {
+                        navigate("/experience");
+                    }
                 }
-                // Add more routes as needed
-            } else if (deltaX < -50) {
-                // Swipe right (go to previous route)
-                if (location.pathname.includes("/about")) {
-                    navigate("/");
-                } else if (location.pathname.includes("/projects")) {
-                    navigate("/about");
-                } else if (location.pathname.includes("/experience")) {
-                    navigate("/projects");
-                } else if (location.pathname.includes("/contact")) {
-                    navigate("/experience");
-                }
-                // Add more routes as needed
             }
 
             // Reset values
             setStartX(0);
             setEndX(0);
+            setStartY(0);
+            setEndY(0);
         };
 
         window.addEventListener("touchstart", handleTouchStart);
@@ -62,7 +70,7 @@ export default function App() {
             window.removeEventListener("touchmove", handleTouchMove);
             window.removeEventListener("touchend", handleTouchEnd);
         };
-    }, [startX, endX, location.pathname, navigate]);
+    }, [startX, endX, startY, endY, location.pathname, navigate]);
 
     return (
         <Routes>
