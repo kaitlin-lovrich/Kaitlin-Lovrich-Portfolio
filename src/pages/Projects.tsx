@@ -23,7 +23,7 @@ export default function Projects() {
                         Projects
                     </h1>
 
-                    <div className="flex flex-wrap justify-center gap-7 min-[1750px]:w-[90%] h-auto">
+                    <div className="flex flex-wrap justify-center gap-7 w-[90%] sm:w-full min-[1750px]:w-[90%] h-auto">
                         {projectsData.map((project, index) => (
                             <ProjectCard key={index} project={project} />
                         ))}

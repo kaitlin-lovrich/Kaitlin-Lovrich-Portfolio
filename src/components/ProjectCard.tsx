@@ -20,7 +20,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
     } = project;
     return (
         <div
-            className={`flex flex-col items-center bg-white/15 rounded-lg px-2 pt-2 shadow-textBox w-full max-w-[300px] sm:max-w-[310px] md:max-w-[315px] lg:max-w-[340px] min-[1415px]:max-w-[360px] transition-all opacity transform duration-1000 ${
+            className={`flex flex-col items-center bg-white/15 rounded-lg px-2 pt-2 shadow-textBox w-full min-w-[245px] max-w-[320px] lg:max-w-[340px] min-[1415px]:max-w-[360px] transition-all opacity transform duration-1000 ${
                 isImageLoaded ? "opacity-100 scale-100" : "opacity-0 scale-95"
             }`}
         >
