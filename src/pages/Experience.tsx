@@ -7,6 +7,7 @@ export default function Experience() {
     const [isVisible, setIsVisible] = useState(false);
 
     useEffect(() => {
+        window.scrollTo(0, 0);
         setIsVisible(true);
     }, []);
 
