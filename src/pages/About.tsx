@@ -11,10 +11,13 @@ export default function About() {
     }, []);
 
     useEffect(() => {
-        setTimeout(() => {
+        const timeoutId = setTimeout(() => {
             window.scrollTo(0, 0);
         }, 500);
-    });
+        return () => {
+            clearTimeout(timeoutId);
+        };
+    }, []);
 
     return (
         <div className="min-h-screen pb-14 xl:pb-20">

@@ -11,10 +11,13 @@ export default function Contact() {
     }, []);
 
     useEffect(() => {
-        setTimeout(() => {
+        const timeoutId = setTimeout(() => {
             window.scrollTo(0, 0);
         }, 500);
-    });
+        return () => {
+            clearTimeout(timeoutId);
+        };
+    }, []);
 
     return (
         <>
