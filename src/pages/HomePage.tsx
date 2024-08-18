@@ -6,9 +6,14 @@ export default function HomePage() {
     const [isImageLoaded, setIsImageLoaded] = useState(false);
 
     useEffect(() => {
-        window.scrollTo(0, 0);
         setIsVisible(true);
     }, []);
+
+    useEffect(() => {
+        setTimeout(() => {
+            window.scrollTo(0, 0);
+        }, 500);
+    });
 
     return (
         <div className="min-h-screen pb-14 xl:pb-20">
