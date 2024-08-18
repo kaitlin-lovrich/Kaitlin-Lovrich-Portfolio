@@ -11,75 +11,70 @@ export default function App() {
     const [endX, setEndX] = useState(0);
     const [startY, setStartY] = useState(0);
     const [endY, setEndY] = useState(0);
+    const [isMounted, setIsMounted] = useState(false); // Add this state
 
     useEffect(() => {
-        const timeoutId = setTimeout(() => {
-            const handleTouchStart = (e: TouchEvent) => {
-                setStartX(e.touches[0].clientX);
-                setStartY(e.touches[0].clientY);
-            };
+        setIsMounted(true); // Set mounted status to true after the first render
 
-            const handleTouchMove = (e: TouchEvent) => {
-                setEndX(e.touches[0].clientX);
-                setEndY(e.touches[0].clientY);
-            };
+        const handleTouchStart = (e: TouchEvent) => {
+            setStartX(e.touches[0].clientX);
+            setStartY(e.touches[0].clientY);
+        };
 
-            const handleTouchEnd = () => {
-                const deltaX = startX - endX;
-                const deltaY = startY - endY;
+        const handleTouchMove = (e: TouchEvent) => {
+            setEndX(e.touches[0].clientX);
+            setEndY(e.touches[0].clientY);
+        };
 
-                // Only consider a swipe if it's mostly horizontal
-                if (
-                    Math.abs(deltaX) > Math.abs(deltaY) &&
-                    Math.abs(deltaX) > 50
-                ) {
-                    if (deltaX > 0) {
-                        // Swipe left (go to next route)
-                        if (location.pathname === "/") {
-                            navigate("/about");
-                        } else if (location.pathname.includes("/about")) {
-                            navigate("/projects");
-                        } else if (location.pathname.includes("/projects")) {
-                            navigate("/experience");
-                        } else if (location.pathname.includes("/experience")) {
-                            navigate("/contact");
-                        }
-                    } else if (deltaX < 0) {
-                        // Swipe right (go to previous route)
-                        if (location.pathname.includes("/about")) {
-                            navigate("/");
-                        } else if (location.pathname.includes("/projects")) {
-                            navigate("/about");
-                        } else if (location.pathname.includes("/experience")) {
-                            navigate("/projects");
-                        } else if (location.pathname.includes("/contact")) {
-                            navigate("/experience");
-                        }
+        const handleTouchEnd = () => {
+            if (!isMounted) return; // Only proceed if components are mounted
+
+            const deltaX = startX - endX;
+            const deltaY = startY - endY;
+
+            if (Math.abs(deltaX) > Math.abs(deltaY) && Math.abs(deltaX) > 50) {
+                if (deltaX > 0) {
+                    // Swipe left (go to next route)
+                    if (location.pathname === "/") {
+                        navigate("/about");
+                    } else if (location.pathname.includes("/about")) {
+                        navigate("/projects");
+                    } else if (location.pathname.includes("/projects")) {
+                        navigate("/experience");
+                    } else if (location.pathname.includes("/experience")) {
+                        navigate("/contact");
+                    }
+                } else if (deltaX < 0) {
+                    // Swipe right (go to previous route)
+                    if (location.pathname.includes("/about")) {
+                        navigate("/");
+                    } else if (location.pathname.includes("/projects")) {
+                        navigate("/about");
+                    } else if (location.pathname.includes("/experience")) {
+                        navigate("/projects");
+                    } else if (location.pathname.includes("/contact")) {
+                        navigate("/experience");
                     }
                 }
+            }
 
-                // Reset values
-                setStartX(0);
-                setEndX(0);
-                setStartY(0);
-                setEndY(0);
-            };
+            // Reset values
+            setStartX(0);
+            setEndX(0);
+            setStartY(0);
+            setEndY(0);
+        };
 
-            window.addEventListener("touchstart", handleTouchStart);
-            window.addEventListener("touchmove", handleTouchMove);
-            window.addEventListener("touchend", handleTouchEnd);
-
-            return () => {
-                window.removeEventListener("touchstart", handleTouchStart);
-                window.removeEventListener("touchmove", handleTouchMove);
-                window.removeEventListener("touchend", handleTouchEnd);
-            };
-        }, 500); // Adjust the delay as needed (500ms)
+        window.addEventListener("touchstart", handleTouchStart);
+        window.addEventListener("touchmove", handleTouchMove);
+        window.addEventListener("touchend", handleTouchEnd);
 
         return () => {
-            clearTimeout(timeoutId);
+            window.removeEventListener("touchstart", handleTouchStart);
+            window.removeEventListener("touchmove", handleTouchMove);
+            window.removeEventListener("touchend", handleTouchEnd);
         };
-    }, [startX, endX, startY, endY, location.pathname, navigate]);
+    }, [startX, endX, startY, endY, location.pathname, navigate, isMounted]);
 
     return (
         <Routes>
