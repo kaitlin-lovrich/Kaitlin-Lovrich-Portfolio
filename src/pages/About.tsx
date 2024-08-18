@@ -12,8 +12,12 @@ export default function About() {
 
     useEffect(() => {
         const timeoutId = setTimeout(() => {
-            window.scrollTo(0, 0);
-        }, 500);
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth",
+            });
+        }, 300);
+
         return () => {
             clearTimeout(timeoutId);
         };
