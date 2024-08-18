@@ -16,7 +16,7 @@ export default function Projects() {
                 top: 0,
                 behavior: "smooth",
             });
-        }, 300);
+        }, 500);
 
         return () => {
             clearTimeout(timeoutId);
