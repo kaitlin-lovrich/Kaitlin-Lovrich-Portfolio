@@ -16,7 +16,7 @@ export default function Experience() {
                 top: 0,
                 behavior: "smooth",
             });
-        }, 300);
+        }, 100);
 
         return () => {
             clearTimeout(timeoutId);
