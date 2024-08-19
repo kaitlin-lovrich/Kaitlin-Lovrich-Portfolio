@@ -15,7 +15,7 @@ export default function HomePage() {
                 top: 0,
                 behavior: "smooth",
             });
-        }, 300);
+        }, 100);
 
         return () => {
             clearTimeout(timeoutId);
