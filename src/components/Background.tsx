@@ -470,24 +470,38 @@ function Bubbles() {
 
 function LargeBubble({ animation }: LargeBubbleProps) {
     return (
-        <div
-            className={`${animation} flex relative bubble w-[45px] h-[37px] border-[3px] m-2 text-xl font-bold font-special`}
-        >
-            <p className="absolute top-[-8px] right-[8px] rotate-[-66deg]">
-                ){" "}
-            </p>
-        </div>
+        <>
+            <div
+                className={`${animation} flex relative bubble w-[45px] h-[37px] border-[1.25px] m-2 text-xl font-bold font-bubble *:absolute`}
+            >
+                <p className="top-[-17px] left-[21px] rotate-[166deg] text-[25px]">
+                    `
+                </p>
+                <p className="top-[13px] left-[13px] rotate-[116deg] text-[22px]">
+                    )
+                </p>
+                <div
+                    className={`bubble blur-[3px] w-[33px] h-[23px] m-2 text-xl top-[-2px] left-[-3px]`}
+                ></div>
+            </div>
+        </>
     );
 }
 
 function MediumBubble({ animation }: MediumBubbleProps) {
     return (
         <div
-            className={`${animation} flex relative bubble w-[35px] h-[27px] border-[2px] m-2 text-base font-bold font-special`}
+            className={`${animation} flex relative bubble w-[35px] h-[27px] border-[1px] m-2 font-bold font-bubble *:absolute`}
         >
-            <p className="absolute top-[-6px] sm:top-[-8px] right-[6px] sm:right-[5px] rotate-[-66deg]">
-                ){" "}
+            <p className="top-[-17px] left-[16px] rotate-[166deg] text-[20px]">
+                `
             </p>
+            <p className="top-[9px] left-[10px] rotate-[116deg] text-[15px]">
+                )
+            </p>
+            <div
+                className={`bubble blur-[3px] w-[25px] h-[15px] m-2 text-xl top-[-3px] left-[-3px]`}
+            ></div>
         </div>
     );
 }
@@ -495,16 +509,28 @@ function MediumBubble({ animation }: MediumBubbleProps) {
 function SmallBubble({ animation }: SmallBubbleProps) {
     return (
         <div
-            className={`${animation} flex bubble w-[18px] h-[14px] border-[2px] m-2 text-xl font-bold font-special`}
-        ></div>
+            className={`${animation} flex relative bubble w-[18px] h-[14px] border-[0.75px] m-2 font-bubble *:absolute`}
+        >
+            <p className="top-[-12px] left-[6px] rotate-[166deg] text-[13px]">
+                `
+            </p>
+            <p className="top-[5px] left-[5px] rotate-[116deg] text-[7px]">)</p>
+            <div
+                className={`bubble blur-[1.75px] w-[11px] h-[7px] m-2 top-[-5px] left-[-5px]`}
+            ></div>
+        </div>
     );
 }
 
 function XSmallBubble({ animation }: XSmallBubbleProps) {
     return (
         <div
-            className={`${animation} flex bubble w-[8px] h-[6px] border-[1px] m-2 text-xl font-bold font-special`}
-        ></div>
+            className={`${animation} flex relative bubble w-[8px] h-[6px] border-[0.5px] m-2 *:absolute`}
+        >
+            <div
+                className={`bubble blur-[.75px] w-[5px] h-[4px] m-2 text-xl top-[-7px] left-[-7px]`}
+            ></div>
+        </div>
     );
 }
 

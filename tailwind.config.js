@@ -6,6 +6,7 @@ export default {
             heading: ["Paytone One", "sans-serif"],
             body: ["Inconsolata", "monospace"],
             special: ["Yanone Kaffeesatz", "sans-serif"],
+            bubble: ["Matemasie", "sans-serif"],
         },
         backgroundImage: {
             "custom-gradient-1": "linear-gradient(#292929 0%, #1D2449 100%)",
