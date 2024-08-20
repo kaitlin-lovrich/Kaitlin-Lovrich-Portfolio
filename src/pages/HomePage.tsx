@@ -23,7 +23,7 @@ export default function HomePage() {
     }, []);
 
     return (
-        <div className="min-h-screen pb-14 xl:pb-20">
+        <div className="min-h-screen">
             <Background />
             <div
                 className={`transition opacity transform duration-1000 inset-0 ${

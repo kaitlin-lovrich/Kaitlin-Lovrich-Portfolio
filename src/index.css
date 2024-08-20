@@ -55,7 +55,7 @@ body {
     -webkit-text-fill-color: transparent;
 }
 
-.gradient-svg {
+/* .gradient-svg {
     width: 100px;
     height: auto;
     background: linear-gradient(
@@ -67,10 +67,10 @@ body {
     mask: url(#icon-mask) no-repeat center;
     -webkit-mask-size: contain;
     mask-size: contain;
-}
+} */
 
 .gradient-svg path {
-    fill: url(#linear-gradient);
+    fill: url(#linear-gradient-2);
 }
 
 .white-text {

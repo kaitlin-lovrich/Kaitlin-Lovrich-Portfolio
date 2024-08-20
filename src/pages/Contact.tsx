@@ -24,7 +24,7 @@ export default function Contact() {
     }, []);
 
     return (
-        <>
+        <div className="min-h-screen">
             <Background />
             <div
                 className={`transition opacity transform duration-1000 inset-0 ${
@@ -59,6 +59,6 @@ export default function Contact() {
                     </div>
                 </div>
             </div>
-        </>
+        </div>
     );
 }
