@@ -7,7 +7,7 @@ import {
 
 export default function Background() {
     return (
-        <div className="relative z-0">
+        <div className="relative z-[-1]">
             <div className="fixed inset-0 z-[-1]">
                 <Bubbles />
             </div>
