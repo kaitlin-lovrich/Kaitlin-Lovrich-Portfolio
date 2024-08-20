@@ -53,7 +53,7 @@ export default function HomePage() {
                     </div>
 
                     <h1 className="text-2xl xl:text-3xl font-heading drop-shadow-heading">
-                        Full Stack Developer
+                        FULL STACK DEVELOPER
                     </h1>
 
                     <p className="font-body text-lg sm:text-xl xl:text-2xl w-full sm:w-[485px] md:w-[555px] lg:w-[675px] xl:w-[795px]">

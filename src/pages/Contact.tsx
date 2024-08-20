@@ -48,7 +48,7 @@ export default function Contact() {
                     </div>
                     <Link to="/contact2" className="hover:cursor-default">
                         <h1 className="text-2xl xl:text-3xl font-heading drop-shadow-heading">
-                            Contact
+                            CONTACT
                         </h1>
                     </Link>
 
