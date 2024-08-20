@@ -20,8 +20,8 @@ export default function Header() {
                     <li className="self-center">
                         <ul className="flex">
                             <li className="mx-4 self-center">
-                                <Link
-                                    to="https://www.linkedin.com/in/kaitlin-lovrich/"
+                                <a
+                                    href="https://www.linkedin.com/in/kaitlin-lovrich/"
                                     target="_blank"
                                     rel="noopener noreferrer"
                                 >
@@ -30,11 +30,11 @@ export default function Header() {
                                         alt="linked-icon"
                                         className="w-[34px] xl:w-[40px] hover:scale-110 active:scale-110 duration-300"
                                     />
-                                </Link>
+                                </a>
                             </li>
                             <li className="">
-                                <Link
-                                    to="https://github.com/kaitlin-lovrich"
+                                <a
+                                    href="https://github.com/kaitlin-lovrich"
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     className="text-blue-purple-gradient"
@@ -44,7 +44,7 @@ export default function Header() {
                                         alt="github-icon"
                                         className="w-[36px] xl:w-[42px] hover:scale-110 active:scale-110 duration-300"
                                     />
-                                </Link>
+                                </a>
                             </li>
                         </ul>
                     </li>

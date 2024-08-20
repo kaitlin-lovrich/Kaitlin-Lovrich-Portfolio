@@ -55,6 +55,24 @@ body {
     -webkit-text-fill-color: transparent;
 }
 
+/* .gradient-svg {
+    width: 100px;
+    height: auto;
+    background: linear-gradient(
+        to right,
+        rgb(105, 241, 192),
+        rgb(72, 101, 253)
+    );
+    -webkit-mask: url(#icon-mask) no-repeat center;
+    mask: url(#icon-mask) no-repeat center;
+    -webkit-mask-size: contain;
+    mask-size: contain;
+} */
+
+.gradient-svg path {
+    fill: url(#linear-gradient-2);
+}
+
 .white-text {
     background-image: linear-gradient(
         to right,
