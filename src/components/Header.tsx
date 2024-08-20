@@ -60,7 +60,7 @@ export default function Header() {
                                     : "white-text"
                             }
                         >
-                            <Link to="/about">About</Link>
+                            <Link to="/about">ABOUT</Link>
                         </li>
                         <span className=" text-coral">|</span>
                         <li
@@ -70,7 +70,7 @@ export default function Header() {
                                     : "white-text"
                             }
                         >
-                            <Link to="/projects">Projects</Link>
+                            <Link to="/projects">PROJECTS</Link>
                         </li>
                         <span className=" text-coral">|</span>
                         <li
@@ -80,7 +80,7 @@ export default function Header() {
                                     : "white-text"
                             }
                         >
-                            <Link to="/experience">Experience</Link>
+                            <Link to="/experience">EXPERIENCE</Link>
                         </li>
                         <span className=" text-coral">|</span>
                         <li
@@ -90,7 +90,7 @@ export default function Header() {
                                     : "gradient-text"
                             }
                         >
-                            <Link to="/contact">Contact</Link>
+                            <Link to="/contact">CONTACT</Link>
                         </li>
                     </ul>
                 </nav>

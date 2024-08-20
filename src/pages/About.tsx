@@ -33,7 +33,7 @@ export default function About() {
             >
                 <div className="flex flex-col items-center relative z-30 mx-auto mt-4 sm:mt-6 xl:mt-12 w-[90%] sm:w-[85%] md:w-[80%] lg:w-[85%] xl:max-w-[1340px]  bg-custom-gradient-5 rounded-xl text-white pt-4 pb-10 lg:pb-14 px-4 sm:px-6 overflow-y-auto">
                     <h1 className="text-2xl sm:text-3xl xl:text-4xl font-heading drop-shadow-heading py-4 md:py-5">
-                        About Me
+                        ABOUT ME
                     </h1>
                     <div className="flex flex-col lg:flex-row justify-center items-center lg:items-start gap-6 h-fit">
                         <div
