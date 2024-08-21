@@ -26,17 +26,20 @@ export default function About() {
     return (
         <div className="min-h-screen pb-14 xl:pb-20">
             <Background />
-            <div
+            <section
                 className={`transition opacity transform duration-1000 inset-0 h-full ${
                     isVisible ? "opacity-100 scale-100" : "opacity-0 scale-95"
                 }`}
             >
-                <div className="flex flex-col items-center relative z-30 mx-auto mt-4 sm:mt-6 xl:mt-12 w-[90%] sm:w-[85%] md:w-[80%] lg:w-[85%] xl:max-w-[1340px]  bg-custom-gradient-5 rounded-xl text-white pt-4 pb-10 lg:pb-14 px-4 sm:px-6 overflow-y-auto">
-                    <h1 className="text-2xl sm:text-3xl xl:text-4xl font-heading drop-shadow-heading py-4 md:py-5">
-                        ABOUT ME
-                    </h1>
+                <article className="flex flex-col items-center relative z-30 mx-auto mt-4 sm:mt-6 xl:mt-12 w-[90%] sm:w-[85%] md:w-[80%] lg:w-[85%] xl:max-w-[1340px] bg-custom-gradient-5 rounded-xl text-white/95 pt-4 pb-10 lg:pb-14 px-4 sm:px-6 overflow-y-auto">
+                    <header className="py-4 md:py-5">
+                        <h1 className="text-2xl sm:text-3xl xl:text-4xl font-heading drop-shadow-heading">
+                            ABOUT ME
+                        </h1>
+                    </header>
                     <div className="flex flex-col lg:flex-row justify-center items-center lg:items-start gap-6 h-fit">
-                        <div
+                        <figure
+                            aria-label="Picture of Kaitlin Lovrich Climbing Rocks at Joshua Tree National Park"
                             className={`w-full max-w-[350px] sm:w-[65%] sm:max-w-[390px] lg:max-w-[430px] rounded transition opacity transform duration-1000 ${
                                 isImageLoaded
                                     ? "opacity-100 scale-100"
@@ -45,11 +48,11 @@ export default function About() {
                         >
                             <img
                                 src="./rock-climbing-kait.jpg"
-                                alt="rock climbing Kait"
+                                alt="Rock Climbing Kait"
                                 className="w-full rounded-2xl shadow-textBox"
                                 onLoad={() => setIsImageLoaded(true)}
                             />
-                        </div>
+                        </figure>
                         <section className="flex flex-col w-full gap-3 text-justify bg-white/15 rounded-2xl p-4 xl:py-8 xl:px-6 shadow-textBox font-body text-base sm:text-lg xl:text-xl indent-8">
                             <p>
                                 Hello! I'm Kaitlin, a software engineer based in
@@ -88,7 +91,7 @@ export default function About() {
                                 free to{" "}
                                 <Link
                                     to="/contact"
-                                    className="font-heading underline underline-offset-4 decoration-4 decoration-coral"
+                                    className="font-heading underline underline-offset-4 decoration-[2.5px] decoration-sky-blue hover:decoration-coral"
                                 >
                                     email me
                                 </Link>
@@ -98,8 +101,8 @@ export default function About() {
                             </p>
                         </section>
                     </div>
-                </div>
-            </div>
+                </article>
+            </section>
         </div>
     );
 }

@@ -19,30 +19,33 @@ export default function ProjectCard({ project }: ProjectCardProps) {
         projectTechStack,
     } = project;
     return (
-        <div
+        <article
             className={`flex flex-col items-center bg-white/15 rounded-lg px-2 pt-2 shadow-textBox w-full min-w-[245px] max-w-[320px] lg:max-w-[340px] min-[1415px]:max-w-[360px] transition-all opacity transform duration-1000 ${
                 isImageLoaded ? "opacity-100 scale-100" : "opacity-0 scale-95"
             }`}
         >
-            <Link
-                to={projectURL}
-                target="_blank"
-                className="relative group w-full"
-            >
-                <img
-                    src={imageSrc}
-                    alt={altText}
-                    className="w-full h-full"
-                    onLoad={() => setIsImageLoaded(true)}
-                />
-                <div className="absolute inset-0 flex items-center justify-center bg-custom-gradient-4 opacity-0 transition-opacity group-hover:opacity-100 ease-in-out duration-500">
-                    <span className="font-heading text-4xl">View Live</span>
-                </div>
-            </Link>
-            <div className="flex flex-col gap-2 px-1.5 min-[1415px]:px-3 py-4">
+            <figure className="relative w-full">
                 <Link
-                    to={projectSourceCode}
+                    to={projectURL}
                     target="_blank"
+                    className="relative group w-full"
+                >
+                    <img
+                        src={imageSrc}
+                        alt={altText}
+                        className="w-full h-full"
+                        onLoad={() => setIsImageLoaded(true)}
+                    />
+                    <figcaption className="absolute inset-0 flex items-center justify-center bg-custom-gradient-4 opacity-0 transition-opacity group-hover:opacity-100 ease-in-out duration-500">
+                        <span className="font-heading text-4xl">View Live</span>
+                    </figcaption>
+                </Link>
+            </figure>
+            <div className="flex flex-col gap-2 px-1.5 min-[1415px]:px-3 py-4">
+                <a
+                    href={projectSourceCode}
+                    target="_blank"
+                    aria-label="View Source Code"
                     className="flex justify-between hover:cursor-pointer"
                     onMouseEnter={() => setShowViewSourceCode(true)}
                     onMouseLeave={() => setShowViewSourceCode(false)}
@@ -60,6 +63,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
                         >
                             {projectName}
                         </h2>
+
                         <h2
                             className={`absolute transition transform ease-in-out duration-500 ${
                                 showViewSourceCode
@@ -79,7 +83,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
                     >
                         <TbHeartCode />
                     </span>
-                </Link>
+                </a>
                 <div className="font-bold">
                     <p>{projectType}</p>
                     <p>{projectRole}</p>
@@ -91,6 +95,6 @@ export default function ProjectCard({ project }: ProjectCardProps) {
                     ))}
                 </ul>
             </div>
-        </div>
+        </article>
     );
 }

@@ -24,10 +24,11 @@ export default function Header() {
                                     href="https://www.linkedin.com/in/kaitlin-lovrich/"
                                     target="_blank"
                                     rel="noopener noreferrer"
+                                    aria-label="LinkedIn Profile"
                                 >
                                     <img
                                         src="./linkedin-icon.png"
-                                        alt="linked-icon"
+                                        alt="LinkedIn Profile"
                                         className="w-[34px] xl:w-[40px] hover:scale-110 active:scale-110 duration-300"
                                     />
                                 </a>
@@ -38,10 +39,11 @@ export default function Header() {
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     className="text-blue-purple-gradient"
+                                    aria-label="Github Profile"
                                 >
                                     <img
                                         src="./github-icon.png"
-                                        alt="github-icon"
+                                        alt="Github Profile"
                                         className="w-[36px] xl:w-[42px] hover:scale-110 active:scale-110 duration-300"
                                     />
                                 </a>
@@ -62,7 +64,7 @@ export default function Header() {
                         >
                             <Link to="/about">ABOUT</Link>
                         </li>
-                        <span className=" text-coral">|</span>
+                        <span className="text-coral">|</span>
                         <li
                             className={
                                 pathname.includes("/projects")
@@ -72,7 +74,7 @@ export default function Header() {
                         >
                             <Link to="/projects">PROJECTS</Link>
                         </li>
-                        <span className=" text-coral">|</span>
+                        <span className="text-coral">|</span>
                         <li
                             className={
                                 pathname.includes("/experience")
@@ -82,7 +84,7 @@ export default function Header() {
                         >
                             <Link to="/experience">EXPERIENCE</Link>
                         </li>
-                        <span className=" text-coral">|</span>
+                        <span className="text-coral">|</span>
                         <li
                             className={
                                 pathname.includes("/contact")

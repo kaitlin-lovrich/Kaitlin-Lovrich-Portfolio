@@ -26,13 +26,14 @@ export default function Contact() {
     return (
         <div className="min-h-screen">
             <Background />
-            <div
+            <section
                 className={`transition opacity transform duration-1000 inset-0 ${
                     isVisible ? "opacity-100 scale-100" : "opacity-0 scale-95"
                 }`}
             >
-                <div className="flex justify-center items-center text-center flex-col relative z-30 mx-auto mt-4 sm:mt-6 xl:mt-12 w-[80%] min-w-[220px] sm:w-max xl:w-[650px] bg-custom-gradient-3 rounded-xl text-white py-8 sm:py-10 lg:py-14 xl:py-28 px-4 sm:px-14 lg:px-20 gap-4 xl:gap-6">
-                    <div
+                <article className="flex justify-center items-center text-center flex-col relative z-30 mx-auto mt-4 sm:mt-6 xl:mt-12 w-[80%] min-w-[220px] sm:w-max xl:w-[650px] bg-custom-gradient-3 rounded-xl text-white py-8 sm:py-10 lg:py-14 xl:py-28 px-4 sm:px-14 lg:px-20 gap-4 xl:gap-6">
+                    <figure
+                        aria-label="Profile Picture of Kaitlin Lovrich"
                         className={`h-[200px] xl:h-[250px] w-[200px] xl:w-[250px] rounded-full overflow-hidden transition opacity transform duration-1000 ${
                             isImageLoaded
                                 ? "opacity-100 scale-100"
@@ -45,7 +46,7 @@ export default function Contact() {
                             className="w-full"
                             onLoad={() => setIsImageLoaded(true)}
                         />
-                    </div>
+                    </figure>
                     <Link to="/contact2" className="hover:cursor-default">
                         <h1 className="text-2xl xl:text-3xl font-heading drop-shadow-heading">
                             CONTACT
@@ -57,8 +58,8 @@ export default function Contact() {
                             Email: kaylovrich@gmail.com
                         </p>
                     </div>
-                </div>
-            </div>
+                </article>
+            </section>
         </div>
     );
 }
