@@ -30,7 +30,7 @@ export default function HomePage() {
                     isVisible ? "opacity-100 scale-100" : "opacity-0 scale-95"
                 }`}
             >
-                <article className="flex justify-center items-center text-center flex-col relative z-30 mx-auto mt-4 sm:mt-6 xl:mt-12 w-[80%] min-w-[220px] sm:w-max bg-custom-gradient-3 rounded-xl text-white/95 py-8 sm:py-10 xl:py-16 px-4 sm:px-7 md:px-10 gap-4 xl:gap-6">
+                <article className="flex justify-center items-center text-center flex-col relative z-30 mx-auto mt-4 sm:mt-6 xl:mt-12 w-[90%] min-w-[220px] sm:w-max bg-custom-gradient-3 rounded-xl text-white/95 py-8 sm:py-10 xl:py-16 px-4 sm:px-7 md:px-10 gap-4 xl:gap-6">
                     <figure
                         aria-label="Profile Picture of Kaitlin Lovrich"
                         className={`h-[200px] xl:h-[250px] w-[200px] xl:w-[250px] rounded-full overflow-hidden transition opacity transform duration-1000 ${
