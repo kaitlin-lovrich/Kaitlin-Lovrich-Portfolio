@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { Link, Outlet } from "react-router-dom";
-// import LinkedInIcon from "../assets/linkedin.svg?react";
 import { LinkedInIcon, GithubIcon } from "./Icons.tsx";
 
 export default function Footer() {
@@ -72,6 +71,7 @@ export default function Footer() {
                         <div className="relative w-[185px] xl:w-[214px] h-[48px] self-center">
                             <Link
                                 to="/contact"
+                                aria-label="Contact Me"
                                 className={`flex justify-center relative z-10 w-[186px] xl:w-[214px] px-5 xl:px-6 py-2 xl:py-3 border-2 border-white/85 hover:border-sky-blue rounded-full text-xl xl:text-2xl font-heading transition transform duration-300 ease-out ${
                                     isHovered.contact
                                         ? "gradient-text"
@@ -96,6 +96,7 @@ export default function Footer() {
                                 <a
                                     href="https://www.linkedin.com/in/kaitlin-lovrich/"
                                     target="_blank"
+                                    aria-label="Kaitlin Lovrich LinkedIn Profile"
                                     rel="noopener noreferrer"
                                     className="*:size-11 *:xl:size-14 hover:scale-110 active:scale-110 duration-300 hover:cursor-pointer"
                                     onMouseEnter={() =>
@@ -114,6 +115,7 @@ export default function Footer() {
                             <li>
                                 <a
                                     href="https://github.com/kaitlin-lovrich"
+                                    aria-label="Kaitlin Lovrich Github Profile"
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     className="*:size-11 *:xl:size-14 hover:scale-110 active:scale-110 duration-300 hover:cursor-pointer"
@@ -138,6 +140,7 @@ export default function Footer() {
                             Designed in{" "}
                             <a
                                 href="https://www.figma.com/"
+                                aria-label="Figma Website"
                                 className={`${
                                     isHovered.figma ? "gradient-text" : ""
                                 }`}
@@ -149,6 +152,7 @@ export default function Footer() {
                             and coded in{" "}
                             <a
                                 href="https://code.visualstudio.com/"
+                                aria-label="Visual Studio Code Website"
                                 className={`${
                                     isHovered.vscode ? "gradient-text" : ""
                                 }`}
@@ -159,6 +163,8 @@ export default function Footer() {
                             </a>{" "}
                             by yours truly. Built with{" "}
                             <a
+                                href="https://react.dev/"
+                                aria-label="React Website"
                                 className={`${
                                     isHovered.react ? "gradient-text" : ""
                                 }`}
@@ -170,6 +176,7 @@ export default function Footer() {
                             and{" "}
                             <a
                                 href="https://tailwindcss.com/"
+                                aria-label="Tailwind CSS Website"
                                 className={`${
                                     isHovered.tailwind ? "gradient-text" : ""
                                 }`}
@@ -185,6 +192,7 @@ export default function Footer() {
                             , deployed with{" "}
                             <a
                                 href="https://vercel.com/"
+                                aria-label="Vercel Website"
                                 className={`${
                                     isHovered.vercel ? "gradient-text" : ""
                                 }`}
