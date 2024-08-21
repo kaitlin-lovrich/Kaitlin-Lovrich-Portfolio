@@ -59,12 +59,12 @@ export default function Footer() {
         <>
             <Outlet />
 
-            <div className="bg-custom-gradient-6 text-white z-[40]">
+            <footer className="bg-custom-gradient-6 text-white z-[40]">
                 <div className="flex flex-col md:flex-row w-[95%] 2xl:w-[80%] mx-auto items-end py-4 xl:py-6 gap-6">
-                    <h1 className="text-6xl xl:text-7xl font-heading drop-shadow-heading self-start">
+                    <h2 className="text-6xl xl:text-7xl font-heading drop-shadow-heading self-start">
                         LET'S
                         <br /> CONNECT
-                    </h1>
+                    </h2>
                     <div className="flex flex-col lg:flex-row gap-4 lg:gap-6 justify-start mx-auto pb-4">
                         <p className="flex items-center xl:items-end text-xl font-bold xl:text-2xl text-white/95">
                             Interested in collaborating with me?
@@ -90,42 +90,48 @@ export default function Footer() {
                 <hr className="w-full border-t-2 border-coral"></hr>
 
                 <div className="flex flex-col md:flex-row w-[90%] xl:w-[80%] mx-auto py-4 xl:py-6 gap-4 md:gap-0">
-                    <ul className="flex justify-center items-center">
-                        <li className="mx-4">
-                            <a
-                                href="https://www.linkedin.com/in/kaitlin-lovrich/"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="*:size-11 *:xl:size-14 hover:scale-110 active:scale-110 duration-300 hover:cursor-pointer"
-                                onMouseEnter={() =>
-                                    handleMouseEnter("linkedin")
-                                }
-                                onMouseLeave={() =>
-                                    handleMouseLeave("linkedin")
-                                }
-                            >
-                                <LinkedInIcon
-                                    color1={linkedInColors.color1}
-                                    color2={linkedInColors.color2}
-                                />
-                            </a>
-                        </li>
-                        <li>
-                            <a
-                                href="https://github.com/kaitlin-lovrich"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="*:size-11 *:xl:size-14 hover:scale-110 active:scale-110 duration-300 hover:cursor-pointer"
-                                onMouseEnter={() => handleMouseEnter("github")}
-                                onMouseLeave={() => handleMouseLeave("github")}
-                            >
-                                <GithubIcon
-                                    color1={githubColors.color1}
-                                    color2={githubColors.color2}
-                                />
-                            </a>
-                        </li>
-                    </ul>
+                    <nav aria-label="Social Media Links">
+                        <ul className="flex justify-center items-center">
+                            <li className="mx-4">
+                                <a
+                                    href="https://www.linkedin.com/in/kaitlin-lovrich/"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="*:size-11 *:xl:size-14 hover:scale-110 active:scale-110 duration-300 hover:cursor-pointer"
+                                    onMouseEnter={() =>
+                                        handleMouseEnter("linkedin")
+                                    }
+                                    onMouseLeave={() =>
+                                        handleMouseLeave("linkedin")
+                                    }
+                                >
+                                    <LinkedInIcon
+                                        color1={linkedInColors.color1}
+                                        color2={linkedInColors.color2}
+                                    />
+                                </a>
+                            </li>
+                            <li>
+                                <a
+                                    href="https://github.com/kaitlin-lovrich"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="*:size-11 *:xl:size-14 hover:scale-110 active:scale-110 duration-300 hover:cursor-pointer"
+                                    onMouseEnter={() =>
+                                        handleMouseEnter("github")
+                                    }
+                                    onMouseLeave={() =>
+                                        handleMouseLeave("github")
+                                    }
+                                >
+                                    <GithubIcon
+                                        color1={githubColors.color1}
+                                        color2={githubColors.color2}
+                                    />
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
 
                     <div className="flex flex-col gap-3 w-[339px] xl:w-[483px] text-justify mx-auto text-white/70 text-sm xl:text-base">
                         <p className="*:font-semibold *:text-white/85 *:hover:cursor-pointer">
@@ -194,9 +200,7 @@ export default function Footer() {
                         </p>
                     </div>
                 </div>
-            </div>
+            </footer>
         </>
     );
 }
-
-// className="w-12 h-12 hover:cursor-pointer "
