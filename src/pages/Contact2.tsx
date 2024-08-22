@@ -1,20 +1,33 @@
 import Background from "../components/Background";
-import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { PaperPlaneIcon } from "../components/Icons.tsx";
+import emailjs from "@emailjs/browser";
+import { useRef } from "react";
 
-// Under construction
 export default function Contact() {
     const [isVisible, setIsVisible] = useState(false);
     const [isImageLoaded, setIsImageLoaded] = useState(false);
+    const [formData, setFormData] = useState({
+        "from_name": "",
+        "reply_to": "",
+        message: "",
+    });
+    const [status, setStatus] = useState("");
     const [isIconHovered, setIsIconHovered] = useState(false);
     const [planeIconColors, setPlaneIconColors] = useState({
         color1: "rgba(255, 255, 255, .95)",
         color2: "rgba(255, 255, 255, .95)",
     });
+    const formRef = useRef<HTMLFormElement>(null);
+    const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+    const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+    const myPublicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+    const siteKey = import.meta.env.VITE_RECAPTCHA_SITE_KEY;
+
     useEffect(() => {
+        emailjs.init(myPublicKey);
         setIsVisible(true);
-    }, []);
+    }, [myPublicKey]);
 
     useEffect(() => {
         const timeoutId = setTimeout(() => {
@@ -28,6 +41,37 @@ export default function Contact() {
             clearTimeout(timeoutId);
         };
     }, []);
+
+    function handleChange(
+        e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+    ) {
+        const { name, value } = e.target;
+        setFormData((prevFormData) => ({
+            ...prevFormData,
+            [name]: value,
+        }));
+    }
+
+    function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+        e.preventDefault();
+        emailjs
+            .sendForm(serviceId, templateId, e.target as HTMLFormElement, {
+                publicKey: myPublicKey,
+            })
+            .then(
+                (result) => {
+                    console.log(result.text);
+                    setStatus("Message sent successfully!");
+                    if (formRef.current) {
+                        formRef.current.reset();
+                    }
+                },
+                (error) => {
+                    console.log(error.text);
+                    setStatus("An error occurred. Please try again.");
+                }
+            );
+    }
 
     function handleMouseEnter() {
         setIsIconHovered(!isIconHovered);
@@ -70,39 +114,35 @@ export default function Contact() {
                         />
                     </figure>
                     <p className="text-xl md:text-2xl font-body font-bold sm:w-[488px] md:w-[572px]">
-                        More convenience coming soon! For now, click{" "}
-                        <Link
-                            to="/contact"
-                            className="font-heading underline underline-offset-4 decoration-4 decoration-coral"
-                        >
-                            Contact
-                        </Link>{" "}
-                        for my email {"("}:
-                        {/* All messages will be sent via emial to me, Kaitlin
-                        Lovrich {"("}: */}
-                    </p>
-                    {/* <p className="text-xl md:text-2xl font-body font-bold sm:w-[488px] md:w-[572px]">
                         All messages will be sent via emial to Kaitlin Lovrich{" "}
                         {"("}:
-                    </p> */}
-                    <form className="flex flex-col gap-5 xl:gap-7 relative w-[90%] md:w-[80%] lg:w-[80%] white-text text-lg font-semibold">
+                    </p>
+                    <form
+                        onSubmit={handleSubmit}
+                        ref={formRef}
+                        className="flex flex-col gap-5 xl:gap-7 relative w-[90%] md:w-[80%] lg:w-[80%] white-text text-lg font-semibold"
+                    >
                         <div className="flex flex-col lg:flex-row w-[100%] gap-5 xl:gap-7 justify-between">
-                            <label htmlFor="name" className="lg:w-[50%]">
+                            <label htmlFor="from_name" className="lg:w-[50%]">
                                 <input
                                     type="text"
-                                    id="name"
-                                    name="name"
+                                    id="from_name"
+                                    name="from_name"
+                                    value={formData["from_name"]}
+                                    onChange={handleChange}
                                     required
                                     placeholder="Name"
                                     aria-label="Name Input"
                                     className="w-full p-2 xl:p-3 rounded bg-white/20 focus:outline-2 focus:outline focus:outline-sky-blue"
                                 />
                             </label>
-                            <label htmlFor="email" className="lg:w-[50%]">
+                            <label htmlFor="reply_to" className="lg:w-[50%]">
                                 <input
                                     type="email"
-                                    id="email"
-                                    name="email"
+                                    id="reply_to"
+                                    name="reply_to"
+                                    value={formData["reply_to"]}
+                                    onChange={handleChange}
                                     required
                                     placeholder="Email"
                                     aria-label="Email Input"
@@ -114,13 +154,18 @@ export default function Contact() {
                             <textarea
                                 id="message"
                                 name="message"
+                                value={formData.message}
+                                onChange={handleChange}
                                 placeholder="Message"
                                 aria-label="Message Input"
                                 rows={4}
-                                // onChange={handleChange}
                                 className="p-2 xl:p-3 rounded bg-white/20 w-full focus:outline-2 focus:outline focus:outline-sky-blue"
                             ></textarea>
                         </label>
+                        <div
+                            className="g-recaptcha"
+                            data-sitekey={siteKey}
+                        ></div>
                         <button
                             className="*:size-6 absolute bottom-4 right-3 text-xl hover:cursor-pointer hover:scale-110 transition transform duration-300 ease-in-out"
                             type="submit"
@@ -133,6 +178,8 @@ export default function Contact() {
                                 color2={planeIconColors.color2}
                             />
                         </button>
+
+                        {status && <p>{status}</p>}
                     </form>
                 </article>
             </section>
