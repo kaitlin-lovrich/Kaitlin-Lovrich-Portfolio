@@ -22,6 +22,7 @@ export default function Contact() {
     const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
     const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
     const myPublicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+    const siteKey = import.meta.env.VITE_RECAPTCHA_SITE_KEY;
 
     useEffect(() => {
         emailjs.init(myPublicKey);
@@ -161,6 +162,10 @@ export default function Contact() {
                                 className="p-2 xl:p-3 rounded bg-white/20 w-full focus:outline-2 focus:outline focus:outline-sky-blue"
                             ></textarea>
                         </label>
+                        <div
+                            className="g-recaptcha"
+                            data-sitekey={siteKey}
+                        ></div>
                         <button
                             className="*:size-6 absolute bottom-4 right-3 text-xl hover:cursor-pointer hover:scale-110 transition transform duration-300 ease-in-out"
                             type="submit"
@@ -173,6 +178,7 @@ export default function Contact() {
                                 color2={planeIconColors.color2}
                             />
                         </button>
+
                         {status && <p>{status}</p>}
                     </form>
                 </article>
