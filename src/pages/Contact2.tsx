@@ -1,17 +1,74 @@
-import { FaPaperPlane } from "react-icons/fa";
 import Background from "../components/Background";
 import { Link } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { PaperPlaneIcon } from "../components/Icons.tsx";
 
 // Under construction
 export default function Contact() {
+    const [isVisible, setIsVisible] = useState(false);
+    const [isImageLoaded, setIsImageLoaded] = useState(false);
+    const [isIconHovered, setIsIconHovered] = useState(false);
+    const [planeIconColors, setPlaneIconColors] = useState({
+        color1: "rgba(255, 255, 255, .95)",
+        color2: "rgba(255, 255, 255, .95)",
+    });
+    useEffect(() => {
+        setIsVisible(true);
+    }, []);
+
+    useEffect(() => {
+        const timeoutId = setTimeout(() => {
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth",
+            });
+        }, 100);
+
+        return () => {
+            clearTimeout(timeoutId);
+        };
+    }, []);
+
+    function handleMouseEnter() {
+        setIsIconHovered(!isIconHovered);
+        setPlaneIconColors({
+            color1: "rgb(105, 241, 192)",
+            color2: "rgb(72, 209, 253)",
+        });
+    }
+
+    function handleMouseLeave() {
+        setIsIconHovered(!isIconHovered);
+        setPlaneIconColors({
+            color1: "rgba(255, 255, 255, .95)",
+            color2: "rgba(255, 255, 255, .95)",
+        });
+    }
+
     return (
-        <div className="relative">
+        <div className="min-h-screen pb-14 xl:pb-20">
             <Background />
-            <div className="absolute inset-0">
-                <div className="flex justify-center items-center text-center flex-col relative z-30 mx-auto mt-4 sm:mt-6 md:mt-12 w-[90%] sm:w-[85%] md:w-[80%] lg:w-[75%] xl:w-[75%] xl:max-w-[1145px] bg-custom-gradient-3 rounded-xl text-white py-8 sm:py-14 md:py-20 gap-5 sm:gap-8">
-                    <h1 className="text-3xl sm:text-4xl font-heading drop-shadow-heading py-2 sm:py-0">
-                        Under Construction
-                    </h1>
+            <section
+                className={`transition opacity transform duration-1000 inset-0 ${
+                    isVisible ? "opacity-100 scale-100" : "opacity-0 scale-95"
+                }`}
+            >
+                <article className="flex justify-center items-center text-center flex-col relative z-30 mx-auto mt-4 sm:mt-6 xl:mt-12 w-[90%] min-w-[220px] sm:w-[85%] md:w-[80%] lg:w-[75%] xl:max-w-[1020px] bg-custom-gradient-3 rounded-xl text-white py-8 sm:py-10 lg:py-14 xl:py-28  gap-4 xl:gap-8">
+                    <figure
+                        aria-label="Profile Picture of Kaitlin Lovrich"
+                        className={`h-[200px] xl:h-[250px] w-[200px] xl:w-[250px] rounded-full overflow-hidden transition opacity transform duration-1000 ${
+                            isImageLoaded
+                                ? "opacity-100 scale-100"
+                                : "opacity-0 scale-95"
+                        }`}
+                    >
+                        <img
+                            src="./kaitlin-lovrich-profile-picture.png"
+                            alt="kaitlin lovrich profile picture"
+                            className="w-full"
+                            onLoad={() => setIsImageLoaded(true)}
+                        />
+                    </figure>
                     <p className="text-xl md:text-2xl font-body font-bold sm:w-[488px] md:w-[572px]">
                         More convenience coming soon! For now, click{" "}
                         <Link
@@ -24,26 +81,32 @@ export default function Contact() {
                         {/* All messages will be sent via emial to me, Kaitlin
                         Lovrich {"("}: */}
                     </p>
-                    <form className="flex flex-col gap-5 relative">
-                        <div className="flex gap-5 w-[50%] justify-between">
-                            <label htmlFor="name" className=" w-1/3">
+                    {/* <p className="text-xl md:text-2xl font-body font-bold sm:w-[488px] md:w-[572px]">
+                        All messages will be sent via emial to Kaitlin Lovrich{" "}
+                        {"("}:
+                    </p> */}
+                    <form className="flex flex-col gap-5 xl:gap-7 relative w-[90%] md:w-[80%] lg:w-[80%] white-text text-lg font-semibold">
+                        <div className="flex flex-col lg:flex-row w-[100%] gap-5 xl:gap-7 justify-between">
+                            <label htmlFor="name" className="lg:w-[50%]">
                                 <input
                                     type="text"
                                     id="name"
                                     name="name"
                                     required
                                     placeholder="Name"
-                                    className="p-2 rounded bg-white/20"
+                                    aria-label="Name Input"
+                                    className="w-full p-2 xl:p-3 rounded bg-white/20 focus:outline-2 focus:outline focus:outline-sky-blue"
                                 />
                             </label>
-                            <label htmlFor="email" className=" w-2/3">
+                            <label htmlFor="email" className="lg:w-[50%]">
                                 <input
                                     type="email"
                                     id="email"
                                     name="email"
                                     required
                                     placeholder="Email"
-                                    className="p-2 rounded bg-white/20"
+                                    aria-label="Email Input"
+                                    className="w-full p-2 xl:p-3 rounded bg-white/20 focus:outline-2 focus:outline focus:outline-sky-blue"
                                 ></input>
                             </label>
                         </div>
@@ -52,20 +115,27 @@ export default function Contact() {
                                 id="message"
                                 name="message"
                                 placeholder="Message"
+                                aria-label="Message Input"
                                 rows={4}
                                 // onChange={handleChange}
-                                className="p-2 rounded bg-white/20 w-full"
+                                className="p-2 xl:p-3 rounded bg-white/20 w-full focus:outline-2 focus:outline focus:outline-sky-blue"
                             ></textarea>
                         </label>
                         <button
-                            className="absolute bottom-4 right-3 text-xl"
+                            className="*:size-6 absolute bottom-4 right-3 text-xl hover:cursor-pointer hover:scale-110 transition transform duration-300 ease-in-out"
                             type="submit"
+                            aria-label="Submit"
+                            onMouseEnter={() => handleMouseEnter()}
+                            onMouseLeave={() => handleMouseLeave()}
                         >
-                            <FaPaperPlane />
+                            <PaperPlaneIcon
+                                color1={planeIconColors.color1}
+                                color2={planeIconColors.color2}
+                            />
                         </button>
                     </form>
-                </div>
-            </div>
+                </article>
+            </section>
         </div>
     );
 }
