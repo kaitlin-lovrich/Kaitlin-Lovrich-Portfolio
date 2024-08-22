@@ -4,13 +4,13 @@ import { LinkedInIcon, GithubIcon } from "./Icons.tsx";
 
 export default function Footer() {
     const [linkedInColors, setLinkedInColors] = useState({
-        color1: "rgba(255, 255, 255, .70)",
-        color2: "rgba(255, 255, 255, .70)",
+        color1: "rgba(255, 255, 255, .85)",
+        color2: "rgba(255, 255, 255, .85)",
     });
 
     const [githubColors, setGithubColors] = useState({
-        color1: "rgba(255, 255, 255, .70)",
-        color2: "rgba(255, 255, 255, .70)",
+        color1: "rgba(255, 255, 255, .85)",
+        color2: "rgba(255, 255, 255, .85)",
     });
 
     const [isHovered, setIsHovered] = useState({
@@ -68,11 +68,11 @@ export default function Footer() {
                         <p className="flex items-center xl:items-end text-xl font-bold xl:text-2xl text-white/95">
                             Interested in collaborating with me?
                         </p>
-                        <div className="relative w-[185px] xl:w-[214px] h-[48px] self-center">
+                        <div className="relative w-[185px] xl:w-[214px] h-[48px] self-center *:hover:scale-105 *:transition *:transform *:duration-300 *:ease-in-out">
                             <Link
                                 to="/contact"
                                 aria-label="Contact Me"
-                                className={`flex justify-center relative z-10 w-[186px] xl:w-[214px] px-5 xl:px-6 py-2 xl:py-3 border-2 border-white/85 hover:border-sky-blue rounded-full text-xl xl:text-2xl font-heading transition transform duration-300 ease-out ${
+                                className={`flex justify-center relative z-10 w-[186px] xl:w-[214px] px-5 xl:px-6 py-2 xl:py-3 border-2 border-white/85 hover:border-sky-blue rounded-full text-xl xl:text-2xl font-heading ${
                                     isHovered.contact
                                         ? "gradient-text"
                                         : "text-white/95"
@@ -98,7 +98,7 @@ export default function Footer() {
                                     target="_blank"
                                     aria-label="Kaitlin Lovrich LinkedIn Profile"
                                     rel="noopener noreferrer"
-                                    className="*:size-11 *:xl:size-14 hover:scale-110 active:scale-110 duration-300 hover:cursor-pointer"
+                                    className="*:size-11 *:xl:size-14 *:hover:scale-110 *:active:scale-105 *:transition *:transform *:duration-300 *:ease-in-out hover:cursor-pointer"
                                     onMouseEnter={() =>
                                         handleMouseEnter("linkedin")
                                     }
@@ -118,7 +118,7 @@ export default function Footer() {
                                     aria-label="Kaitlin Lovrich Github Profile"
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="*:size-11 *:xl:size-14 hover:scale-110 active:scale-110 duration-300 hover:cursor-pointer"
+                                    className="*:size-11 *:xl:size-14 *:hover:scale-110 *:active:scale-105 *:transition *:transform *:duration-300 *:ease-in-out hover:cursor-pointer"
                                     onMouseEnter={() =>
                                         handleMouseEnter("github")
                                     }
