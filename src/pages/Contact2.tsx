@@ -8,8 +8,8 @@ export default function Contact() {
     const [isVisible, setIsVisible] = useState(false);
     const [isImageLoaded, setIsImageLoaded] = useState(false);
     const [formData, setFormData] = useState({
-        name: "",
-        email: "",
+        "from_name": "",
+        "reply_to": "",
         message: "",
     });
     const [status, setStatus] = useState("");
@@ -127,7 +127,7 @@ export default function Contact() {
                                     type="text"
                                     id="from_name"
                                     name="from_name"
-                                    value={formData.name}
+                                    value={formData["from_name"]}
                                     onChange={handleChange}
                                     required
                                     placeholder="Name"
@@ -140,7 +140,7 @@ export default function Contact() {
                                     type="email"
                                     id="reply_to"
                                     name="reply_to"
-                                    value={formData.email}
+                                    value={formData["reply_to"]}
                                     onChange={handleChange}
                                     required
                                     placeholder="Email"
