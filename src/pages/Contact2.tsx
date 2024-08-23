@@ -113,7 +113,7 @@ export default function Contact() {
                             onLoad={() => setIsImageLoaded(true)}
                         />
                     </figure>
-                    <p className="text-xl md:text-2xl font-body font-bold sm:w-[488px] md:w-[572px]">
+                    <p className="text-xl lg:text-2xl font-body font-semibold w-[85%] sm:w-[75%] max-w-[530px] lg:max-w-[572px]">
                         All messages will be sent via emial to Kaitlin Lovrich{" "}
                         {"("}:
                     </p>
