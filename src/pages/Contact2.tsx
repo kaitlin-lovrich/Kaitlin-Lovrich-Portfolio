@@ -176,8 +176,8 @@ export default function Contact() {
                                 color2={planeIconColors.color2}
                             />
                         </button>
-                        {status && <p>{status}</p>}
                     </form>
+                    {status && <p>{status}</p>}
                 </article>
             </section>
         </div>
