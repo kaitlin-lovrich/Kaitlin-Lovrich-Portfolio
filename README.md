@@ -3,7 +3,9 @@
 ## Showcases projects, professional experience timeline, design and animation skills
 
 ### Built with: `React` + `TypeScript` + `Vite` + `TailwindCSS`
+
 ### Animated with: custom `CSS keyframes`
+
 ### Features: `EmailJS` + `reCAPTACHA`
 
 <br/>
