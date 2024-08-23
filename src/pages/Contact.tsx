@@ -21,7 +21,8 @@ export default function Contact() {
     const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
     const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
     const myPublicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
-    const siteKey = import.meta.env.VITE_RECAPTCHA_SITE_KEY;
+    const reCaptchaKey = import.meta.env.VITE_RECAPTCHA_SITE_KEY;
+    const apiKey = import.meta.env.VITE_RECAPTCHA_API_KEY;
 
     useEffect(() => {
         emailjs.init(myPublicKey);
@@ -53,27 +54,65 @@ export default function Contact() {
 
     function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
         e.preventDefault();
-        const recaptchaResponse = (
-            window as unknown as Window
-        ).grecaptcha.getResponse();
 
-        if (!recaptchaResponse) {
-            setStatus("Please complete the reCAPTCHA.");
-            return;
-        }
         async function submitForm() {
             try {
-                await emailjs.sendForm(
-                    serviceId,
-                    templateId,
-                    e.target as HTMLFormElement,
+                // Execute reCAPTCHA and get the token
+                const token = await (
+                    window as unknown as Window
+                ).grecaptcha.enterprise.execute(reCaptchaKey, {
+                    action: "submit",
+                });
+
+                // If no token is returned, show an error message
+                if (!token) {
+                    setStatus("Please complete the reCAPTCHA.");
+                    return;
+                }
+
+                // Create the request body
+                const requestBody = {
+                    event: {
+                        token: token,
+                        expectedAction: "submit",
+                        siteKey: reCaptchaKey,
+                    },
+                };
+
+                // Send the request to reCAPTCHA Enterprise for verification
+                const response = await fetch(
+                    `https://recaptchaenterprise.googleapis.com/v1/projects/kaitlin-lovrich--1724363176792/assessments?key=${apiKey}`,
                     {
-                        publicKey: myPublicKey,
+                        method: "POST",
+                        headers: {
+                            "Content-Type": "application/json",
+                        },
+                        body: JSON.stringify(requestBody),
                     }
                 );
-                setStatus("Message sent successfully!");
-                setFormData({ "from_name": "", "reply_to": "", message: "" });
-                (window as unknown as Window).grecaptcha.reset();
+
+                const data = await response.json();
+
+                // If the token is valid, proceed to send the email
+                if (data.tokenProperties.valid) {
+                    await emailjs.sendForm(
+                        serviceId,
+                        templateId,
+                        e.target as HTMLFormElement,
+                        {
+                            publicKey: myPublicKey,
+                        }
+                    );
+                    setStatus("Message sent successfully!");
+                    setFormData({
+                        "from_name": "",
+                        "reply_to": "",
+                        message: "",
+                    });
+                    (window as unknown as Window).grecaptcha.reset();
+                } else {
+                    setStatus("Failed reCAPTCHA validation.");
+                }
             } catch (error) {
                 setStatus("Failed to send message.");
             }
@@ -81,6 +120,37 @@ export default function Contact() {
 
         submitForm();
     }
+
+    // function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+    //     e.preventDefault();
+    //     const recaptchaResponse = (
+    //         window as unknown as Window
+    //     ).grecaptcha.getResponse();
+
+    //     if (!recaptchaResponse) {
+    //         setStatus("Please complete the reCAPTCHA.");
+    //         return;
+    //     }
+    //     async function submitForm() {
+    //         try {
+    //             await emailjs.sendForm(
+    //                 serviceId,
+    //                 templateId,
+    //                 e.target as HTMLFormElement,
+    //                 {
+    //                     publicKey: myPublicKey,
+    //                 }
+    //             );
+    //             setStatus("Message sent successfully!");
+    //             setFormData({ "from_name": "", "reply_to": "", message: "" });
+    //             (window as unknown as Window).grecaptcha.reset();
+    //         } catch (error) {
+    //             setStatus("Failed to send message.");
+    //         }
+    //     }
+
+    //     submitForm();
+    // }
 
     function handleMouseEnter() {
         setIsIconHovered(!isIconHovered);
@@ -174,7 +244,7 @@ export default function Contact() {
                         </label>
                         <div
                             className="g-recaptcha"
-                            data-sitekey={siteKey}
+                            data-sitekey={reCaptchaKey}
                         ></div>
                         <button
                             className="*:size-6 absolute top-56 lg:top-40 xl:top-[185px] right-3 text-xl hover:cursor-pointer hover:scale-110 transition transform duration-300 ease-in-out"
