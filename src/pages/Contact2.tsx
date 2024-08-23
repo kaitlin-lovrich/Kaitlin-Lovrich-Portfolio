@@ -63,7 +63,7 @@ export default function Contact() {
                     }
                 );
                 setStatus("Message sent successfully!");
-                setFormData({ name: "", email: "", message: "" }); // Clear form
+                setFormData({ "from_name": "", "reply_to": "", message: "" }); // Clear form
             } catch (error) {
                 setStatus("Failed to send message.");
             }
