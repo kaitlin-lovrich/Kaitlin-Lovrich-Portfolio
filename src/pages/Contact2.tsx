@@ -63,7 +63,7 @@ export default function Contact() {
                     }
                 );
                 setStatus("Message sent successfully!");
-                setFormData({ "from_name": "", "reply_to": "", message: "" }); // Clear form
+                setFormData({ "from_name": "", "reply_to": "", message: "" });
             } catch (error) {
                 setStatus("Failed to send message.");
             }
@@ -176,8 +176,8 @@ export default function Contact() {
                                 color2={planeIconColors.color2}
                             />
                         </button>
+                        {status && <p>{status}</p>}
                     </form>
-                    {status && <p>{status}</p>}
                 </article>
             </section>
         </div>
