@@ -162,6 +162,7 @@ export default function Contact() {
                                 className="p-2 xl:p-3 rounded bg-white/20 w-full focus:outline-2 focus:outline focus:outline-sky-blue"
                             ></textarea>
                         </label>
+                        {/* Add reCAPTCHA below */}
                         <div
                             className="g-recaptcha"
                             data-sitekey={siteKey}
