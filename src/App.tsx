@@ -2,7 +2,6 @@ import { Routes, Route, useLocation, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { HomePage, About, Projects, Experience, Contact } from "./pages/index";
 import Header from "./components/Header";
-import Contact2 from "./pages/Contact2";
 import Footer from "./components/Footer";
 
 export default function App() {
@@ -87,7 +86,6 @@ export default function App() {
                         <Route path="/projects" element={<Projects />} />
                         <Route path="/experience" element={<Experience />} />
                         <Route path="/contact" element={<Contact />} />
-                        <Route path="/contact2" element={<Contact2 />} />
                     </Route>
                 </Route>
             </Routes>
