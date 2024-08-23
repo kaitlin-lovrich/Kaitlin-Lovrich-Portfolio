@@ -165,7 +165,7 @@ export default function Contact() {
                             data-sitekey={siteKey}
                         ></div>
                         <button
-                            className="*:size-6 absolute top-56 right-3 text-xl hover:cursor-pointer hover:scale-110 transition transform duration-300 ease-in-out"
+                            className="*:size-6 absolute top-56 lg:top-40 xl:top-[185px] right-3 text-xl hover:cursor-pointer hover:scale-110 transition transform duration-300 ease-in-out"
                             type="submit"
                             aria-label="Submit"
                             onMouseEnter={() => handleMouseEnter()}
