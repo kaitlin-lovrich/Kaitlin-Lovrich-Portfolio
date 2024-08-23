@@ -85,17 +85,6 @@ textarea:-webkit-autofill {
     border: none;
 }
 
-#rc-anchor-container {
-    background-color: rgb(105, 241, 192);
-    border: 2px solid rgb(105, 241, 192);
-    border-radius: 4px;
-}
-
-.recaptcha-checkbox-border {
-    background-color: royalblue;
-    border-color: darkblue;
-}
-
 .bubble {
     border-radius: 189px 189px 189px 189px / 150px 150px 150px 150px;
 }
