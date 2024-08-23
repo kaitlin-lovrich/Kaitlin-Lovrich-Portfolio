@@ -1,13 +1,14 @@
 # [Kaitlin Lovrich Portfolio](https://kaitlin-lovrich-portfolio.vercel.app/)
 
-## Overview
+## Showcases projects, professional experience timeline, design and animation skills
 
-Showcases projects, professional experience timeline, design and animation skills
-### Built with `React + TypeScript + Vite`
-### Animated with custom `CSS keyframes`
+### Built with: `React` + `TypeScript` + `Vite` + `TailwindCSS`
+### Animated with: custom `CSS keyframes`
+### Features: `EmailJS` + `reCAPTACHA`
 
+<br/>
 <div align="center">
   <a href="https://kaitlin-lovrich-portfolio.vercel.app/">
-    <img src="https://github.com/user-attachments/assets/d960f22f-49a4-4694-9929-296e9cabb3c5" alt="HomePage" width="500" />
+    <img src="https://github.com/user-attachments/assets/668675de-9fba-4ea8-b698-bdb5eba38789" alt="HomePage" width="500" />
   </a>
 </div>
