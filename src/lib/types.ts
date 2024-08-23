@@ -1,3 +1,25 @@
+export interface RecaptchaRenderOptions {
+    sitekey: string;
+    theme?: "light" | "dark";
+    size?: "compact" | "normal" | "invisible";
+    tabindex?: number;
+    callback?: (response: string) => void;
+    "expired-callback"?: () => void;
+    "error-callback"?: () => void;
+    badge?: "bottomright" | "bottomleft" | "inline";
+}
+
+export interface Window {
+    grecaptcha: {
+        render: (
+            element: string | HTMLElement,
+            options: RecaptchaRenderOptions
+        ) => string;
+        reset: (opt_widget_id?: string) => void;
+        getResponse: (opt_widget_id?: string) => string;
+    };
+}
+
 export interface LargeBubbleProps {
     animation: string;
 }

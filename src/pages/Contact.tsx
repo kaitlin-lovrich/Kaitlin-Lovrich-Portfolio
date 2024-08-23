@@ -2,6 +2,7 @@ import Background from "../components/Background";
 import { useState, useEffect } from "react";
 import { PaperPlaneIcon } from "../components/Icons.tsx";
 import emailjs from "@emailjs/browser";
+import { Window } from "../lib/types.ts";
 
 export default function Contact() {
     const [isVisible, setIsVisible] = useState(false);
@@ -52,6 +53,14 @@ export default function Contact() {
 
     function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
         e.preventDefault();
+        const recaptchaResponse = (
+            window as unknown as Window
+        ).grecaptcha.getResponse();
+
+        if (!recaptchaResponse) {
+            setStatus("Please complete the reCAPTCHA.");
+            return;
+        }
         async function submitForm() {
             try {
                 await emailjs.sendForm(
@@ -64,6 +73,7 @@ export default function Contact() {
                 );
                 setStatus("Message sent successfully!");
                 setFormData({ "from_name": "", "reply_to": "", message: "" });
+                (window as unknown as Window).grecaptcha.reset();
             } catch (error) {
                 setStatus("Failed to send message.");
             }
