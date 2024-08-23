@@ -2,7 +2,6 @@ import Background from "../components/Background";
 import { useState, useEffect } from "react";
 import { PaperPlaneIcon } from "../components/Icons.tsx";
 import emailjs from "@emailjs/browser";
-import { useRef } from "react";
 
 export default function Contact() {
     const [isVisible, setIsVisible] = useState(false);
@@ -18,7 +17,6 @@ export default function Contact() {
         color1: "rgba(255, 255, 255, .95)",
         color2: "rgba(255, 255, 255, .95)",
     });
-    const formRef = useRef<HTMLFormElement>(null);
     const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
     const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
     const myPublicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
@@ -54,23 +52,24 @@ export default function Contact() {
 
     function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
         e.preventDefault();
-        emailjs
-            .sendForm(serviceId, templateId, e.target as HTMLFormElement, {
-                publicKey: myPublicKey,
-            })
-            .then(
-                (result) => {
-                    console.log(result.text);
-                    setStatus("Message sent successfully!");
-                    if (formRef.current) {
-                        formRef.current.reset();
+        async function submitForm() {
+            try {
+                await emailjs.sendForm(
+                    serviceId,
+                    templateId,
+                    e.target as HTMLFormElement,
+                    {
+                        publicKey: myPublicKey,
                     }
-                },
-                (error) => {
-                    console.log(error.text);
-                    setStatus("An error occurred. Please try again.");
-                }
-            );
+                );
+                setStatus("Message sent successfully!");
+                setFormData({ name: "", email: "", message: "" }); // Clear form
+            } catch (error) {
+                setStatus("Failed to send message.");
+            }
+        }
+
+        submitForm();
     }
 
     function handleMouseEnter() {
@@ -119,7 +118,6 @@ export default function Contact() {
                     </p>
                     <form
                         onSubmit={handleSubmit}
-                        ref={formRef}
                         className="flex flex-col gap-5 xl:gap-7 relative w-[90%] md:w-[80%] lg:w-[80%] white-text text-lg font-semibold"
                     >
                         <div className="flex flex-col lg:flex-row w-[100%] gap-5 xl:gap-7 justify-between">
@@ -162,13 +160,12 @@ export default function Contact() {
                                 className="p-2 xl:p-3 rounded bg-white/20 w-full focus:outline-2 focus:outline focus:outline-sky-blue"
                             ></textarea>
                         </label>
-                        {/* Add reCAPTCHA below */}
                         <div
                             className="g-recaptcha"
                             data-sitekey={siteKey}
                         ></div>
                         <button
-                            className="*:size-6 absolute bottom-4 right-3 text-xl hover:cursor-pointer hover:scale-110 transition transform duration-300 ease-in-out"
+                            className="*:size-6 absolute bottom-9 right-3 text-xl hover:cursor-pointer hover:scale-110 transition transform duration-300 ease-in-out"
                             type="submit"
                             aria-label="Submit"
                             onMouseEnter={() => handleMouseEnter()}
@@ -179,9 +176,8 @@ export default function Contact() {
                                 color2={planeIconColors.color2}
                             />
                         </button>
-
-                        {status && <p>{status}</p>}
                     </form>
+                    {status && <p>{status}</p>}
                 </article>
             </section>
         </div>
