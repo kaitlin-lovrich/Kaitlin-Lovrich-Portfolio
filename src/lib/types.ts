@@ -1,3 +1,19 @@
+export interface RecaptchaEnterprise {
+    execute: (siteKey: string, options: { action: string }) => Promise<string>;
+}
+
+export interface Window {
+    grecaptcha: {
+        enterprise: RecaptchaEnterprise;
+        render: (
+            element: string | HTMLElement,
+            options: RecaptchaRenderOptions
+        ) => string;
+        reset: (opt_widget_id?: string) => void;
+        getResponse: (opt_widget_id?: string) => string;
+    };
+}
+
 export interface RecaptchaRenderOptions {
     sitekey: string;
     theme?: "light" | "dark";
@@ -7,17 +23,6 @@ export interface RecaptchaRenderOptions {
     "expired-callback"?: () => void;
     "error-callback"?: () => void;
     badge?: "bottomright" | "bottomleft" | "inline";
-}
-
-export interface Window {
-    grecaptcha: {
-        render: (
-            element: string | HTMLElement,
-            options: RecaptchaRenderOptions
-        ) => string;
-        reset: (opt_widget_id?: string) => void;
-        getResponse: (opt_widget_id?: string) => string;
-    };
 }
 
 export interface LargeBubbleProps {

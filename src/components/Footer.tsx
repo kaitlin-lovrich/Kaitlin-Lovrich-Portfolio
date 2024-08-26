@@ -72,7 +72,7 @@ export default function Footer() {
                             <Link
                                 to="/contact"
                                 aria-label="Contact Me"
-                                className={`flex justify-center relative z-10 w-[186px] xl:w-[214px] px-5 xl:px-6 py-2 xl:py-3 border-2 border-white/85 hover:border-sky-blue rounded-full text-xl xl:text-2xl font-heading ${
+                                className={`flex justify-center relative z-10 w-[186px] xl:w-[215px] px-5 xl:px-6 py-2 xl:py-3 border-2 border-white/85 hover:border-sky-blue rounded-full text-xl xl:text-2xl font-heading ${
                                     isHovered.contact
                                         ? "gradient-text"
                                         : "text-white/95"
