@@ -22,7 +22,6 @@ export default function Contact() {
     const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
     const myPublicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
     const reSiteKey = import.meta.env.VITE_RECAPTCHA_SITE_KEY;
-    // const reApiKey = import.meta.env.VITE_RECAPTCHA_API_KEY;
 
     useEffect(() => {
         emailjs.init(myPublicKey);
@@ -36,6 +35,7 @@ export default function Contact() {
                 behavior: "smooth",
             });
         }, 100);
+
         const script = document.createElement("script");
         script.src = `https://www.google.com/recaptcha/api.js`;
         script.async = true;
@@ -57,113 +57,6 @@ export default function Contact() {
         }));
     }
 
-    // function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
-    //     e.preventDefault();
-
-    //     async function submitForm() {
-    //         try {
-    //             const recaptchaResponse = (
-    //                 window as unknown as Window
-    //             ).grecaptcha.getResponse();
-
-    //             if (!recaptchaResponse) {
-    //                 setStatus("Please complete the reCAPTCHA");
-    //                 return;
-    //             }
-    //             await emailjs.sendForm(
-    //                 serviceId,
-    //                 templateId,
-    //                 e.target as HTMLFormElement,
-    //                 {
-    //                     publicKey: myPublicKey,
-    //                 }
-    //             );
-    //             setStatus("Message sent successfully!");
-    //             // Reset form and reCAPTCHA
-    //             setFormData({
-    //                 "from_name": "",
-    //                 "reply_to": "",
-    //                 message: "",
-    //             });
-    //             (window as unknown as Window).grecaptcha.reset();
-    //         } catch (error) {
-    //             setStatus("Failed to send message.");
-    //         }
-    //     }
-    //     submitForm();
-    // }
-
-    // Have not tested yet, Need to add private key to vercel's env variables. I want to try something else before doing that
-    // function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
-    //     e.preventDefault();
-
-    //     async function submitForm() {
-    //         try {
-    //             // Execute reCAPTCHA and get the token
-    //             const token = await (
-    //                 window as unknown as Window
-    //             ).grecaptcha.enterprise.execute(reSiteKey, {
-    //                 action: "submit",
-    //             });
-
-    //             // If no token is returned, show an error message
-    //             if (!token) {
-    //                 setStatus("Please complete the reCAPTCHA.");
-    //                 return;
-    //             }
-
-    //             // Create the request body
-    //             const requestBody = {
-    //                 event: {
-    //                     token: token,
-    //                     expectedAction: "submit",
-    //                     siteKey: reSiteKey,
-    //                 },
-    //             };
-
-    //             // Send the request to reCAPTCHA Enterprise for verification
-    //             const response = await fetch(
-    //                 `https://recaptchaenterprise.googleapis.com/v1/projects/kaitlin-lovrich--1724363176792/assessments?key=${reApiKey}`,
-    //                 {
-    //                     method: "POST",
-    //                     headers: {
-    //                         "Content-Type": "application/json",
-    //                     },
-    //                     body: JSON.stringify(requestBody),
-    //                 }
-    //             );
-
-    //             const data = await response.json();
-
-    //             // If the token is valid, proceed to send the email
-    //             if (data.tokenProperties.valid) {
-    //                 await emailjs.sendForm(
-    //                     serviceId,
-    //                     templateId,
-    //                     e.target as HTMLFormElement,
-    //                     {
-    //                         publicKey: myPublicKey,
-    //                     }
-    //                 );
-    //                 setStatus("Message sent successfully!");
-    //                 setFormData({
-    //                     "from_name": "",
-    //                     "reply_to": "",
-    //                     message: "",
-    //                 });
-    //                 (window as unknown as Window).grecaptcha.reset();
-    //             } else {
-    //                 setStatus("Failed reCAPTCHA validation.");
-    //             }
-    //         } catch (error) {
-    //             setStatus("Failed to send message.");
-    //         }
-    //     }
-
-    //     submitForm();
-    // }
-
-    // First handle submit function I think works but the captcha isnt checked
     function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
         e.preventDefault();
         const recaptchaResponse = (
@@ -210,6 +103,20 @@ export default function Contact() {
         });
     }
 
+    function handleClick() {
+        setPlaneIconColors({
+            color1: "rgb(105, 241, 192)",
+            color2: "rgb(72, 209, 253)",
+        });
+
+        setTimeout(() => {
+            setPlaneIconColors({
+                color1: "rgba(255, 255, 255, .95)",
+                color2: "rgba(255, 255, 255, .95)",
+            });
+        }, 300);
+    }
+
     return (
         <div className="min-h-screen pb-14 xl:pb-20">
             <Background />
@@ -235,10 +142,8 @@ export default function Contact() {
                         />
                     </figure>
                     <p className="text-xl lg:text-2xl font-body font-semibold w-[85%] sm:w-[75%] max-w-[530px] lg:max-w-[572px]">
-                        {/* All messages will be sent via emial to Kaitlin Lovrich{" "}
-                        {"("}: */}
-                        Work in progress, please email me at
-                        kaylovrich@gmail.com for now {"("}:
+                        All messages will be sent via emial to Kaitlin Lovrich{" "}
+                        {"("}:
                     </p>
                     <form
                         onSubmit={handleSubmit}
@@ -294,13 +199,13 @@ export default function Contact() {
                             aria-label="Submit"
                             onMouseEnter={() => handleMouseEnter()}
                             onMouseLeave={() => handleMouseLeave()}
+                            onClick={() => handleClick()}
                         >
                             <PaperPlaneIcon
                                 color1={planeIconColors.color1}
                                 color2={planeIconColors.color2}
                             />
                         </button>
-
                         {status && <p>{status}</p>}
                     </form>
                 </article>
