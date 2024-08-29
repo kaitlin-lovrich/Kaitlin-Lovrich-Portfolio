@@ -52,41 +52,41 @@ export default function Contact() {
         }));
     }
 
-    function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
-        e.preventDefault();
+    // function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+    //     e.preventDefault();
 
-        async function submitForm() {
-            try {
-                const recaptchaResponse = (
-                    window as unknown as Window
-                ).grecaptcha.getResponse();
+    //     async function submitForm() {
+    //         try {
+    //             const recaptchaResponse = (
+    //                 window as unknown as Window
+    //             ).grecaptcha.getResponse();
 
-                if (!recaptchaResponse) {
-                    setStatus("Please complete the reCAPTCHA");
-                    return;
-                }
-                await emailjs.sendForm(
-                    serviceId,
-                    templateId,
-                    e.target as HTMLFormElement,
-                    {
-                        publicKey: myPublicKey,
-                    }
-                );
-                setStatus("Message sent successfully!");
-                // Reset form and reCAPTCHA
-                setFormData({
-                    "from_name": "",
-                    "reply_to": "",
-                    message: "",
-                });
-                (window as unknown as Window).grecaptcha.reset();
-            } catch (error) {
-                setStatus("Failed to send message.");
-            }
-        }
-        submitForm();
-    }
+    //             if (!recaptchaResponse) {
+    //                 setStatus("Please complete the reCAPTCHA");
+    //                 return;
+    //             }
+    //             await emailjs.sendForm(
+    //                 serviceId,
+    //                 templateId,
+    //                 e.target as HTMLFormElement,
+    //                 {
+    //                     publicKey: myPublicKey,
+    //                 }
+    //             );
+    //             setStatus("Message sent successfully!");
+    //             // Reset form and reCAPTCHA
+    //             setFormData({
+    //                 "from_name": "",
+    //                 "reply_to": "",
+    //                 message: "",
+    //             });
+    //             (window as unknown as Window).grecaptcha.reset();
+    //         } catch (error) {
+    //             setStatus("Failed to send message.");
+    //         }
+    //     }
+    //     submitForm();
+    // }
 
     // Have not tested yet, Need to add private key to vercel's env variables. I want to try something else before doing that
     // function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
@@ -159,36 +159,35 @@ export default function Contact() {
     // }
 
     // First handle submit function I think works but the captcha isnt checked
-    // function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
-    //     e.preventDefault();
-    //     const recaptchaResponse = (
-    //         window as unknown as Window
-    //     ).grecaptcha.getResponse();
+    function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+        e.preventDefault();
+        const recaptchaResponse = (
+            window as unknown as Window
+        ).grecaptcha.getResponse();
 
-    //     if (!recaptchaResponse) {
-    //         setStatus("Please complete the reCAPTCHA.");
-    //         return;
-    //     }
-    //     async function submitForm() {
-    //         try {
-    //             await emailjs.sendForm(
-    //                 serviceId,
-    //                 templateId,
-    //                 e.target as HTMLFormElement,
-    //                 {
-    //                     publicKey: myPublicKey,
-    //                 }
-    //             );
-    //             setStatus("Message sent successfully!");
-    //             setFormData({ "from_name": "", "reply_to": "", message: "" });
-    //             (window as unknown as Window).grecaptcha.reset();
-    //         } catch (error) {
-    //             setStatus("Failed to send message.");
-    //         }
-    //     }
-
-    //     submitForm();
-    // }
+        if (!recaptchaResponse) {
+            setStatus("Please complete the reCAPTCHA.");
+            return;
+        }
+        async function submitForm() {
+            try {
+                await emailjs.sendForm(
+                    serviceId,
+                    templateId,
+                    e.target as HTMLFormElement,
+                    {
+                        publicKey: myPublicKey,
+                    }
+                );
+                setStatus("Message sent successfully!");
+                setFormData({ "from_name": "", "reply_to": "", message: "" });
+                (window as unknown as Window).grecaptcha.reset();
+            } catch (error) {
+                setStatus("Failed to send message.");
+            }
+        }
+        submitForm();
+    }
 
     function handleMouseEnter() {
         setIsIconHovered(!isIconHovered);
