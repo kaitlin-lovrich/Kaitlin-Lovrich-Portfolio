@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link, Outlet } from "react-router-dom";
+import { Link, Outlet, useLocation } from "react-router-dom";
 import { LinkedInIcon, GithubIcon } from "./Icons.tsx";
 
 export default function Footer() {
@@ -23,6 +23,7 @@ export default function Footer() {
         linkedin: false,
         github: false,
     });
+    const location = useLocation();
 
     const handleMouseEnter = (key: string) => {
         setIsHovered((prevState) => ({ ...prevState, [key]: true }));
@@ -54,6 +55,15 @@ export default function Footer() {
         }
     };
 
+    const handleContactClick = () => {
+        if (location.pathname === "/contact") {
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth",
+            });
+        }
+    };
+
     return (
         <>
             <Outlet />
@@ -79,6 +89,7 @@ export default function Footer() {
                                 }`}
                                 onMouseEnter={() => handleMouseEnter("contact")}
                                 onMouseLeave={() => handleMouseLeave("contact")}
+                                onClick={() => handleContactClick()}
                             >
                                 CONTACT ME
                             </Link>
