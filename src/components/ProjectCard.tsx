@@ -1,10 +1,10 @@
 import { useState } from "react";
 import { TbHeartCode } from "react-icons/tb";
 import { ProjectCardProps } from "../lib/types";
-import { Link } from "react-router-dom";
 
 export default function ProjectCard({ project }: ProjectCardProps) {
     const [showViewSourceCode, setShowViewSourceCode] = useState(false);
+    const [showViewLive, setShowViewLive] = useState(false);
     const [isImageLoaded, setIsImageLoaded] = useState(false);
 
     const {
@@ -18,6 +18,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
         projectRole,
         projectTechStack,
     } = project;
+
     return (
         <article
             className={`flex flex-col items-center bg-white/15 rounded-lg px-2 pt-2 shadow-textBox w-full min-w-[245px] max-w-[320px] lg:max-w-[340px] min-[1415px]:max-w-[360px] transition-all opacity transform duration-1000 ${
@@ -25,10 +26,14 @@ export default function ProjectCard({ project }: ProjectCardProps) {
             }`}
         >
             <figure className="relative w-full">
-                <Link
-                    to={projectURL}
+                <a
+                    href={projectURL}
                     target="_blank"
                     className="relative group w-full"
+                    onMouseEnter={() => setShowViewLive(true)}
+                    onMouseLeave={() => setShowViewLive(false)}
+                    onTouchStart={() => setShowViewLive(true)}
+                    onTouchEnd={() => setShowViewLive(false)}
                 >
                     <img
                         src={imageSrc}
@@ -36,10 +41,16 @@ export default function ProjectCard({ project }: ProjectCardProps) {
                         className="w-full h-full"
                         onLoad={() => setIsImageLoaded(true)}
                     />
-                    <figcaption className="absolute inset-0 flex items-center justify-center bg-custom-gradient-4 opacity-0 transition-opacity group-hover:opacity-100 ease-in-out duration-500">
+                    <figcaption
+                        className={`absolute inset-0 flex items-center justify-center bg-custom-gradient-4 opacity-0 transition-opacity group-hover:opacity-100 ease-in-out duration-500 ${
+                            showViewLive
+                                ? "opacity-100 ease-in-out duration-500"
+                                : ""
+                        }`}
+                    >
                         <span className="font-heading text-4xl">View Live</span>
                     </figcaption>
-                </Link>
+                </a>
             </figure>
             <div className="flex flex-col gap-2 px-1.5 min-[1415px]:px-3 py-4">
                 <a
