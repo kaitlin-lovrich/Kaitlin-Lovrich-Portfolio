@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { TbHeartCode } from "react-icons/tb";
 import { ProjectCardProps } from "../lib/types";
-import "../index.css";
 
 export default function ProjectCard({ project }: ProjectCardProps) {
     const [showViewSourceCode, setShowViewSourceCode] = useState(false);
