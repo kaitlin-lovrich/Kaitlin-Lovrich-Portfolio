@@ -25,33 +25,33 @@ export default function ProjectCard({ project }: ProjectCardProps) {
                 isImageLoaded ? "opacity-100 scale-100" : "opacity-0 scale-95"
             }`}
         >
-            {/* <figure className="relative w-full"> */}
-            <a
-                href={projectURL}
-                target="_blank"
-                className="relative group w-full"
-                onMouseEnter={() => setShowViewLive(true)}
-                onMouseLeave={() => setShowViewLive(false)}
-                onTouchStart={() => setShowViewLive(true)}
-                onTouchEnd={() => setShowViewLive(false)}
-            >
-                <img
-                    src={imageSrc}
-                    alt={altText}
-                    className="w-full h-full"
-                    onLoad={() => setIsImageLoaded(true)}
-                />
-                <figcaption
-                    className={`absolute inset-0 flex items-center justify-center bg-custom-gradient-4 opacity-0 transition-opacity group-hover:opacity-100 ease-in-out duration-500 centered ${
-                        showViewLive
-                            ? "opacity-100 ease-in-out duration-500"
-                            : ""
-                    }`}
+            <figure>
+                <a
+                    href={projectURL}
+                    target="_blank"
+                    className="relative group w-full"
+                    onMouseEnter={() => setShowViewLive(true)}
+                    onMouseLeave={() => setShowViewLive(false)}
+                    onTouchStart={() => setShowViewLive(true)}
+                    onTouchEnd={() => setShowViewLive(false)}
                 >
-                    <span className="font-heading text-4xl">View Live</span>
-                </figcaption>
-            </a>
-            {/* </figure> */}
+                    <img
+                        src={imageSrc}
+                        alt={altText}
+                        className="w-full h-full"
+                        onLoad={() => setIsImageLoaded(true)}
+                    />
+                    <figcaption
+                        className={`absolute inset-0 flex items-center justify-center bg-custom-gradient-4 opacity-0 transition-opacity group-hover:opacity-100 ease-in-out duration-500 ${
+                            showViewLive
+                                ? "opacity-100 ease-in-out duration-500"
+                                : ""
+                        }`}
+                    >
+                        <span className="font-heading text-4xl">View Live</span>
+                    </figcaption>
+                </a>
+            </figure>
             <div className="flex flex-col gap-2 px-1.5 min-[1415px]:px-3 py-4">
                 <a
                     href={projectSourceCode}
