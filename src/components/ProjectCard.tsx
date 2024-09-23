@@ -25,7 +25,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
                 isImageLoaded ? "opacity-100 scale-100" : "opacity-0 scale-95"
             }`}
         >
-            <figure>
+            <figure className="relative w-full">
                 <a
                     href={projectURL}
                     target="_blank"
