@@ -65,7 +65,7 @@ export default function CookieConsentBanner() {
                         >
                             ACCEPT
                         </button>
-                        <div className="w-[87%] h-[70%] xl:h-[88%] top-[-3px] xl:top-[0px] left-[3px] absolute m-2 bg-bubble-gradient blur-[4px] rounded-full"></div>
+                        <div className="w-[87%] xl:w-[91%] h-[70%] xl:h-[88%] top-[-3px] xl:top-[0px] left-[3px] absolute m-2 bg-bubble-gradient blur-[4px] rounded-full"></div>
                     </div>
                     <div className="relative w-[142px] xl:w-[214px] h-[48px] self-center *:hover:scale-105 *:transition *:transform *:duration-300 *:ease-in-out">
                         <button
@@ -74,7 +74,7 @@ export default function CookieConsentBanner() {
                         >
                             DENY
                         </button>
-                        <div className="w-[87%] h-[70%] xl:h-[88%] top-[-3px] xl:top-[0px] left-[3px] absolute m-2 bg-bubble-gradient blur-[4px] rounded-full"></div>
+                        <div className="w-[87%] xl:w-[91%] h-[70%] xl:h-[88%] top-[-3px] xl:top-[0px] left-[3px] absolute m-2 bg-bubble-gradient blur-[4px] rounded-full"></div>
                     </div>
                 </div>
             </div>
