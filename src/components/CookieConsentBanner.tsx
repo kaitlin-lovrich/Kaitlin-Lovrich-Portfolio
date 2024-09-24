@@ -50,7 +50,7 @@ export default function CookieConsentBanner() {
                 <p>
                     This website uses cookies for analytical purposes.{" "}
                     <Link
-                        to="/privacy policy"
+                        to="/privacy"
                         aria-label="Privacy Policy"
                         className="font-bold"
                     >

@@ -33,7 +33,7 @@ export default function Privacy() {
                     <h1 className="text-2xl sm:text-3xl xl:text-4xl font-heading drop-shadow-heading py-4 md:py-5">
                         PRIVACY POLICY
                     </h1>
-                    <div className="flex flex-col text-base sm:text-lg xl:text-xl w-[90%] md:w-[80%] py-4 md:py-5 gap-6">
+                    <div className="flex flex-col text-base sm:text-lg xl:text-xl w-[90%] md:w-[80%] py-4 md:py-5 gap-3 sm:gap-6">
                         <h2 className="text-xl sm:text-2xl xl:text-3xl font-bold">
                             Use of Google Analytics
                         </h2>
@@ -45,7 +45,7 @@ export default function Privacy() {
                             as page views, clicks, scrolls, and user engagement.
                             Specifically, I track the following metrics:
                         </p>
-                        <ul className="list-disc ml-8">
+                        <ul className="list-disc mx-8">
                             <li>
                                 <span className="font-bold">Page views:</span>{" "}
                                 The number of times a page on this site is
@@ -81,7 +81,7 @@ export default function Privacy() {
                             Data Privacy and Your Rights
                         </h2>
 
-                        <ul className="list-disc ml-8">
+                        <ul className="list-disc mx-8">
                             <li>
                                 All information collected through Google
                                 Analytics is anonymous and used strictly for
@@ -106,6 +106,10 @@ export default function Privacy() {
                                 .
                             </li>
                         </ul>
+                        <p>
+                            You will be prompted to accept or decline tracking
+                            when you visit this site.
+                        </p>
                     </div>
                 </article>
             </section>
