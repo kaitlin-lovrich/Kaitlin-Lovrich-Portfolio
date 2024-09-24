@@ -142,7 +142,7 @@ export default function Contact() {
                         />
                     </figure>
                     <p className="text-xl lg:text-2xl font-body font-semibold w-[85%] sm:w-[75%] max-w-[530px] lg:max-w-[572px]">
-                        All messages will be sent via emial to Kaitlin Lovrich{" "}
+                        All messages will be sent via email to Kaitlin Lovrich{" "}
                         {"("}:
                     </p>
                     <form
