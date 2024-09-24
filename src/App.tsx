@@ -80,19 +80,17 @@ export default function App() {
 
     return (
         <>
+            <Header />
             <Routes>
-                <Route path="/" element={<Header />}>
-                    <Route path="/" element={<Footer />}>
-                        <Route index element={<HomePage />} />
-                        <Route path="/about" element={<About />} />
-                        <Route path="/projects" element={<Projects />} />
-                        <Route path="/experience" element={<Experience />} />
-                        <Route path="/contact" element={<Contact />} />
-                        <Route path="/privacy" element={<Privacy />} />
-                    </Route>
-                </Route>
+                <Route index element={<HomePage />} />
+                <Route path="/about" element={<About />} />
+                <Route path="/projects" element={<Projects />} />
+                <Route path="/experience" element={<Experience />} />
+                <Route path="/contact" element={<Contact />} />
+                <Route path="/privacy" element={<Privacy />} />
             </Routes>
             <CookieConsentBanner />
+            <Footer />
         </>
     );
 }
