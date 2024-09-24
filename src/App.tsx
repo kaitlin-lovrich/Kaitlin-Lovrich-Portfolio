@@ -3,6 +3,8 @@ import { useEffect, useState } from "react";
 import { HomePage, About, Projects, Experience, Contact } from "./pages/index";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+import Privacy from "./pages/Privacy";
+import CookieConsentBanner from "./components/CookieConsentBanner";
 
 export default function App() {
     const location = useLocation();
@@ -86,9 +88,11 @@ export default function App() {
                         <Route path="/projects" element={<Projects />} />
                         <Route path="/experience" element={<Experience />} />
                         <Route path="/contact" element={<Contact />} />
+                        <Route path="/privacy" element={<Privacy />} />
                     </Route>
                 </Route>
             </Routes>
+            <CookieConsentBanner />
         </>
     );
 }

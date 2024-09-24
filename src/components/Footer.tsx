@@ -22,6 +22,7 @@ export default function Footer() {
         vercel: false,
         linkedin: false,
         github: false,
+        privacyPolicy: false,
     });
     const location = useLocation();
 
@@ -67,7 +68,6 @@ export default function Footer() {
     return (
         <>
             <Outlet />
-
             <footer className="bg-custom-gradient-6 text-white z-[40]">
                 <div className="flex flex-col md:flex-row w-[95%] 2xl:w-[80%] mx-auto items-end py-4 xl:py-6 gap-6">
                     <h2 className="text-6xl xl:text-7xl font-heading drop-shadow-heading self-start">
@@ -214,6 +214,20 @@ export default function Footer() {
                             </a>
                             . Animated with custom CSS keyframes.
                         </p>
+                        <Link
+                            to="/privacy"
+                            className={`text-xs xl:text-sm text-center font-semibold text-white/85 hover:cursor-pointer ${
+                                isHovered.privacyPolicy ? "gradient-text" : ""
+                            }`}
+                            onMouseEnter={() =>
+                                handleMouseEnter("privacyPolicy")
+                            }
+                            onMouseLeave={() =>
+                                handleMouseLeave("privacyPolicy")
+                            }
+                        >
+                            View Privacy Policy
+                        </Link>
                         <p className="text-xs xl:text-sm text-center">
                             © 2024 Kaitlin Lovrich. All Rights Reserved.
                         </p>
