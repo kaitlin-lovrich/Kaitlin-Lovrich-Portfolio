@@ -10,6 +10,7 @@
 <br/>
 <div align="center">
   <a href="https://kaitlin-lovrich-portfolio.vercel.app/">
-    <img src="https://github.com/user-attachments/assets/668675de-9fba-4ea8-b698-bdb5eba38789" alt="HomePage" width="700" />
+    <img src="https://github.com/user-attachments/assets/7853982d-e29f-430b-ae03-9402153ab8ca" alt="HomePage" width="700" />
   </a>
 </div>
+
