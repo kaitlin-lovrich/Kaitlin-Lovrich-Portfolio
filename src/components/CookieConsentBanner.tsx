@@ -11,15 +11,10 @@ export default function CookieConsentBanner() {
         }
     }, []);
 
-    function handleAcceptClick() {
-        localStorage.setItem("cookieConsent", "accepted");
+    function handleConsentClick(consent: string) {
+        localStorage.setItem("cookieConsent", consent);
         setShowBanner(false);
-        loadGoogleAnalytics();
-    }
-
-    function handleDenyClick() {
-        localStorage.setItem("cookieConsent", "declined");
-        setShowBanner(false);
+        if (consent === "accept") loadGoogleAnalytics();
     }
 
     function loadGoogleAnalytics() {
@@ -61,7 +56,7 @@ export default function CookieConsentBanner() {
                     <div className="relative w-[142px] xl:w-[214px] h-[48px] self-center *:hover:scale-105 *:transition *:transform *:duration-300 *:ease-in-out">
                         <button
                             className="flex justify-center relative z-10 w-[142px] xl:w-[215px] px-5 xl:px-6 py-2 xl:py-3 border-2 border-white/85 hover:border-sky-blue rounded-full text-base xl:text-2xl font-heading"
-                            onClick={() => handleAcceptClick()}
+                            onClick={() => handleConsentClick("accept")}
                         >
                             ACCEPT
                         </button>
@@ -70,7 +65,7 @@ export default function CookieConsentBanner() {
                     <div className="relative w-[142px] xl:w-[214px] h-[48px] self-center *:hover:scale-105 *:transition *:transform *:duration-300 *:ease-in-out">
                         <button
                             className="flex justify-center relative z-10 w-[142px] xl:w-[215px] px-5 xl:px-6 py-2 xl:py-3 border-2 border-white/85 hover:border-sky-blue rounded-full text-base xl:text-2xl font-heading"
-                            onClick={() => handleDenyClick()}
+                            onClick={() => handleConsentClick("deny")}
                         >
                             DENY
                         </button>
