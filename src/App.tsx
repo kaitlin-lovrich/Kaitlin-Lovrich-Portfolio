@@ -1,10 +1,14 @@
 import { Routes, Route, useLocation, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
-import { HomePage, About, Projects, Experience, Contact } from "./pages/index";
-import Header from "./components/Header";
-import Footer from "./components/Footer";
-import Privacy from "./pages/Privacy";
-import CookieConsentBanner from "./components/CookieConsentBanner";
+import {
+    HomePage,
+    About,
+    Projects,
+    Experience,
+    Contact,
+    Privacy,
+} from "./pages/index";
+import { Header, Footer, CookieConsentBanner } from "./components/index";
 
 export default function App() {
     const location = useLocation();
@@ -13,59 +17,102 @@ export default function App() {
     const [endX, setEndX] = useState(0);
     const [startY, setStartY] = useState(0);
     const [endY, setEndY] = useState(0);
-    const [isMounted, setIsMounted] = useState(false); // Add this state
+    const [isMounted, setIsMounted] = useState(false);
 
+    // Mobile swipe navigation
     useEffect(() => {
-        setIsMounted(true); // Set mounted status to true after the first render
+        setIsMounted(true);
 
-        const handleTouchStart = (e: TouchEvent) => {
+        // Capture the starting touch coordinates (X and Y)
+        function handleTouchStart(e: TouchEvent) {
             setStartX(e.touches[0].clientX);
             setStartY(e.touches[0].clientY);
-        };
+        }
 
-        const handleTouchMove = (e: TouchEvent) => {
+        // Capture the current touch coordinates (X and Y) as the touch moves
+        function handleTouchMove(e: TouchEvent) {
             setEndX(e.touches[0].clientX);
             setEndY(e.touches[0].clientY);
-        };
+        }
 
-        const handleTouchEnd = () => {
-            if (!isMounted) return; // Only proceed if components are mounted
+        // Determine if a swipe action occurred
+        function handleTouchEnd() {
+            if (!isMounted) return;
 
-            const deltaX = startX - endX;
-            const deltaY = startY - endY;
+            // Calculate the differences (deltas) between starting and ending touch positions
+            const deltaX = endX - startX; // Horizontal swipe distance
+            const deltaY = endY - startY; // Vertical swipe distance
 
-            if (Math.abs(deltaX) > Math.abs(deltaY) && Math.abs(deltaX) > 50) {
+            const MIN_SWIPE_DISTANCE = 50; // Minimum distance to consider as a swipe
+            const MAX_TAP_DISTANCE = 10; // Allow a small distance for tap detection
+
+            // Check if swipe action is detected
+            const isSwipe =
+                Math.abs(deltaX) > Math.abs(deltaY) &&
+                Math.abs(deltaX) > MIN_SWIPE_DISTANCE;
+
+            // Additional condition to distinguish taps from small swipes
+            const isTap =
+                Math.abs(deltaX) <= MAX_TAP_DISTANCE &&
+                Math.abs(deltaY) <= MAX_TAP_DISTANCE;
+
+            if (isSwipe) {
                 if (deltaX > 0) {
                     // Swipe left (go to next route)
-                    if (location.pathname === "/") {
-                        navigate("/about");
-                    } else if (location.pathname.includes("/about")) {
-                        navigate("/projects");
-                    } else if (location.pathname.includes("/projects")) {
-                        navigate("/experience");
-                    } else if (location.pathname.includes("/experience")) {
-                        navigate("/contact");
-                    }
-                } else if (deltaX < 0) {
+                    navigateToNextRoute(location.pathname);
+                } else {
                     // Swipe right (go to previous route)
-                    if (location.pathname.includes("/about")) {
-                        navigate("/");
-                    } else if (location.pathname.includes("/projects")) {
-                        navigate("/about");
-                    } else if (location.pathname.includes("/experience")) {
-                        navigate("/projects");
-                    } else if (location.pathname.includes("/contact")) {
-                        navigate("/experience");
-                    }
+                    navigateToPreviousRoute(location.pathname);
                 }
+            } else if (isTap) {
+                // If it's a tap, do nothing
+                return;
             }
 
-            // Reset values
+            // Reset all the touch coordinate values
             setStartX(0);
             setEndX(0);
             setStartY(0);
             setEndY(0);
-        };
+        }
+
+        function navigateToNextRoute(pathname: string) {
+            switch (pathname) {
+                case "/":
+                    navigate("/about");
+                    break;
+                case "/about":
+                    navigate("/projects");
+                    break;
+                case "/projects":
+                    navigate("/experience");
+                    break;
+                case "/experience":
+                    navigate("/contact");
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        function navigateToPreviousRoute(pathname: string) {
+            switch (pathname) {
+                case "/about":
+                    navigate("/");
+                    break;
+                case "/projects":
+                    navigate("/about");
+                    break;
+                case "/experience":
+                    navigate("/projects");
+                    break;
+                case "/contact":
+                    navigate("/experience");
+                    break;
+                default:
+                    break;
+            }
+        }
 
         window.addEventListener("touchstart", handleTouchStart);
         window.addEventListener("touchmove", handleTouchMove);
