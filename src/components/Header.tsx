@@ -1,4 +1,4 @@
-import { Link, Outlet, useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import "../index.css";
 
 export default function Header() {
@@ -97,7 +97,6 @@ export default function Header() {
                     </ul>
                 </nav>
             </aside>
-            <Outlet />
         </>
     );
 }

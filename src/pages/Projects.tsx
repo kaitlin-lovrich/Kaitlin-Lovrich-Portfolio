@@ -4,10 +4,11 @@ import ProjectCard from "../components/ProjectCard";
 import { projectsData } from "../lib/data";
 
 export default function Projects() {
-    const [isVisible, setIsVisible] = useState(false);
+    const [isMounted, setIsMounted] = useState(false);
 
+    // Scale and fade in component when it mounts
     useEffect(() => {
-        setIsVisible(true);
+        setIsMounted(true);
     }, []);
 
     useEffect(() => {
@@ -28,7 +29,7 @@ export default function Projects() {
             <Background />
             <section
                 className={`transition opacity transform duration-1000  inset-0 ${
-                    isVisible ? "opacity-100 scale-100" : "opacity-0 scale-95"
+                    isMounted ? "opacity-100 scale-100" : "opacity-0 scale-95"
                 }`}
             >
                 <article className="flex items-center flex-col relative z-30 mx-auto mt-4 sm:mt-6 xl:mt-12 w-[90%] min-w-[280px] sm:w-[85%] xl:max-w-[1340px] bg-custom-gradient-3 rounded-xl text-white pt-4 pb-10 lg:pb-14 px-3 sm:px-6">

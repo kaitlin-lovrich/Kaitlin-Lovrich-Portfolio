@@ -5,7 +5,7 @@ import emailjs from "@emailjs/browser";
 import { Window } from "../lib/types.ts";
 
 export default function Contact() {
-    const [isVisible, setIsVisible] = useState(false);
+    const [isMounted, setIsMounted] = useState(false);
     const [isImageLoaded, setIsImageLoaded] = useState(false);
     const [formData, setFormData] = useState({
         "from_name": "",
@@ -23,9 +23,10 @@ export default function Contact() {
     const myPublicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
     const reSiteKey = import.meta.env.VITE_RECAPTCHA_SITE_KEY;
 
+    // Scale and fade in component when it mounts, initialize emailJS
     useEffect(() => {
+        setIsMounted(true);
         emailjs.init(myPublicKey);
-        setIsVisible(true);
     }, [myPublicKey]);
 
     useEffect(() => {
@@ -122,12 +123,12 @@ export default function Contact() {
             <Background />
             <section
                 className={`transition opacity transform duration-1000 inset-0 ${
-                    isVisible ? "opacity-100 scale-100" : "opacity-0 scale-95"
+                    isMounted ? "opacity-100 scale-100" : "opacity-0 scale-95"
                 }`}
             >
                 <article className="flex justify-center items-center text-center flex-col relative z-30 mx-auto mt-4 sm:mt-6 xl:mt-12 w-[90%] min-w-[220px] sm:w-[85%] md:w-[80%] lg:w-[75%] xl:max-w-[1020px] bg-custom-gradient-3 rounded-xl text-white py-8 sm:py-10 lg:py-14 xl:py-28  gap-4 xl:gap-8">
                     <figure
-                        aria-label="Profile Picture of Kaitlin Lovrich"
+                        aria-label="Kaitlin Lovrich - Full Stack Developer"
                         className={`h-[200px] xl:h-[250px] w-[200px] xl:w-[250px] rounded-full overflow-hidden transition opacity transform duration-1000 ${
                             isImageLoaded
                                 ? "opacity-100 scale-100"
@@ -136,7 +137,7 @@ export default function Contact() {
                     >
                         <img
                             src="./kaitlin-lovrich-profile-picture.png"
-                            alt="kaitlin lovrich profile picture"
+                            alt="Kaitlin Lovrich - Full Stack Developer"
                             className="w-full"
                             onLoad={() => setIsImageLoaded(true)}
                         />

@@ -533,9 +533,3 @@ function XSmallBubble({ animation }: XSmallBubbleProps) {
         </div>
     );
 }
-
-// After applying animation subtract
-// -250px from top for large bubbles
-// -195px from top for med bubbles
-// -93px from top for small bubbles
-// -37 from top for xs bubbles
