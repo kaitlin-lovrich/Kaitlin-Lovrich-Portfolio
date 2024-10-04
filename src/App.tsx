@@ -25,8 +25,10 @@ export default function App() {
 
         // Capture the starting touch coordinates (X and Y)
         function handleTouchStart(e: TouchEvent) {
-            setStartX(e.touches[0].clientX);
-            setStartY(e.touches[0].clientY);
+            setStartX(e.touches[0].clientX); // sets a numerical X axis value
+            setStartY(e.touches[0].clientY); // sets a numerical Y axis value
+
+            console.log(e);
         }
 
         // Capture the current touch coordinates (X and Y) as the touch moves
@@ -48,7 +50,7 @@ export default function App() {
 
             // Check if swipe action is detected
             const isSwipe =
-                Math.abs(deltaX) > Math.abs(deltaY) &&
+                Math.abs(deltaX) > Math.abs(deltaY) && // use abs because the value of delta can be negative depending on swipe direction
                 Math.abs(deltaX) > MIN_SWIPE_DISTANCE;
 
             // Additional condition to distinguish taps from small swipes

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link, Outlet, useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { LinkedInIcon, GithubIcon } from "./Icons.tsx";
 
 export default function Footer() {
@@ -67,7 +67,6 @@ export default function Footer() {
 
     return (
         <>
-            <Outlet />
             <footer className="bg-custom-gradient-6 text-white z-[40]">
                 <div className="flex flex-col md:flex-row w-[95%] 2xl:w-[80%] mx-auto items-end py-4 xl:py-6 gap-6">
                     <h2 className="text-6xl xl:text-7xl font-heading drop-shadow-heading self-start">

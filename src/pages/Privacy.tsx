@@ -2,10 +2,10 @@ import { useEffect, useState } from "react";
 import Background from "../components/Background";
 
 export default function Privacy() {
-    const [isVisible, setIsVisible] = useState(false);
+    const [isMounted, setIsMounted] = useState(false);
 
     useEffect(() => {
-        setIsVisible(true);
+        setIsMounted(true);
     }, []);
 
     useEffect(() => {
@@ -26,7 +26,7 @@ export default function Privacy() {
             <Background />
             <section
                 className={`transition opacity transform duration-1000 inset-0 ${
-                    isVisible ? "opacity-100 scale-100" : "opacity-0 scale-95"
+                    isMounted ? "opacity-100 scale-100" : "opacity-0 scale-95"
                 }`}
             >
                 <article className="flex justify-evenly items-center flex-col relative z-30 mx-auto mt-4 sm:mt-6 xl:mt-12 w-[90%] sm:w-[85%] md:w-[80%] lg:w-[85%] xl:max-w-[1340px] bg-custom-gradient-5 rounded-xl text-white pt-4 pb-4 lg:pb-8 px-3">

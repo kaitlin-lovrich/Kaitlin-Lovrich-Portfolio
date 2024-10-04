@@ -3,11 +3,12 @@ import Background from "../components/Background";
 import { Link } from "react-router-dom";
 
 export default function About() {
-    const [isVisible, setIsVisible] = useState(false);
+    const [isMounted, setIsMounted] = useState(false);
     const [isImageLoaded, setIsImageLoaded] = useState(false);
 
+    // Scale and fade in component when it mounts
     useEffect(() => {
-        setIsVisible(true);
+        setIsMounted(true);
     }, []);
 
     useEffect(() => {
@@ -18,6 +19,7 @@ export default function About() {
             });
         }, 100);
 
+        // Prevent memory leaks if the component unmounts before the timeout completes.
         return () => {
             clearTimeout(timeoutId);
         };
@@ -28,7 +30,7 @@ export default function About() {
             <Background />
             <section
                 className={`transition opacity transform duration-1000 inset-0 h-full ${
-                    isVisible ? "opacity-100 scale-100" : "opacity-0 scale-95"
+                    isMounted ? "opacity-100 scale-100" : "opacity-0 scale-95"
                 }`}
             >
                 <article className="flex flex-col items-center relative z-30 mx-auto mt-4 sm:mt-6 xl:mt-12 w-[90%] sm:w-[85%] md:w-[80%] lg:w-[85%] xl:max-w-[1340px] bg-custom-gradient-5 rounded-xl text-white/95 pt-4 pb-10 lg:pb-14 px-4 sm:px-6 overflow-y-auto">
@@ -48,7 +50,7 @@ export default function About() {
                         >
                             <img
                                 src="./rock-climbing-kait.jpg"
-                                alt="Rock Climbing Kait"
+                                alt="Kaitlin Lovrich - Full Stack Developer"
                                 className="w-full rounded-2xl shadow-textBox"
                                 onLoad={() => setIsImageLoaded(true)}
                             />
