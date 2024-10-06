@@ -27,8 +27,6 @@ export default function App() {
         function handleTouchStart(e: TouchEvent) {
             setStartX(e.touches[0].clientX); // sets a numerical X axis value
             setStartY(e.touches[0].clientY); // sets a numerical Y axis value
-
-            console.log(e);
         }
 
         // Capture the current touch coordinates (X and Y) as the touch moves
@@ -42,8 +40,8 @@ export default function App() {
             if (!isMounted) return;
 
             // Calculate the differences (deltas) between starting and ending touch positions
-            const deltaX = endX - startX; // Horizontal swipe distance
-            const deltaY = endY - startY; // Vertical swipe distance
+            const deltaX = startX - endX; // Horizontal swipe distance
+            const deltaY = startY - endY; // Vertical swipe distance
 
             const MIN_SWIPE_DISTANCE = 50; // Minimum distance to consider as a swipe
             const MAX_TAP_DISTANCE = 10; // Allow a small distance for tap detection
