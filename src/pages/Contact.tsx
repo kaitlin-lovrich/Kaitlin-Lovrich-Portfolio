@@ -77,8 +77,6 @@ export default function Contact() {
                         publicKey: myPublicKey,
                     }
                 );
-                console.log("response", response);
-                console.log("response.status", response.status);
                 if (response.status !== 200) {
                     throw new Error("Email service returned an error."); // Throw an error to be caught below
                 }
