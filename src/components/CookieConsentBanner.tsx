@@ -11,10 +11,10 @@ export default function CookieConsentBanner() {
         }
     }, []);
 
-    function handleConsentClick(consent: string) {
-        localStorage.setItem("cookieConsent", consent);
+    function handleConsentClick(userResponse: string) {
+        localStorage.setItem("cookieConsent", userResponse);
         setShowBanner(false);
-        if (consent === "accept") loadGoogleAnalytics();
+        if (userResponse === "accept") loadGoogleAnalytics();
     }
 
     function loadGoogleAnalytics() {
