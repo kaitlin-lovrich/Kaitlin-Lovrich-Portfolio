@@ -28,6 +28,8 @@ export default function ProjectCard({ project }: ProjectCardProps) {
             <a
                 href={projectURL}
                 target="_blank"
+                rel="noopener noreferrer"
+                aria-label={projectName}
                 className="relative group w-full"
                 onMouseEnter={() => setShowViewLive(true)}
                 onMouseLeave={() => setShowViewLive(false)}
@@ -55,6 +57,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
                 <a
                     href={projectSourceCode}
                     target="_blank"
+                    rel="noopener noreferrer"
                     aria-label="View Source Code"
                     className="flex justify-between hover:cursor-pointer"
                     onMouseEnter={() => setShowViewSourceCode(true)}
