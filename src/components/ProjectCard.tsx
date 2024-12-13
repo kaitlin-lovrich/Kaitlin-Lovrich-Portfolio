@@ -102,19 +102,15 @@ export default function ProjectCard({ project }: ProjectCardProps) {
                             {projectName}
                         </h2>
                     </div>
-                    <div className="relative group">
-                        <a
-                            href={projectSourceCode}
-                            target="_blank"
-                            aria-label="View Source Code"
-                            className="self-center text-3xl md:text-4xl xl:text-5xl duration-500 ease-in-out hover:scale-110 hover:drop-shadow-custom-blue custom-pulse"
-                        >
-                            <TbHeartCode />
-                        </a>
-                        <div className="absolute z-50 hidden group-hover:block bg-blue-950 bg-opacity-100 w-[145px] text-white text-sm rounded px-3 py-1 -top-full">
-                            View source code on Github
-                        </div>
-                    </div>
+
+                    <a
+                        href={projectSourceCode}
+                        target="_blank"
+                        aria-label="View Source Code"
+                        className="self-center text-3xl md:text-4xl xl:text-5xl duration-500 ease-in-out hover:scale-110 hover:drop-shadow-custom-blue custom-pulse"
+                    >
+                        <TbHeartCode />
+                    </a>
                 </div>
 
                 <div className="font-bold">
