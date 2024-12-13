@@ -3,6 +3,18 @@ import { experienceDataType } from "./types";
 
 export const projectsData: projectDataType[] = [
     {
+        imageSrc: "./rolling-hills-industries-website.png",
+        altText: "Rolling Hills Industries Website",
+        projectName: "Rolling Hills Industries",
+        projectURL: "https://rollinghillsindustries.com/",
+        projectSourceCode:
+            "https://github.com/kaitlin-lovrich/Rolling-Hills-Industries",
+        projectDescription: "Website for a commercial cleaning company.",
+        projectType: "Solo Project",
+        projectRole: "Frontend",
+        projectTechStack: ["React", "TypeScript", "Next.js", "Tailwind CSS"],
+    },
+    {
         imageSrc: "./bullies-bbq-website.png",
         altText: "Bullies BBQ Website",
         projectName: "Bullies BBQ",
@@ -48,6 +60,20 @@ export const projectsData: projectDataType[] = [
 ];
 
 export const experiencesData: experienceDataType[] = [
+    {
+        imageSrc: "./rolling-hills-industries-logo.png",
+        altText: "Rolling Hills Industries",
+        imageWidth: "w-full sm:w-[280px]",
+        experienceTitle: "Freelance Web Developer",
+        experienceLocation: "Rolling Hills Industries - Irvine, CA",
+        experienceDate: "October 2024 - Current",
+        experienceBulletPoints: [
+            "Redesigned the website wireframe for Rolling Hills Industries using Figma, blending client preferences with creative input to modernize the design while maintaining the existing color scheme and aesthetic",
+            "Implemented responsive styling with TailwindCSS and React, optimizing accessibility, fast load times using Next.js Image component, and SEO-friendly HTML elements for a user-friendly experience",
+            "Collaborated with the company President to set up Google Analytics for tracking website performance metrics and EmailJS for automated customer emails with professional templates for instant responses",
+            "Integrated Google reCAPTCHA to strengthen email security against cyber threats, and registered the website with Google Site Verification  to boost search engine visibility, ensuring higher rankings",
+        ],
+    },
     {
         imageSrc: "./coding-cat3.jpg",
         altText: "coding cat",

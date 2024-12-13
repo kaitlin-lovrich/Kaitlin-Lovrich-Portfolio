@@ -29,6 +29,7 @@ export default {
             colors: {
                 "coral": "#FF4D5A",
                 "sky-blue": "rgb(72, 209, 253)",
+                "dark-blue": "rgb(29, 36, 73)",
             },
             dropShadow: {
                 "heading": "2px 3.5px 1px rgba(255, 77, 90, .98)",

@@ -68,13 +68,13 @@ export default function HomePage() {
                         work ethic and a commitment to delivering high-quality
                         results using modern web development practices.
                     </p>
-                    <div className="relative w-[160px] xl:w-[214px] h-[48px] self-center *:hover:scale-105 *:transition *:transform *:duration-300 *:ease-in-out">
+                    <div className="relative w-[243px] xl:w-[284px] h-[48px] self-center *:hover:scale-105 *:transition *:transform *:duration-300 *:ease-in-out">
                         <a
                             href="/kaitlin-lovrich-resume.pdf"
                             download="kaitlin-lovrich-resume.pdf"
-                            className="flex justify-center relative z-10 w-[160px] xl:w-[215px] px-5 xl:px-6 py-2 xl:py-3 border-2 border-white/85 hover:border-sky-blue rounded-full text-base xl:text-xl font-heading"
+                            className="flex justify-center relative z-10 w-[232px] xl:w-[280px] px-5 xl:px-6 py-2 xl:py-3 border-2 border-white/85 hover:border-sky-blue rounded-full text-base xl:text-xl font-heading"
                         >
-                            RESUME
+                            DOWNLOAD RESUME
                         </a>
                         <div className="w-[88%] xl:w-[92%] h-[70%] xl:h-[88%] top-[-3px] left-[3px] absolute m-2 bg-bubble-gradient blur-[4px] rounded-full"></div>
                     </div>
