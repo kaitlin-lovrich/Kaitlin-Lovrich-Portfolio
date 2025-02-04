@@ -71,7 +71,7 @@ export default function HomePage() {
                     <div className="relative w-[243px] xl:w-[284px] h-[48px] self-center *:hover:scale-105 *:transition *:transform *:duration-300 *:ease-in-out">
                         <a
                             href="/kaitlin-lovrich-full-stack-web-developer.pdf"
-                            download="kaitlin-lovrich-resume.pdf"
+                            download="kaitlin-lovrich-full-stack-web-developer.pdf"
                             className="flex justify-center relative z-10 w-[232px] xl:w-[280px] px-5 xl:px-6 py-2 xl:py-3 border-2 border-white/85 hover:border-sky-blue rounded-full text-base xl:text-xl font-heading"
                         >
                             DOWNLOAD RESUME
