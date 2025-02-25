@@ -18,7 +18,7 @@ export const projectsData: projectDataType[] = [
         imageSrc: "./bullies-bbq-website.png",
         altText: "Bullies BBQ Website",
         projectName: "Bullies BBQ",
-        projectURL: "https://www.bulliesbbq.restaurant/",
+        projectURL: "https://www.bulliesbbq.com",
         projectSourceCode: "https://github.com/Bullies-BBQ-dev/Bullies-BBQ",
         projectDescription:
             "Website for a popular restaurant in Hilton Head, North Carolina.",
