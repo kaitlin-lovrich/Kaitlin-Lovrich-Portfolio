@@ -2,7 +2,6 @@ import Background from "../components/Background";
 import { useState, useEffect } from "react";
 import { PaperPlaneIcon } from "../components/Icons.tsx";
 import emailjs from "@emailjs/browser";
-import { Window } from "../lib/types.ts";
 
 export default function Contact() {
     const [isMounted, setIsMounted] = useState(false);
@@ -21,7 +20,6 @@ export default function Contact() {
     const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
     const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
     const myPublicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
-    const reSiteKey = import.meta.env.VITE_RECAPTCHA_SITE_KEY;
 
     // Scale and fade in component when it mounts, initialize emailJS
     useEffect(() => {
@@ -36,11 +34,6 @@ export default function Contact() {
                 behavior: "smooth",
             });
         }, 100);
-
-        const script = document.createElement("script");
-        script.src = `https://www.google.com/recaptcha/api.js`;
-        script.defer = true;
-        document.body.appendChild(script);
 
         return () => {
             clearTimeout(timeoutId);
@@ -59,14 +52,7 @@ export default function Contact() {
 
     function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
         e.preventDefault();
-        const recaptchaResponse = (
-            window as unknown as Window
-        ).grecaptcha.getResponse();
 
-        if (!recaptchaResponse) {
-            setStatus("Please complete the reCAPTCHA.");
-            return;
-        }
         async function submitForm() {
             try {
                 const response = await emailjs.sendForm(
@@ -82,7 +68,6 @@ export default function Contact() {
                 }
                 setStatus("Message sent successfully!");
                 setFormData({ "from_name": "", "reply_to": "", message: "" });
-                (window as unknown as Window).grecaptcha.reset();
             } catch (error) {
                 setStatus("Failed to send message.");
             }
@@ -192,10 +177,6 @@ export default function Contact() {
                                 className="p-2 xl:p-3 rounded bg-white/20 w-full focus:outline-2 focus:outline focus:outline-sky-blue"
                             ></textarea>
                         </label>
-                        <div
-                            className="g-recaptcha"
-                            data-sitekey={reSiteKey}
-                        ></div>
                         <button
                             className="*:size-6 absolute top-56 lg:top-40 xl:top-[185px] right-3 text-xl hover:cursor-pointer hover:scale-110 transition transform duration-300 ease-in-out"
                             type="submit"
