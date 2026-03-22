@@ -41,9 +41,6 @@ export default function Contact() {
     script.src = `https://www.google.com/recaptcha/api.js`;
     script.async = true;
     script.defer = true;
-    script.onload = () => {
-      console.log("reCAPTCHA loaded");
-    };
     document.body.appendChild(script);
 
     return () => {
@@ -63,17 +60,17 @@ export default function Contact() {
 
   function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    const recaptchaResponse = (
-      window as unknown as Window
-    ).grecaptcha.getResponse();
-
-    console.log("reCAPTCHA response:", recaptchaResponse); // Debugging log
-
+    const grecaptchaObj = (window as unknown as Window).grecaptcha;
+    if (!grecaptchaObj) {
+      setStatus("reCAPTCHA not ready. Please try again.");
+      return;
+    }
+    const recaptchaResponse = grecaptchaObj.getResponse();
     if (!recaptchaResponse) {
-      console.log("reCAPTCHA not found: ", recaptchaResponse); // Debugging log
       setStatus("Please complete the reCAPTCHA.");
       return;
     }
+
     async function submitForm() {
       try {
         const response = await emailjs.sendForm(
